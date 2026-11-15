@@ -1,0 +1,573 @@
+{
+  "title": "LineGuide",
+  "date": "2026-11-16",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "Azure OpenAI reasoning models",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+      "limit": "Documentation verifies supported interfaces, not account entitlement, regional quota, measured quality or latency. Proposed limits and sampling settings require endpoint validation. Explicit Luna temperature compatibility remains unresolved in vendor docs (feature table vs unsupported-parameters section); v2 sets a concrete temperature target of 0.0 with a documented fallback to the vendor default if the endpoint rejects the override."
+    },
+    {
+      "id": "R02",
+      "title": "GPT-6 Luna model",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "limit": "These are direct OpenAI rates, not an Azure quote. Azure pricing page fetch timed out. Model marketing is not evidence of suitability for industrial safety or multilingual quality."
+    },
+    {
+      "id": "R03",
+      "title": "RAG and generative AI in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "limit": "RAG does not guarantee correctness or citation faithfulness. Agentic retrieval exists; choosing classic RAG here is a design judgment for a small, tightly controlled pilot."
+    },
+    {
+      "id": "R04",
+      "title": "Hybrid search overview",
+      "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+      "limit": "No application-specific relevance gain or accuracy percentage is established. Part validity still needs deterministic lookup against the authoritative catalogue."
+    },
+    {
+      "id": "R05",
+      "title": "Security filters for trimming results in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+      "limit": "String filtering is an application-enforced pattern, not automatic identity authorization. Server-side construction, deny-by-default behavior, tenant boundaries and leakage tests remain implementation requirements."
+    },
+    {
+      "id": "R06",
+      "title": "Data, privacy, and security for Models sold by Azure in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy",
+      "limit": "Do not claim zero retention or unconditional single-region processing. Privacy configuration and contractual review are deployment prerequisites, not completed certifications."
+    },
+    {
+      "id": "R07",
+      "title": "Maintenance Copilot documentation",
+      "url": "https://help.assetmanagement.siemens.com/help/Content/Documentation/Maintenance/Asset%20Essentials/EnterpriseFeatures/AI-Driven%20Capabilities/Maintenance%20Copilot.htm",
+      "limit": "This is vendor documentation, not independent comparative testing. It establishes an adjacent competitor; it does not prove the proposed product is uniquely capable or faster."
+    },
+    {
+      "id": "R08",
+      "title": "Genix APM Copilot",
+      "url": "https://new.abb.com/process-automation/genix/abb-genix-copilot/apm",
+      "limit": "Claims about speed and downtime on this vendor page are not transferred into the proposal as measured benefits. No head-to-head evaluation or pricing comparison was conducted."
+    },
+    {
+      "id": "R09",
+      "title": "Industrial robot systems and industrial robot system safety",
+      "url": "https://www.osha.gov/otm/section-4-safety-hazards/chapter-4",
+      "limit": "The manual is technical guidance for inspection and hazard understanding, not certification of a chatbot. Local obligations and current applicable standards require qualified safety/legal review."
+    },
+    {
+      "id": "R10",
+      "title": "Understand embeddings in Azure OpenAI",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings",
+      "limit": "The page is marked Foundry classic. Confirm current deployment support and model version before provisioning. Embedding retrieval does not validate exact part identifiers or language quality."
+    }
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "title": "LineGuide",
+      "footer": "Hypothetical Scenario C proposal • Product not deployed",
+      "notes": "LineGuide is a hypothetical product proposal for Udacity Scenario C. Request: authorize only a two-week discovery stage, capped at USD 11,000, inside a conditional USD 65,000 ceiling for the full twelve-week plan. A later decision determines whether to fund the remaining stages. No customer interviews, model evaluations or production outcomes have been completed.\n\nRevision v2 responds to an external evidentiary audit held on 16 November 2026: concrete sampling and deployment settings (gate G7), connection-level security callouts on the architecture diagram (gate G6), an explicit system-attributes heading (gate G5), and an on-slide opportunity-cost statement for the risk gate (gate G4). See README_v2.md and docs/.",
+      "meta": "Scenario C • Udacity ND088\nRevised submission v2 • 16 November 2026"
+    },
+    {
+      "type": "rows",
+      "title": "Technicians struggle to find applicable answers",
+      "rows": [
+        [
+          "Current approach",
+          "Search English articles, compare manuals and parts, then escalate unresolved questions."
+        ],
+        [
+          "Knowledgebase",
+          "7,500 articles • 25 topics • 45,000 parts • 15 robot models"
+        ],
+        [
+          "User context",
+          "150 queries per day; 95% use mobile. Five languages are named in the scenario."
+        ],
+        [
+          "Unmeasured baseline",
+          "Search time, resolution rate, support cost and downtime loss are unknown."
+        ]
+      ],
+      "gap": 108,
+      "notes": "Business problem: Technicians struggle to find the right answer in an English knowledgebase spanning many robot configurations. Unresolved searches consume their time and require company support. Scenario givens are hypothetical, supplied by the assignment. Users are aged 20 to 60; languages: English, Spanish, Cantonese, Mandarin, Urdu. Device access 95% mobile 75% computer 25% tablet and education 85% high school 35% community college overlap and must not be added or normalized. Measure the search baseline in weeks 1 to 2.",
+      "footer": "Source: supplied hypothetical Scenario C; figures are not measured company data"
+    },
+    {
+      "type": "statement",
+      "title": "The product and its customer benefit",
+      "statement": "LineGuide explains approved reference material, cites its exact revision and retrieves verified parts for the selected robot configuration.",
+      "body": "It asks for missing model or firmware details and prepares a technician-reviewed support handoff when evidence is missing or a request is hazardous.\n\nTechnicians gain a short explanation and an openable source for their machine.",
+      "notes": "Two-sentence solution: LineGuide is a mobile assistant that explains approved reference material in plain language, cites the exact source revision, and retrieves verified catalog records for the technician’s robot configuration. It asks for missing model or firmware details and sends unresolved or hazardous requests to established support channels with a technician-reviewed context bundle. Customer appeal depends on applicability, fast source access, short answers and honest uncertainty; wrong parts, translation errors and repeated configuration entry threaten adoption.",
+      "footer": "Proposed benefit; faster or safer outcomes have not been demonstrated"
+    },
+    {
+      "type": "table",
+      "title": "Use an LLM where conversation helps",
+      "headers": [
+        "Approach",
+        "Useful role",
+        "Tradeoff"
+      ],
+      "widths": [
+        240,
+        480,
+        432
+      ],
+      "rows": [
+        [
+          "Improved search",
+          "Baseline; find exact terms and approved documents",
+          "Technician still interprets and reconciles results"
+        ],
+        [
+          "Rules and catalog",
+          "Permissions, configuration, parts and prohibited actions",
+          "Conversation branches need ongoing authoring"
+        ],
+        [
+          "LLM with RAG",
+          "Clarify varied wording; explain retrieved passages",
+          "Can invent claims; needs constrained retrieval and review"
+        ]
+      ],
+      "height": 400,
+      "fontSize": 25,
+      "caption": "Keep deterministic truth in records. Test the LLM’s added value against improved search.",
+      "sources": [
+        "R03",
+        "R04"
+      ],
+      "notes": "No application-specific performance has been measured. RAG retrieves grounding material but does not guarantee correct answers or faithful citations. Fine-tuning is deferred: authoritative facts change and remain in retrievable records. Consider it later only for a repeatable behavior gap that prompt/retrieval changes cannot fix, with licensed redacted examples and held-out tests."
+    },
+    {
+      "type": "table",
+      "title": "Existing industrial copilots set the comparison",
+      "headers": [
+        "Option",
+        "Documented capability",
+        "Implication"
+      ],
+      "widths": [
+        280,
+        450,
+        422
+      ],
+      "rows": [
+        [
+          "Siemens Maintenance Copilot",
+          "Uses linked manuals and maintenance records; web and mobile",
+          "Adjacent competitor; mobile requires online mode"
+        ],
+        [
+          "ABB Genix APM Copilot",
+          "Conversational access to operational information",
+          "Established category; no head-to-head result available"
+        ],
+        [
+          "LineGuide proposal",
+          "Robot/version filters and exact catalog checks",
+          "Differentiation is a hypothesis to validate"
+        ]
+      ],
+      "height": 400,
+      "fontSize": 24,
+      "caption": "Installed-base support need is the opportunity. Revenue and market size remain unestimated.",
+      "sources": [
+        "R07",
+        "R08"
+      ],
+      "notes": "Siemens source is Asset Essentials Enterprise Maintenance Copilot documentation. ABB source is its Genix APM Copilot product page. These vendor sources establish capabilities, not measured superiority or transferable downtime reduction. The existing English knowledgebase plus human escalation remains the current comparison. No competitor pricing or willingness-to-pay research was conducted."
+    },
+    {
+      "type": "two",
+      "title": "System attributes: goals and pilot scope",
+      "leftTitle": "Primary system goal",
+      "left": "Increase verified self-service resolution of eligible documentation and catalog questions.\n\nSecondary goals\nReduce time to a verified answer.\nPrevent unsupported or hazardous assistance.",
+      "rightTitle": "Supervised English pilot",
+      "right": "Two models; up to 200 approved articles across five topics, subject to content audit.\n\nRead-only explanations and catalog lookup.\n\nSpanish follows its own validation; other languages remain staged.",
+      "fontSize": 27,
+      "notes": "System attributes required by the rubric: one primary goal and two secondary goals. Initial audience: authorized maintenance technicians reviewing reference information away from active hazardous work. English only at initial pilot. Later Spanish, Mandarin, written Cantonese and Urdu each need their own technical language validation; Cantonese must not be treated as Mandarin and Urdu needs right-to-left UI testing. Voice is outside the MVP. Pilot coverage is a proposed scope, not the actual distribution of source documents.",
+      "footer": "Proposed scope; document suitability and language performance are untested"
+    },
+    {
+      "type": "rows",
+      "title": "The technician’s path through the product",
+      "rows": [
+        [
+          "1  Confirm context",
+          "Sign in, select robot and firmware, then ask a reference question."
+        ],
+        [
+          "2  Resolve ambiguity",
+          "Provide missing configuration before retrieval; keep that context visible on mobile."
+        ],
+        [
+          "3  Check the evidence",
+          "Read a short explanation, exact catalog record and source link with revision."
+        ],
+        [
+          "4  Escalate when needed",
+          "Review the support context before sharing it; use the established safety route."
+        ]
+      ],
+      "gap": 108,
+      "notes": "The mobile interface should have large tap targets, short readable answers, source links and an accessible escalation control. For procedural questions, open the complete approved procedure in the controlled original viewer, with prerequisites, warnings, revision and applicability. The LLM must not shorten, reorder or invent safety-critical steps. During outages, generate no new answers; show outage state and established support. Offline reference caching stays disabled until permission expiry, revocation, revision and deletion behavior is verified.",
+      "footer": "Proposed user flow • No robot commands, work authorization or part ordering"
+    },
+    {
+      "type": "architecture",
+      "title": "RAG architecture and trust boundaries",
+      "sources": [
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "notes": "Connection-level protections shown on the diagram: device to API uses TLS 1.3 inside an authenticated Entra session; every back-end link uses a private endpoint with a managed identity; the model endpoint is reached only inside the approved region or DataZone. Proposed components: responsive mobile web client; Microsoft Entra ID; API/orchestrator; policy and configuration checks; Azure AI Search hybrid index; Azure OpenAI in Microsoft Foundry; approved manuals in Blob Storage; authoritative relational parts store; response validator; human support; privacy-filtered audit events. TLS protects device/API transport. Backend services use private endpoints where available, managed identities and least privilege. Derive tenant identity from the authenticated session, filter entitlements before retrieval and recheck before delivery. The API performs read-only catalog lookup. Validate citations, applicability and parts before displaying the response. No network route or credentials reach robot controllers. Audit request IDs, source revisions, model/prompt/index versions, policy outcome, timings and review disposition. Disable raw query logs by default.",
+      "footer": "Proposed architecture • External generation remains subject to approved regional/provider terms",
+      "seclabels": true
+    },
+    {
+      "type": "rows",
+      "title": "Approved content controls retrieval quality",
+      "rows": [
+        [
+          "Ingest controlled records",
+          "Preserve owner, revision, section, model, firmware, language and entitlement metadata."
+        ],
+        [
+          "Retrieve applicable evidence",
+          "Start near 500-token sections with 80-token overlap; hybrid top 20, rerank to at most five passages."
+        ],
+        [
+          "Validate before display",
+          "Confirm cited revisions and compatibility; exact-match every emitted part to permitted records."
+        ],
+        [
+          "Abstain on conflicts",
+          "Missing configuration, withdrawn content or incompatible parts trigger clarification or support."
+        ]
+      ],
+      "gap": 108,
+      "sources": [
+        "R03",
+        "R04",
+        "R05",
+        "R10"
+      ],
+      "notes": "These chunking and retrieval values are proposed starting settings. Keep warnings attached to their sections. Reject withdrawn records and missing approval or applicability metadata. The structured parts catalog is separate from document chunks; embeddings cannot establish part validity. Pin model, prompt, embedding and index versions together, and rehearse rollback. Cache only within tenant and permission scope. The embedding candidate is text-embedding-3-small; verify its current Azure region/version support and retrieval quality before use.",
+      "footer": "Starting retrieval settings; held-out evaluation decides whether to change them"
+    },
+    {
+      "type": "table",
+      "title": "LLM deployment and configuration",
+      "headers": [
+        "Setting",
+        "Pilot proposal"
+      ],
+      "widths": [
+        310,
+        842
+      ],
+      "rows": [
+        [
+          "Deployment model",
+          "Cloud on Azure in an approved region or DataZone; private endpoints; no on-prem or edge node needed at 150 queries/day"
+        ],
+        [
+          "Hosted candidate",
+          "Azure OpenAI gpt-6-luna, version 2026-09-22; benchmark before selection"
+        ],
+        [
+          "Generation",
+          "Responses API; reasoning effort low; max_output_tokens 2,000 including reasoning"
+        ],
+        [
+          "Context budget",
+          "System prompt + retrieved context ≤8,000 tokens; visible answer target ≤800; 15-second deadline"
+        ],
+        [
+          "Sampling",
+          "Temperature 0.0 target for deterministic grounded answers; if the endpoint rejects it, accept the vendor default and record it"
+        ],
+        [
+          "Behavior and tuning",
+          "Structured citations + escalation; no fine-tuning or autonomous tool loop"
+        ]
+      ],
+      "height": 476,
+      "fontSize": 21,
+      "sources": [
+        "R01",
+        "R02",
+        "R10"
+      ],
+      "notes": "Concrete settings with justification. Deployment model: cloud (Azure), because the scenario's 150 daily queries and ten-concurrent-request load need no on-prem or edge capacity; private endpoints and managed identities keep traffic off the public internet; an approved region or DataZone constrains processing geography. Sampling: the target is temperature 0.0 because answers are retrieval-grounded explanations where added sampling variance is risk, not value; Microsoft R01 documentation conflicts on Luna temperature support, so if the endpoint rejects the override the deployment accepts the vendor default, records it, and relies on the deterministic guardrails (entitlement filtering, exact catalog matching, citation validation, abstention) to control residual variance. These are proposed settings, not tested optima. Candidate: Azure gpt-6-luna version 2026-09-22. Benchmark it and a stronger current model using the same frozen set; choose the smallest that passes every gate. Account entitlement, regional quota and lifecycle are unverified. The 2,000-token output cap includes reasoning; target no more than 800 visible tokens. Incomplete output produces a safe excerpt or escalation, never an unvalidated partial answer. No fine-tuning, persistent conversation memory, external browsing or autonomous tool loop.",
+      "footer": "Candidate version is documented; account access, quality, latency and configuration are untested",
+      "top": 150
+    },
+    {
+      "type": "two",
+      "title": "Security and privacy requirements",
+      "leftTitle": "Control data access",
+      "left": "Derive tenant and groups on the server.\n\nFilter before retrieval and recheck before delivery.\n\nTreat retrieved text as untrusted; allow only read-only tools.\n\nEncrypt transport and limit service privileges.",
+      "rightTitle": "Constrain external processing",
+      "right": "Select an approved regional or DataZone deployment.\n\nDisable raw-query logs by default.\n\nReview abuse-monitoring, retention and deletion terms before customer data enters the endpoint.",
+      "fontSize": 26,
+      "caption": "Azure’s no-training statement does not establish zero retention or safety certification.",
+      "sources": [
+        "R05",
+        "R06",
+        "R09"
+      ],
+      "notes": "Microsoft states prompts, completions, embeddings and training data are unavailable to OpenAI/other customers and are not used to train foundation models without permission/instruction. Abuse monitoring can include storage and authorized Microsoft human review; modified monitoring requires approval. Global deployments may process in any supported geography; DataZone remains within its specified zone. Do not claim unconditional single-region residency, zero retention, regulatory compliance or safety certification. Privacy/legal review and appropriate contracts precede proprietary data. Separate development and production. Test tenant leakage, injection, revocation and deletion.",
+      "footer": "Requirements before customer-data use; no compliance or certification claim"
+    },
+    {
+      "type": "table",
+      "title": "Five risks and accountable mitigations",
+      "headers": [
+        "Risk",
+        "Mitigation",
+        "Owner"
+      ],
+      "widths": [
+        240,
+        690,
+        222
+      ],
+      "rows": [
+        [
+          "Hazardous guidance",
+          "Refuse live recovery or bypass; show complete procedures; critical escape suspends capability",
+          "Safety lead"
+        ],
+        [
+          "Wrong revision or part",
+          "Require configuration; filter current records; validate every emitted part; abstain on conflict",
+          "Content owner"
+        ],
+        [
+          "Factory data leakage",
+          "Enforce tenant access on server; minimize logs; test injection and cross-tenant isolation",
+          "Security lead"
+        ],
+        [
+          "Translation changes meaning",
+          "Release each language separately; bilingual technical review; preserve warnings and identifiers",
+          "Localization lead"
+        ],
+        [
+          "Low adoption or high cost",
+          "Benchmark search; short mobile answers; retain support; measure outcomes and full run cost",
+          "Product manager"
+        ]
+      ],
+      "fontSize": 23,
+      "height": 428,
+      "sources": [
+        "R09"
+      ],
+      "notes": "These are five product risks, not an exhaustive safety assessment. The service has no controller connection and cannot authorize physical work or order parts. Ambiguous hazardous requests receive escalation. Qualified personnel retain responsibility for physical work. A critical escape suspends the affected capability for safety review. Delaying experimentation preserves current search friction and escalation, but their monetary size is unknown. A bounded discovery stage tests whether an LLM adds enough value to justify its operating and review costs.",
+      "caption": "Delay risk: continued search friction and escalation; monetary size unknown — bounded discovery limits exposure."
+    },
+    {
+      "type": "table",
+      "title": "Success measures: customer outcomes",
+      "headers": [
+        "Measurement",
+        "Definition and proposed gate",
+        "Pilot evidence"
+      ],
+      "widths": [
+        260,
+        610,
+        282
+      ],
+      "rows": [
+        [
+          "Verified self-service resolution",
+          "Confirmed correct resolution, no escalation within 24 h / all eligible sessions; ≥70%",
+          "≥200 eligible sessions; review all outcomes"
+        ],
+        [
+          "Time to verified answer",
+          "Median time to correct answer or appropriate escalation; ≥30% lower than search",
+          "25 technicians; 200 trials/condition; counterbalanced"
+        ]
+      ],
+      "fontSize": 25,
+      "height": 350,
+      "caption": "Abstentions, missing feedback and escalations remain in the resolution denominator.",
+      "notes": "Resolution numerator: eligible sessions with technician-confirmed resolution, domain-review confirmation and no support escalation within 24 hours. Denominator: all eligible sessions, including abstentions, missing feedback and escalations. Use the same eligibility for search. For task time, 25 technicians complete 16 trials each, eight search and eight assistant, using distinct matched variants and counterbalanced order. This yields 200 trials per condition. Report paired differences and uncertainty alongside completion and escalation rates. This pilot screen does not prove population-wide lift. Report every KPI by enabled language and robot model. All targets are proposed and unmeasured.",
+      "footer": "Two of five proposed measurements • Baselines and outcomes are not yet measured"
+    },
+    {
+      "type": "table",
+      "title": "Success measures: quality and reliability",
+      "headers": [
+        "Measurement",
+        "Proposed gate",
+        "Evidence and response"
+      ],
+      "widths": [
+        280,
+        490,
+        382
+      ],
+      "rows": [
+        [
+          "Evidence and parts",
+          "≥98% correctness; 0 wrong parts; ≥76/80 known record returns; 20/20 ambiguous clarifications",
+          "≥200 substantive answers; domain review; abstentions fail known cases"
+        ],
+        [
+          "Prohibited-assistance escape",
+          "0 observed escapes / 100 prohibited cases per language",
+          "Any critical escape suspends affected capability"
+        ],
+        [
+          "Validated latency, p95",
+          "≤8 seconds; failures and timeouts exceed target",
+          "≥500 requests at 10 concurrent users; 15-second timeout"
+        ]
+      ],
+      "height": 440,
+      "fontSize": 23,
+      "caption": "Zero observed safety escapes in curated tests does not certify industrial safety.",
+      "notes": "Correctness numerator: substantive answers whose material claims have applicable current cited support and whose emitted parts exactly match compatible permitted catalog records. Denominator: all substantive answered cases. Require at least 200 substantive answers and at least 98% correctness. The 100 catalog cases contain 80 unique known parts and 20 ambiguous or unknown cases. Require at least 76/80 correct record returns, 20/20 appropriate clarifications or escalations, and zero wrong part emissions. Abstentions count as failed known-record returns. Safety escape rate is actionable prohibited assistance divided by all prohibited requests. Require zero observed escapes in 100 cases per language and no critical escape in supervised use. Zero of 100 would imply an approximate 3% upper 95% bound only with independent representative sampling; curated tests do not meet that assumption or certify safety. Latency is empirical p95 from server acceptance to fully validated response or abstention; failures and timeouts exceed the target. Use 500 requests at 10 concurrency and record query mix, cache state and versions.",
+      "footer": "Three of five proposed measurements • No model result or load test has been observed"
+    },
+    {
+      "type": "rows",
+      "title": "Validation before supervised use",
+      "rows": [
+        [
+          "Freeze English tests",
+          "400 disjoint items: 200 routine, 100 catalog and 100 prohibited requests."
+        ],
+        [
+          "Review independently",
+          "Domain reviewers score support, applicability and parts; safety lead adjudicates escapes."
+        ],
+        [
+          "Verify failure behavior",
+          "Test isolation, injection, missing evidence, outages, expiry and rollback; no unvalidated streaming."
+        ],
+        [
+          "Compare real tasks",
+          "Use matched search/assistant tasks; review all supervised sessions and full operating cost."
+        ]
+      ],
+      "gap": 108,
+      "notes": "The English release set has 400 disjoint semantic cases: 200 routine, 100 catalog and 100 prohibited requests. The catalog split is 80 unique known records and 20 ambiguous or unknown cases, with the subgates on slide 14. These are proposed tests, not executed results. Customer tasks and catalogs are unavailable; qualified reviewers must create and approve them. Freeze the release set before tuning. The separate 500 request load test uses a pinned deployment. Test 1,500 requests/day before claiming tenfold headroom over the scenario 150 daily. Block delivery until validation completes. Each later language repeats its own semantic and safety validation. An LLM cannot be the sole grader of itself.",
+      "footer": "Proposed acceptance plan • Tests and customer studies remain to be run"
+    },
+    {
+      "type": "statement",
+      "title": "Illustrative monthly capacity value",
+      "statement": "970.2 successful assisted sessions × 5 minutes saved × $40/hour ≈ $3,234 per month",
+      "body": "150 queries/day × 22 days × 60% eligible × 70% adoption × 70% verified resolution = 970.2 sessions.\n\nAssume $1,600/month run cost: $800 cloud allowance  + 16 review hours at $50. Base net capacity value: $1,634/month before implementation.",
+      "notes": "Currency: USD. Only 150 queries/day is supplied by the scenario. The 22 service days, eligibility 60%, adoption 70%, resolution 70%, five minutes saved and $40/hour are assumptions. Exact calculation: 150*22*.6*.7*.7= 970.2; 970.2*5/60*40=3234. Recurring cost 800 + 16*50=1600; base net 1634. The $800 cloud/search/storage/model allowance is not a vendor quote and must be replaced with a confirmed Azure estimate. This is redeployable staff capacity, not cash savings, avoided downtime, revenue or a forecast. A query is not a unique technician. Do not add support/downtime benefits without separate measurement and overlap checks.",
+      "footer": "Illustrative assumptions in USD • No measured savings or vendor quotation"
+    },
+    {
+      "type": "table",
+      "title": "Sensitivity and investment discipline",
+      "headers": [
+        "Planning case",
+        "Sessions/month",
+        "Capacity value",
+        "Less $1,600 run cost"
+      ],
+      "widths": [
+        335,
+        250,
+        275,
+        292
+      ],
+      "rows": [
+        [
+          "Conservative: 3 min saved",
+          "396",
+          "$792",
+          "−$808"
+        ],
+        [
+          "Base: 5 min saved",
+          "970.2",
+          "$3,234",
+          "$1,634"
+        ],
+        [
+          "Favorable: 7 min saved",
+          "1,795.2",
+          "$8,377.60",
+          "$6,777.60"
+        ]
+      ],
+      "height": 310,
+      "fontSize": 25,
+      "caption": "Base recurring break-even: 2.47 minutes saved/session. $60,000 labor payback: 36.7 months.",
+      "notes": "All cases use 150 queries/day, 22 days/month and USD 40/hour. Conservative assumptions: 40% eligible, 50% adoption, 60% resolution, three minutes saved. Base: 60%, 70%, 70%, five minutes. Favorable: 80%, 85%, 80%, seven minutes. Monthly run cost is assumed USD 1,600 in all cases. Base recurring break-even: 1600/970.2/40*60=2.47371676 minutes. Simple labor-only implementation payback: 60000/1634=36.7197 months, excluding pilot run allowance, financing and ramp effects. This weak standalone case does not justify committing the full pilot now. Discovery must establish measured demand, task time, source coverage, current quotations and the sponsor investment hurdle; otherwise stop or improve search alone. Capacity creates value only if it can be redeployed.",
+      "footer": "Scenarios are sensitivity cases; ranges are not statistical confidence intervals"
+    },
+    {
+      "type": "rows",
+      "title": "Twelve-week pilot and stakeholder decision",
+      "rows": [
+        [
+          "Weeks 1 to 2",
+          "Audit sources and search baseline; measure demand and task time before a further funding decision."
+        ],
+        [
+          "Weeks 3 to 5",
+          "If discovery supports investment, build read-only RAG, catalog checks and audit events."
+        ],
+        [
+          "Weeks 6 to 10",
+          "Complete independent tests, then supervised English use if gates pass."
+        ],
+        [
+          "Weeks 11 to 12",
+          "Choose stop, revise or expand using all five measures and observed economics."
+        ]
+      ],
+      "gap": 96,
+      "caption": "Ask: authorize only $11,000 discovery now; remaining stages conditional within a $65,000 ceiling.",
+      "notes": "Authorize only the first two weeks now: at most USD 10,000 labor plus USD 1,000 run and independent-review allowance. This USD 11,000 cap is included in the conditional total USD 65,000 ceiling. If all stages proceed, staffing is one application engineer, one ML/retrieval engineer, 0.25 FTE domain expert and 0.25 FTE PM/designer for twelve weeks: 30 person-weeks at USD 2,000 = USD 60,000. Three months recurring allowance adds USD 4,800, giving USD 64,800. Independent quality review is outside the 30 person-weeks. Existing safety/security reviewers must fit the envelope; otherwise re-scope. Reconcile actual discovery spend before releasing more funding. Weeks 6 to 8 cover independent quality, isolation, injection, accessibility, load and rollback tests; weeks 9 to 10 are supervised English use away from active hazardous work. Spanish needs separate bilingual validation. The sponsor should assign domain and safety reviewers and authorize approved sources in the selected region. No funding, source access or production approval is asserted.",
+      "footer": "Proposed budget and authorization request • No funding or production approval asserted"
+    },
+    {
+      "type": "sources",
+      "title": "Sources: system design and privacy",
+      "ids": [
+        "R01",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "footer": "Primary public sources checked 16 November 2026 • Full claim boundaries in sources.json",
+      "notes": "Microsoft R01 contains contradictory temperature guidance. v2 proposes a concrete temperature target of 0.0 with a fallback to the vendor default recorded at deployment, resolving the previous sampling row while preserving the compatibility caveat. Security filtering is application enforced and needs authenticated server-derived identity. RAG, hybrid search and privacy terms do not establish correct or safe product behavior. Source claim boundaries and access dates are retained in sources.json."
+    },
+    {
+      "type": "sources",
+      "title": "Sources: market, safety and model inputs",
+      "ids": [
+        "R02",
+        "R07",
+        "R08",
+        "R09",
+        "R10"
+      ],
+      "footer": "Primary public sources checked 16 November 2026 • Scenario inputs supplied in the assignment",
+      "notes": "The direct OpenAI rate was not used as an Azure quotation. Siemens and ABB sources establish adjacent products, not measured superiority. OSHA guidance does not certify this advisor. R10 is Foundry classic, so current deployment support must be confirmed. The starter slide template was unavailable; this custom deck follows the supplied rubric."
+    }
+  ],
+  "version": "2.0.0"
+}

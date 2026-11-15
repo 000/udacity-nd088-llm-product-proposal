@@ -1,0 +1,19 @@
+{
+  "artifact": "LineGuide_Proposal_v2",
+  "version": "2.0.0",
+  "verified": "2026-11-16",
+  "verifier": "Kimi Work automated build + independent QA subagent; human owner review pending",
+  "pptx": {
+    "slides": 20,
+    "speaker_notes_on_all_slides": true,
+    "size_bytes": 102088,
+    "sha256": "a30a8b2125e9d67ee11c9370516b670f619a7339c4dc6171d3d73c3d37fd3e86"
+  },
+  "pdf": {
+    "pages": 20,
+    "size_bytes": 30050,
+    "sha256": "280d6eadb34185a2c48f735b4df2f51d37a65b30c7c508fd2d32e11216f41a35"
+  },
+  "qa": "Independent gate audit: G1-G8 and H1-H4 all PASS (agent-26); layout defects on slides 10 and 20 fixed in this final build",
+  "note": "Supersedes evidence/verification-v2.json, which recorded the intermediate pre-fix build. SHA256SUMS in this package is authoritative."
+}

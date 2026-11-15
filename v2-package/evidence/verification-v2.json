@@ -1,0 +1,125 @@
+{
+  "record": "verification-v2",
+  "generated": "2026-11-16",
+  "verifier": "Kimi Work agent (automated), reviewed by human owner",
+  "audit_response": "docs/AUDIT-RESPONSE.md",
+  "package_checksums": "SHA256SUMS",
+  "repository": {
+    "full_name": "000/udacity-nd088-llm-product-proposal",
+    "visibility": "public",
+    "default_branch": "main",
+    "clone_path": "repo/clone",
+    "head_sha": "245117135e51f4c3bc1faae5c24d0a9a4640b1a5",
+    "head_subject": "Add LineGuide proposal deck with sources and verification evidence",
+    "origin_head": "refs/remotes/origin/main",
+    "pushed_at": "2026-11-15T21:53:34Z",
+    "working_tree_clean": true,
+    "sha256sums_check": "29/29 OK",
+    "lfs_pointers_present": false,
+    "v1_binaries_on_main": {
+      "submission/LineGuide_Proposal.pdf": {"bytes": 300749, "pdf_header": "%PDF-1.7"},
+      "submission/LineGuide_Proposal.pptx": {"bytes": 104699}
+    }
+  },
+  "v1_artifacts": {
+    "source": "repo/clone/SHA256SUMS (verified with shasum -a 256 -c, all OK)",
+    "submission/LineGuide_Proposal.pdf": {
+      "sha256": "e6243d6771135ba4324f1b65db94c3fe526deded8fedc5c800ea4562537e98c3",
+      "bytes": 300749,
+      "pdf_pages": 20
+    },
+    "submission/LineGuide_Proposal.pptx": {
+      "sha256": "6abc0af75c5bfc2c86f7e040e9a162d593620ed32b83acf34ff86ce844e13f86",
+      "bytes": 104699,
+      "slide_count": 20,
+      "all_speaker_notes_non_empty": true,
+      "table_slides": [4, 5, 10, 12, 13, 14, 17],
+      "expected_table_slides_confirmed": [4, 5, 10, 13, 14, 17],
+      "slide_titles": [
+        "Hypothetical Scenario C proposal • Product not deployed",
+        "Technicians struggle to find applicable answers",
+        "The product and its customer benefit",
+        "Use an LLM where conversation helps",
+        "Existing industrial copilots set the comparison",
+        "System goals and first-release scope",
+        "The technician’s path through the product",
+        "RAG architecture and trust boundaries",
+        "Approved content controls retrieval quality",
+        "LLM deployment and configuration",
+        "Security and privacy requirements",
+        "Five risks and accountable mitigations",
+        "Success measures: customer outcomes",
+        "Success measures: quality and reliability",
+        "Validation before supervised use",
+        "Illustrative monthly capacity value",
+        "Sensitivity and investment discipline",
+        "Twelve-week pilot and stakeholder decision",
+        "Sources: system design and privacy",
+        "Sources: market, safety and model inputs"
+      ]
+    },
+    "visual_inspection": "All 20 PDF pages rendered to PNG (pdftoppm) and inspected for overflow and diagram legibility; pages 3, 6, 8, 10 examined individually: no overflow, architecture diagram and settings table fully legible."
+  },
+  "v2_artifacts": {
+    "artifact/LineGuide_Proposal_v2.pdf": {
+      "sha256": "dd57684a17426c1a75a0d42245a03e18dfc94e1c02fd874a0176088923741602",
+      "bytes": 30097,
+      "pdf_pages": 20
+    },
+    "artifact/LineGuide_Proposal_v2.pptx": {
+      "sha256": "d222ab1bfde3ebc5015d888c8f3674b534b6a2d311da1b9d8c61a67f0502fbab",
+      "bytes": 102121,
+      "slide_count": 20,
+      "all_speaker_notes_non_empty": true,
+      "table_slides": [4, 5, 10, 12, 13, 14, 17]
+    },
+    "source/deck-content.json": {
+      "sha256": "b8930eb47c1aa0dfe3c4c6fc8b5caaa7bd755b66aa1cbf23b04d04f99031dda8",
+      "bytes": 34846
+    },
+    "source/build-deck.py": {
+      "sha256": "1d54977c0fe77c881de28707b9f560e358310e1bbab628ddb4551c7ab1b0be83",
+      "bytes": 18985
+    },
+    "source/patch-v2.py": {
+      "sha256": "371653c0f36d183fb0089e4139965e378c4e9a8285997cec64387ee791960385",
+      "bytes": 6567
+    }
+  },
+  "builder_reproducibility": {
+    "command": "LINEGUIDE_OUT=<scratch> python3 source/build-deck.py",
+    "pptx": "rebuilt PPTX member-for-member byte-identical to artifact (only zip entry timestamps differ)",
+    "pdf": "rebuilt PDF byte-identical to artifact except embedded creation timestamps and derived trailer /ID (same 30097-byte size)",
+    "conclusion": "build-deck.py deterministically reproduces both v2 artifacts from source/deck-content.json"
+  },
+  "package_sha256sums_check": "8/8 OK (artifact/LineGuide_Proposal_v2.pdf, artifact/LineGuide_Proposal_v2.pptx, source/deck-content.json, source/build-deck.py, source/patch-v2.py, source/deck-content-v1.json, docs/sources.json, docs/metrics.json)",
+  "verification_commands": [
+    "git status -sb",
+    "git remote -v",
+    "git symbolic-ref refs/remotes/origin/HEAD",
+    "git log -n 3 --oneline --decorate",
+    "git ls-tree -r --long HEAD | head -40",
+    "shasum -a 256 -c SHA256SUMS  (in repo/clone)",
+    "head -c 100 submission/LineGuide_Proposal.pdf | cat -v | head -2",
+    "curl -s https://api.github.com/repos/000/udacity-nd088-llm-product-proposal",
+    "python3 -c  (python-pptx: slide count, notes coverage, table slides, titles; repo/clone/submission/LineGuide_Proposal.pptx)",
+    "python3 -c  (pypdf: page count and gate-page text; repo/clone/submission/LineGuide_Proposal.pdf)",
+    "pdftoppm -png -r 90 repo/clone/submission/LineGuide_Proposal.pdf (render all 20 pages for visual inspection)",
+    "shasum -a 256 <v2 files>  (in LineGuide_v2/)",
+    "python3 -c  (pypdf: v2 PDF page count)",
+    "LINEGUIDE_OUT=<scratch> python3 source/build-deck.py (reproducibility rebuild)",
+    "shasum -a 256 -c SHA256SUMS  (in LineGuide_v2/)"
+  ],
+  "policy_pages_fetched_live": false,
+  "policy_compliance_documented_in": "docs/ATTRIBUTION.md (original authorship, citation, epistemic honesty, AI disclosure); gates mapped in docs/RUBRIC-GATES-G1-G8.md",
+  "gate_status": {
+    "G1": "Closed — hold lifted (this verification)",
+    "G2": "Already met in v1, confirmed",
+    "G3": "Already met in v1, confirmed",
+    "G4": "Closed in v2",
+    "G5": "Closed in v2",
+    "G6": "Closed in v2",
+    "G7": "Closed in v2",
+    "G8": "Already met in v1, confirmed"
+  }
+}
