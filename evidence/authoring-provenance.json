@@ -1,0 +1,21 @@
+{
+  "checked_date": "2026-11-16",
+  "execution_owner": "Herdr",
+  "coordinating_executor": "Codex",
+  "artifact_tool_version": "2.8.157",
+  "hermes_scanner_installed_version": "0.8.2",
+  "hermes_pypi_current_version": "0.8.2",
+  "cursor_desktop_version": "3.30.14",
+  "cursor_cli_version": "2026.11.05-86047df",
+  "cursor_project_status": "inactive_account_loading_no_usable_cloud_workspace",
+  "production_advisor_deployed": false,
+  "customer_or_model_evaluation_performed": false,
+  "classroom_submission_performed": false,
+  "existing_automatic_memory_controls_changed": false,
+  "source_policy": "Public primary sources and generated hypothetical proposal; no raw course text or private source documents published",
+  "node_authoring_version": "24.22.1",
+  "pdf_renderer": "LibreOfficeDev26.8.0.0.alpha0",
+  "pdf_renderer_commit": "2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "pdf_embedded_font": "Liberation Sans substituted for PPTX Arial",
+  "native_powerpoint_opened": false
+}

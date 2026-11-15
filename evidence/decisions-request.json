@@ -1,0 +1,15 @@
+{
+  "model": "gemini-decision-1",
+  "input": "Synthetic proposal-review case. A fictional read-only industrial documentation advisor has no robot-control channel. No customer interviews, model evaluation, operational service or pilot result exists. Its scenario calculation values redeployable staff capacity, not cash or avoided downtime. The conservative case is negative. The base case implies a 36.7-month simple implementation payback. The recommendation authorizes only an 11,000 USD two-week discovery stage inside a conditional 65,000 USD twelve-week ceiling. Remaining funding requires observed need, approved sources, current vendor quotes and a sponsor-agreed investment hurdle. If those conditions fail, stop or improve search. Production safety acceptance remains with qualified personnel. All product performance thresholds are proposed and unmeasured.",
+  "questions": {
+    "funding_argument": {
+      "type": "choice",
+      "instructions": "Which description best matches the reasoning and limits of this recommendation? Assess coherence of the funding argument, not the arithmetic or industrial safety.",
+      "criteria": {
+        "conditional_discovery": "It acknowledges weak economic evidence and limits current funding to discovery with explicit later conditions.",
+        "full_rollout": "It claims measured benefits justify immediate full production rollout.",
+        "unclear_scope": "It does not make current funding scope or later acceptance conditions clear."
+      }
+    }
+  }
+}

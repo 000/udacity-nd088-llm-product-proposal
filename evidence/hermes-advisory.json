@@ -1,0 +1,21 @@
+{
+  "mode": "advisory",
+  "workflow_exit_code": 0,
+  "scanner_version": "0.8.2",
+  "recorded_at": "2026-11-15T20:47:07.527775+00:00",
+  "target": "source/",
+  "sandbox_profile_sha256": "f41b317dcc3f0eccbfb555237915efb6960c14cce97819cbb10027ef02f206d5",
+  "scanner_exit_code": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.299,
+  "status": "completed_advisory",
+  "report_sha256": "ed41fe3de4395cd315235ae7bf2f07d1e2cbd048b59ad7bc9cbeaee3c2d9a042",
+  "scope": "Deterministic core only. Completion is not a security certification.",
+  "source_hashes_before_and_after": {
+    "deck-content.json": "bdf59daea904444494ab97590e70445fefc9f0e07229329505873c419996c33e",
+    "build-deck.mjs": "3f2814fbe9044edfbdcb1f1052e1d476a49fb8e5570cc4468a2f7bcf5dd880bd",
+    "verify.py": "f8858364d50695de239f494c5e996fb9155c324fefc6bdd8f69f95b160248d79"
+  },
+  "source_unchanged": true,
+  "interpretation": "Scanner reported two code files and no recognized action surfaces. This does not establish complete JavaScript coverage, industrial safety or security. Optional language and AI extras were not installed. Vendor-reported coverage is not an independent completeness measure."
+}

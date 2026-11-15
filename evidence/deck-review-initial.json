@@ -1,0 +1,274 @@
+{
+  "reviewed_at": "2026-11-16T03:44:30.063646+07:00",
+  "reviewer": "product_plan subagent under codex-root-llm",
+  "owner": "Herdr",
+  "status": "one_material_diagram_correction_requested",
+  "scope": {
+    "content": "All 20 deck-content.json slides, including notes, reviewed against final product-plan.md, metrics.json, research.md, source-audit.json and the user-supplied rubric.",
+    "pptx": "All 20 slide XML parts and all 20 note XML parts compared with authored text; no expected content fragment or note text was missing.",
+    "visual": "PNG previews inspected for slides 8, 14, 17 and 18 only. These cover architecture, quality gates, sensitivity and staged funding. Other slide previews were not visually reviewed by this reviewer.",
+    "pdf": "PDF hash recorded for snapshot identity; this reviewer did not render or inspect every PDF page.",
+    "source_boundary": "Source claims were checked against the existing research and source audit. This review did not repeat live public-source retrieval or inspect the unavailable Udacity classroom/template.",
+    "outcome_boundary": "No deployment, model inference, customer study, safety certification, Udacity acceptance or grade was established."
+  },
+  "snapshot_sha256": {
+    "deck-content.json": "bdf59daea904444494ab97590e70445fefc9f0e07229329505873c419996c33e",
+    "product-plan.md": "46cf9d0edd2a57e0b078073a929ca4e4632fdcd44a264219aae1f022bd823ec3",
+    "metrics.json": "dbecbd4777a4a97cff57c775826abc850f3955effeb1f5116272d0fe785e8f44",
+    "research.md": "909417d1b9420e5b0e84dce53f6a9d5ed3cf1a6479a1f84c6d144b497de6426c",
+    "sources.json": "93fc7066bb0ec1a3ecf95094e0bc5221ce026de9d464cb686dd6b69ddda719de",
+    "source-audit.json": "cdd114eec431371182b1b39943ad4f2c5685a8e24ec2a2faf7c2b8afcad2f5f9",
+    "package/submission/LineGuide_Proposal.pptx": "24f02e4ec00499c13493f8145e7cb1e4101f5d424b37f02c87d168a0190855b7",
+    "package/submission/LineGuide_Proposal.pdf": "10d5cc9b0801b2421e65d242263ab071b15fbd66a7056976aedc7e337970b471"
+  },
+  "rubric_coverage": [
+    {
+      "criterion": "Describe the problem",
+      "slides": [
+        2
+      ],
+      "result": "Present: current search and escalation, user context, knowledgebase scale and unknown baseline."
+    },
+    {
+      "criterion": "Describe the solution",
+      "slides": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "result": "Present: concise solution, customer benefit, alternatives, mobile flow and bounded initial scope."
+    },
+    {
+      "criterion": "Identify risks and mitigations",
+      "slides": [
+        11,
+        12
+      ],
+      "result": "Present: five realistic risks with mitigations and accountable owners; risk of delay remains qualified in notes."
+    },
+    {
+      "criterion": "System attributes",
+      "slides": [
+        6
+      ],
+      "result": "Present: one primary and two secondary goals."
+    },
+    {
+      "criterion": "System architecture",
+      "slides": [
+        8,
+        9,
+        11
+      ],
+      "result": "Components and security relationships are present in text and notes. Diagram needs the catalog-path clarification recorded below."
+    },
+    {
+      "criterion": "LLM configuration",
+      "slides": [
+        10
+      ],
+      "result": "Present: candidate version, hosted API, reasoning, total/visible token distinction, deadline, omitted temperature pending compatibility, privacy conditions and no fine-tuning."
+    },
+    {
+      "criterion": "Success metrics",
+      "slides": [
+        13,
+        14,
+        15
+      ],
+      "result": "Present: exactly five measurements, denominators, proposed targets and test plans. All results remain unmeasured."
+    }
+  ],
+  "fidelity_checks": {
+    "hypothetical_scenario_and_no_results": "Consistent throughout cover, slide footers and notes.",
+    "scenario_counts": "7500 articles,25 topics,150 queries/day,45000 parts,15 models and95 percent mobile retained. Overlapping device/education shares are qualified in notes.",
+    "language_scope": "English initial pilot; Spanish after separate validation; other named languages staged. Written Cantonese and Urdu considerations retained in notes.",
+    "model_configuration": "Azure gpt-6-luna2026-09-22;Responses;low reasoning;2000 max output tokens including reasoning;visible target800;context8000;15-second deadline. Temperature omitted with the source contradiction disclosed.",
+    "kpi_count": 5,
+    "catalog_subgate": "100 catalog cases split80 unique known and20 ambiguous;at least76/80 correct returns,20/20 clarification or escalation,zero wrong emissions. Detailed thresholds are in slide14 notes.",
+    "semantic_cases": "400 disjoint English cases=200 routine+100catalog+100prohibited. Separate500-request load test.",
+    "economic_case": "22 service days,3300 monthly queries,970.2 base successful sessions,$3234 capacity value,$1600 recurring allowance,$1634 net before implementation. Sensitivity and2.47-minute recurring break-even agree with the plan.",
+    "investment_case": "36.7-month labor-only simple payback is qualified. Ask is only$11000 discovery now within the conditional$65000 ceiling;full-plan estimate$64800 and subsequent funding gates retained in notes.",
+    "safety_scope": "Read-only information advisor;no controller connection,work authorization or ordering;no new offline generation. Complete approved procedures and hazardous-request escalation retained in notes."
+  },
+  "citation_checks": {
+    "source_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10"
+    ],
+    "all_referenced_ids_resolve": true,
+    "all_source_ids_used": true,
+    "market_claims": "Siemens and ABB claims match the research/audit and are qualified as vendor documentation without comparative proof.",
+    "cost_claims": "Deck does not substitute direct OpenAI token rates for an Azure quotation;the cloud allowance is explicitly assumed.",
+    "privacy_claims": "No-training statement is separated from retention,monitoring and geography caveats.",
+    "safety_claims": "OSHA source supports hazard awareness;the deck makes no chatbot certification claim."
+  },
+  "findings": [
+    {
+      "id": "DCR-01",
+      "priority": "material",
+      "slide": 8,
+      "status": "sent_to_root_and_builder",
+      "issue": "The diagram merges approved manuals and the parts catalog into one source box feeding hybrid retrieval. The distinct authoritative structured catalog lookup described in notes is not visible. This can imply that part identifiers are validated through vector retrieval.",
+      "requested_correction": "Show a separate read-only structured catalog lookup or clearly labeled API/validator path, distinct from manual ingestion and document retrieval. Preserve exact catalog checks and tenant/configuration scope."
+    },
+    {
+      "id": "DCR-02",
+      "priority": "visual",
+      "slide": 8,
+      "status": "sent_to_root_and_builder",
+      "issue": "The diagonal source-to-retrieval line crosses the Private endpoints + managed identities label.",
+      "requested_correction": "Move the label or route the line so text is unobstructed."
+    }
+  ],
+  "sampled_visual_results": [
+    {
+      "slide": 8,
+      "result": "Diagram correction requested;overall labels and no-controller boundary are readable."
+    },
+    {
+      "slide": 14,
+      "result": "Table is readable;no clipping observed in the inspected PNG. Safety limit is visibly qualified."
+    },
+    {
+      "slide": 17,
+      "result": "Sensitivity values and payback caption are readable;no clipping observed in the inspected PNG."
+    },
+    {
+      "slide": 18,
+      "result": "Conditional roadmap and$11000 initial ask within$65000 ceiling are readable;no clipping observed in the inspected PNG."
+    }
+  ],
+  "pptx_text_checks": [
+    {
+      "slide": 1,
+      "title": "LineGuide",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 2,
+      "title": "Technicians struggle to find applicable answers",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 3,
+      "title": "The product and its customer benefit",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 4,
+      "title": "Use an LLM where conversation helps",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 5,
+      "title": "Existing industrial copilots set the comparison",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 6,
+      "title": "System goals and first-release scope",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 7,
+      "title": "The technician’s path through the product",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 8,
+      "title": "RAG architecture and trust boundaries",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 9,
+      "title": "Approved content controls retrieval quality",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 10,
+      "title": "LLM deployment and configuration",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 11,
+      "title": "Security and privacy requirements",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 12,
+      "title": "Five risks and accountable mitigations",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 13,
+      "title": "Success measures: customer outcomes",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 14,
+      "title": "Success measures: quality and reliability",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 15,
+      "title": "Validation before supervised use",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 16,
+      "title": "Illustrative monthly capacity value",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 17,
+      "title": "Sensitivity and investment discipline",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 18,
+      "title": "Twelve-week pilot and stakeholder decision",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 19,
+      "title": "Sources: system design and privacy",
+      "content_fragments_match": true,
+      "notes_match": true
+    },
+    {
+      "slide": 20,
+      "title": "Sources: market, safety and model inputs",
+      "content_fragments_match": true,
+      "notes_match": true
+    }
+  ],
+  "handoff": "Builder and root were notified of both slide8 findings. This review applies only to the recorded artifact hashes. Reinspect the revised diagram and refresh its snapshot before treating these findings as closed."
+}

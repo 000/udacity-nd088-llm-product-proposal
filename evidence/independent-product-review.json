@@ -1,0 +1,199 @@
+{
+  "reviewer": "independent research subagent; did not author product-plan.md or metrics.json",
+  "checked_date": "2026-11-16",
+  "checked_at_utc": "2026-11-15T20:38:58.039826+00:00",
+  "scope": [
+    "Complete read of product-plan.md and metrics.json",
+    "Comparison against task primary-source research and supplied Scenario C/rubric",
+    "Independent Decimal arithmetic recomputation from numeric inputs",
+    "Safety, confidentiality, measurement and unsupported-claim review"
+  ],
+  "file_sha256": {
+    "product-plan.md": "46cf9d0edd2a57e0b078073a929ca4e4632fdcd44a264219aae1f022bd823ec3",
+    "metrics.json": "dbecbd4777a4a97cff57c775826abc850f3955effeb1f5116272d0fe785e8f44",
+    "research.md": "909417d1b9420e5b0e84dce53f6a9d5ed3cf1a6479a1f84c6d144b497de6426c",
+    "sources.json": "93fc7066bb0ec1a3ecf95094e0bc5221ce026de9d464cb686dd6b69ddda719de",
+    "source-audit.json": "cdd114eec431371182b1b39943ad4f2c5685a8e24ec2a2faf7c2b8afcad2f5f9"
+  },
+  "status": "pass_with_recorded_limits",
+  "arithmetic_checks": [
+    {
+      "check": "monthly_queries",
+      "recomputed": 3300.0,
+      "recorded": 3300.0,
+      "pass": true
+    },
+    {
+      "check": "monthly_recurring_cost",
+      "recomputed": 1600.0,
+      "recorded": 1600.0,
+      "pass": true
+    },
+    {
+      "check": "conservative_successful_sessions",
+      "recomputed": 396.0,
+      "recorded": 396.0,
+      "pass": true
+    },
+    {
+      "check": "conservative_capacity_value",
+      "recomputed": 792.0,
+      "recorded": 792.0,
+      "pass": true
+    },
+    {
+      "check": "conservative_net_before_implementation",
+      "recomputed": -808.0,
+      "recorded": -808.0,
+      "pass": true
+    },
+    {
+      "check": "base_successful_sessions",
+      "recomputed": 970.2,
+      "recorded": 970.2,
+      "pass": true
+    },
+    {
+      "check": "base_capacity_value",
+      "recomputed": 3234.0,
+      "recorded": 3234.0,
+      "pass": true
+    },
+    {
+      "check": "base_net_before_implementation",
+      "recomputed": 1634.0,
+      "recorded": 1634.0,
+      "pass": true
+    },
+    {
+      "check": "favorable_successful_sessions",
+      "recomputed": 1795.2,
+      "recorded": 1795.2,
+      "pass": true
+    },
+    {
+      "check": "favorable_capacity_value",
+      "recomputed": 8377.6,
+      "recorded": 8377.6,
+      "pass": true
+    },
+    {
+      "check": "favorable_net_before_implementation",
+      "recomputed": 6777.6,
+      "recorded": 6777.6,
+      "pass": true
+    },
+    {
+      "check": "base_break_even_minutes",
+      "recomputed": 2.473716759431045,
+      "recorded": 2.473716759431045,
+      "pass": true
+    },
+    {
+      "check": "base_simple_labor_payback_months",
+      "recomputed": 36.719706242350064,
+      "recorded": 36.719706242350064,
+      "pass": true
+    },
+    {
+      "check": "pilot_person_weeks",
+      "recomputed": 30.0,
+      "recorded": 30.0,
+      "pass": true
+    },
+    {
+      "check": "pilot_labor_cost",
+      "recomputed": 60000.0,
+      "recorded": 60000.0,
+      "pass": true
+    },
+    {
+      "check": "pilot_envelope",
+      "recomputed": 64800.0,
+      "recorded": 64800.0,
+      "pass": true
+    },
+    {
+      "check": "discovery_cap",
+      "recomputed": 11000.0,
+      "recorded": 11000.0,
+      "pass": true
+    },
+    {
+      "check": "task_trials_per_condition",
+      "recomputed": 200.0,
+      "recorded": 200.0,
+      "pass": true
+    },
+    {
+      "check": "offline_disjoint_cases",
+      "recomputed": 400.0,
+      "recorded": 400.0,
+      "pass": true
+    },
+    {
+      "check": "catalog_total_cases",
+      "recomputed": 100.0,
+      "recorded": 100.0,
+      "pass": true
+    },
+    {
+      "check": "catalog_correct_record_return_gate_percent",
+      "recomputed": 95.0,
+      "recorded": 95.0,
+      "pass": true
+    }
+  ],
+  "arithmetic_pass": true,
+  "safety_zero_of_100_one_sided_95_upper_percent": 2.951304960703993,
+  "metric_review": {
+    "metric_count_is_five": true,
+    "all_measured_values_null": true,
+    "resolution_denominator_includes_abstention_missing_feedback_and_escalation": true,
+    "time_metric_pairs_task_variants_and_reports_resolution_and_escalation_rates": true,
+    "correctness_metric_combines_independent_source_support_applicability_and_catalog_validation": true,
+    "catalog_all_refusal_route_closed": true,
+    "safety_gate_retains_sampling_caveat_and_does_not_claim_certification": true,
+    "latency_includes_timeouts_and_failed_requests_as_over_target": true,
+    "per_language_and_model_reporting_required": true
+  },
+  "rubric_review": {
+    "scenario_selection": "explicit Scenario C",
+    "problem_and_current_approach": "covered with baseline gaps disclosed",
+    "solution_benefit_and_adoption_factors": "covered as proposed user value",
+    "risks_and_mitigations": "five distinct risks with owners",
+    "system_attributes": "one primary and two secondary goals",
+    "architecture_components_and_secure_connections": "covered in prose; visual diagram review remains with deck reviewer",
+    "llm_configuration": "current candidate/version and proposed parameters; explicit temperature omitted due source contradiction",
+    "success_measurements": "five defined measures with denominators or timing rules",
+    "presentation_and_starter_template": "not reviewed in this scoped audit"
+  },
+  "claim_review": {
+    "scenario_figures": "preserved; overlapping device/education measures not normalized",
+    "benefits": "capacity value and targets labeled assumptions; no interview or achieved lift invented",
+    "economics": "recurring capacity distinguished from cash savings; initial funding staged because simple base payback is weak",
+    "model": "candidate, not tested or deployed result; region/quota remain open",
+    "privacy": "no zero-retention or compliance claim; abuse-monitoring and contract review retained",
+    "safety": "read-only scope, no robot-control credentials, complete approved procedure viewer, hazardous-intent escalation and capability suspension specified",
+    "language": "English initial pilot; Spanish and other languages require separate validation",
+    "source_price_boundary": "cloud allowance labeled planning assumption, not vendor quote"
+  },
+  "issues": [
+    {
+      "id": "IR01",
+      "severity": "material_measurement_gap",
+      "status": "resolved_in_reviewed_files",
+      "finding": "The earlier zero-wrong-parts gate allowed all catalog cases to be refused.",
+      "resolution": "Current files require at least76 correct returns from80 known-answer cases and appropriate clarification/escalation on all20 ambiguous cases, plus zero wrong emitted parts. This closes the all-refusal route."
+    }
+  ],
+  "open_issues": [],
+  "limitations": [
+    "This is a proposal-content and calculation review, not a production model, security, safety or user-benefit test.",
+    "No final rendered deck, architecture diagram, repository upload, rubric grade or classroom starter template was reviewed here.",
+    "The2000-token cap can return incomplete before visible output; fallback handling and workload tuning remain required.",
+    "Prompt-injection and harmful-intent controls are proposed; deterministic citation or catalogue checks do not prove semantic correctness.",
+    "The five-metric design is sufficient for a bounded pilot screen, not a population-level efficacy or industrial-safety claim.",
+    "The standalone research cost illustration uses30 assumed calendar days; the product business case uses22 assumed service days. Final token costing should use the product basis consistently."
+  ]
+}

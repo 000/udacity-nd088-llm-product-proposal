@@ -1,0 +1,7 @@
+{
+  "provider": "gemini-decisions",
+  "purpose": "rubric_triage",
+  "classification": "synthetic",
+  "content_reviewed": true,
+  "request_sha256": "1d195ab09afb0a09a908934ba7d63f27acff78ac8ce2ef08aa87084b8cc9b3a4"
+}

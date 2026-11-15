@@ -1,0 +1,57 @@
+{
+  "schema": "lineguide-deck-review.v1",
+  "date": "2026-11-16",
+  "acting_agent": "Codex deck-builder subagent",
+  "owner": "Herdr",
+  "slides": 20,
+  "speaker_note_parts": 20,
+  "full_size_visual_review": {
+    "reviewed_slides": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "surface": "PDF rendered from the exact finalized PPTX using bundled LibreOffice; reviewed as 1280 x 720 PNGs",
+    "findings_closed": [
+      "Slide 8 now separates manual retrieval from structured catalog lookup and has a clear record-validation path.",
+      "Slide 8 label overlap and validator text overflow were corrected.",
+      "Slide 14 visibly includes the catalog coverage subgates."
+    ],
+    "unresolved_visual_findings": []
+  },
+  "structural_validation": "All 20 slides passed native-table, package-integrity, layout and Artifact Tool import checks; see validation-current.json.",
+  "runtime": {
+    "node": "24.22.1",
+    "artifact_tool": "2.8.157",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0, commit 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "pdf_font_substitution": "The PPTX requests Arial. Bundled LibreOffice embedded Liberation Sans in the PDF. The rendered PDF passed visual review."
+  },
+  "limits": [
+    "The deck was not opened in Microsoft PowerPoint.",
+    "Product settings, metrics and costs are proposed; no production evaluation has been run.",
+    "Artifact Tool PDF export failed on a standard-font alias. LibreOffice rendered the exact finalized PPTX instead."
+  ],
+  "hashes": {
+    "submission/LineGuide_Proposal.pptx": "6abc0af75c5bfc2c86f7e040e9a162d593620ed32b83acf34ff86ce844e13f86",
+    "submission/LineGuide_Proposal.pdf": "e6243d6771135ba4324f1b65db94c3fe526deded8fedc5c800ea4562537e98c3",
+    "source/build-deck.mjs": "3f2814fbe9044edfbdcb1f1052e1d476a49fb8e5570cc4468a2f7bcf5dd880bd",
+    "source/deck-content.json": "bdf59daea904444494ab97590e70445fefc9f0e07229329505873c419996c33e"
+  }
+}

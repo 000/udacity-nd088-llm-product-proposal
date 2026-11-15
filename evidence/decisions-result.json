@@ -1,0 +1,52 @@
+{
+  "action": "human_review",
+  "answers": {
+    "funding_argument": {
+      "confidence": 0.9893735834793486,
+      "status": "scored_advisory",
+      "type": "choice",
+      "value": "conditional_discovery"
+    }
+  },
+  "reason": "uncalibrated_advisory",
+  "receipt": {
+    "action": "human_review",
+    "attempts": 1,
+    "automatic_retries": 0,
+    "claim_id": "udacity-llm-proposal-20261116",
+    "content_reviewed": true,
+    "data_classification": "synthetic",
+    "elapsed_seconds": 0.375,
+    "executor": "codex-root-llm",
+    "host": "generativelanguage.googleapis.com",
+    "http_status": 200,
+    "input_persisted": false,
+    "max_questions": 1,
+    "max_request_bytes": 2048,
+    "max_response_bytes": 65536,
+    "method": "POST",
+    "model": "gemini-decision-1",
+    "path": "/v1beta/decisions",
+    "provider": "gemini-decisions",
+    "purpose": "rubric_triage",
+    "question_count": 1,
+    "raw_response_persisted": false,
+    "reason": "uncalibrated_advisory",
+    "recorded_at": "2026-11-15T20:40:36.603587+00:00",
+    "redirects_followed": 0,
+    "request_bytes": 1424,
+    "request_sha256": "1d195ab09afb0a09a908934ba7d63f27acff78ac8ce2ef08aa87084b8cc9b3a4",
+    "response_bytes": 389,
+    "schema_version": 1,
+    "scope_enforcement": "owner_attestation_with_request_binding_and_pattern_screen",
+    "scope_sha256": "8da96fdc0ca87c5f87cee799b0eb085df9e0781895117cf39476829a66a65279",
+    "status": "scored_advisory",
+    "timeout_seconds": 20,
+    "usage": {
+      "total_input_tokens": 313,
+      "total_output_tokens": 0,
+      "total_tokens": 313
+    }
+  },
+  "status": "scored_advisory"
+}

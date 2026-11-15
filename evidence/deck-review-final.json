@@ -1,0 +1,55 @@
+{
+  "reviewed_at": "2026-11-16T03:47:21.323733+07:00",
+  "reviewer": "product_plan subagent under codex-root-llm",
+  "owner": "Herdr",
+  "status": "DCR-01_and_DCR-02_resolved",
+  "supplements": "deck-content-review.json",
+  "supersedes": "Only the pending slide8 findings and their diagram-specific snapshot; the earlier review remains the record of its20-slide content review and four-slide visual sample.",
+  "scope": {
+    "visual": "Final slide8PNG only, inspected at1280x720. No other final slide preview was reinspected in this follow-up.",
+    "source": "Final PPTXslide8 XML and notes, plus slide8 source entry in deck-content.json.",
+    "pdf": "Hash verified only; no PDF rendering or page inspection in this follow-up.",
+    "limits": "This closes the two recorded diagram findings. It does not establish model quality, deployment behavior, industrial safety certification, Udacity acceptance or a grade."
+  },
+  "artifacts": {
+    "pptx": {
+      "path": "package/submission/LineGuide_Proposal.pptx",
+      "sha256": "6abc0af75c5bfc2c86f7e040e9a162d593620ed32b83acf34ff86ce844e13f86",
+      "matches_root_expected_hash": true
+    },
+    "pdf": {
+      "path": "package/submission/LineGuide_Proposal.pdf",
+      "sha256": "e6243d6771135ba4324f1b65db94c3fe526deded8fedc5c800ea4562537e98c3",
+      "matches_root_expected_hash": true
+    },
+    "inspected_png": {
+      "path": "previews/slide-08.png",
+      "sha256": "ec9e663dbc37567debec01ca131d6861eb607c2518d51c1723ff0f77ebe93169"
+    },
+    "deck_content": {
+      "path": "deck-content.json",
+      "sha256": "bdf59daea904444494ab97590e70445fefc9f0e07229329505873c419996c33e"
+    }
+  },
+  "findings": [
+    {
+      "id": "DCR-01",
+      "slide": 8,
+      "status": "resolved",
+      "evidence": "The diagram now shows Parts catalogue / API-only SQL lookup as a separate component reached from the API. A distinct line labeled Exact catalog records reaches validation. Approved manuals / Blob + search index is a separate component feeding hybrid retrieval. PPTX XML retains these labels, and notes retain read-only catalog access and exact part validation."
+    },
+    {
+      "id": "DCR-02",
+      "slide": 8,
+      "status": "resolved",
+      "evidence": "The private-endpoint and managed-identity statement now sits below the flow. No line crosses that statement or the source labels in the inspected final PNG."
+    }
+  ],
+  "additional_diagram_checks": [
+    "TLS label remains visible on the device-to-API connection.",
+    "Private service boundary, authenticated API, retrieval, generation and validation remain visible.",
+    "The caption states that validated answers return through the API and robot controllers remain disconnected.",
+    "No clipping or obstructed diagram text was observed in the inspected final PNG."
+  ],
+  "remaining_review_findings": []
+}

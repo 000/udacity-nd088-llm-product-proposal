@@ -1,0 +1,17 @@
+flowchart LR
+  U[Authorized technician on mobile web] -->|TLS and authenticated session| G[Gateway: validate identity and entitlement]
+  subgraph Private_application_boundary
+    G --> P[Policy and required configuration checks]
+    P -->|Only approved low-risk information tasks| R[Hybrid retrieval with server-derived tenant and compatibility filters]
+    P --> C[Read-only catalog lookup]
+    R --> L[Bounded LLM explanation with source IDs]
+    C --> V[Validate citations, revisions, applicability and exact catalog records]
+    L --> V
+    V --> A[Validated answer or abstention]
+    P -->|Hazardous, uncertain or unsupported| E[Established support route]
+  end
+  D[Content owner approves and versions manuals] --> I[Ingestion: applicability metadata and entitlement]
+  I --> R
+  A -->|TLS| U
+  E --> U
+  A --> T[Privacy-filtered audit events]

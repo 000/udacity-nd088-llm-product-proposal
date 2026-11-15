@@ -1,0 +1,327 @@
+{
+  "checked_date": "2026-11-16",
+  "checked_at_utc": "2026-11-15T20:35:51.629357+00:00",
+  "scope": "Read-only current public source and parameter validation by the research agent. No model inference or paid API calls.",
+  "sources_manifest_sha256": "93fc7066bb0ec1a3ecf95094e0bc5221ce026de9d464cb686dd6b69ddda719de",
+  "http_checks": [
+    {
+      "source_id": "R01",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 155031,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "ec419cfab145b569a6dfecbd720b9831c9846512d4f9aa8276157db24bfec144",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R02",
+      "requested_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "resolved_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 495866,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "b9306d56bf116cd94573c55258ad47c3f97aaddb2a521246dd48d671e2e61639",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R03",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 67880,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "e6cd10e381268de414ac5fbef8c392efc73b1738d01693e3143142c5b2b57014",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R04",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 56469,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "f9b1d8d15a5f580a89d8b17f1042f7bdabb8333e886c689591ad24f1055c858e",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R05",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 58271,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "973e09339d7ea1e307f0154c93771f47a9907e64de7612ace3f0280e1064d261",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R06",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 73478,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "88f4304058525f198fd716f639d1f06c60e5d3a7531aab65b7778c84279e536a",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R07",
+      "requested_url": "https://help.assetmanagement.siemens.com/help/Content/Documentation/Maintenance/Asset%20Essentials/EnterpriseFeatures/AI-Driven%20Capabilities/Maintenance%20Copilot.htm",
+      "resolved_url": "https://help.assetmanagement.siemens.com/help/Content/Documentation/Maintenance/Asset%20Essentials/EnterpriseFeatures/AI-Driven%20Capabilities/Maintenance%20Copilot.htm",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 50944,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "76104ae77388128537b698f1464f75cc11d276056563de711477c525f95134e4",
+      "status": "reachable"
+    },
+    {
+      "source_id": "R08",
+      "requested_url": "https://new.abb.com/process-automation/genix/abb-genix-copilot/apm",
+      "status": "inconclusive",
+      "error_class": "TimeoutError"
+    },
+    {
+      "source_id": "R09",
+      "requested_url": "https://www.osha.gov/otm/section-4-safety-hazards/chapter-4",
+      "http_status": 403,
+      "status": "http_error"
+    },
+    {
+      "source_id": "R10",
+      "requested_url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings",
+      "resolved_url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings",
+      "http_status": 200,
+      "content_type": "text/html",
+      "bytes_read": 52373,
+      "complete_within_4mb_limit": true,
+      "response_sha256": "539e4f61f87926a58d0541452a43c494b515dfc883474852cd49c02de7950637",
+      "status": "reachable"
+    }
+  ],
+  "claim_audit_pending": false,
+  "audit_completed_at_utc": "2026-11-15T20:37:03.474644+00:00",
+  "claim_reviews": [
+    {
+      "source_id": "R01",
+      "status": "supported_with_documentation_conflict",
+      "locations": [
+        {
+          "section": "API and feature support, GPT-6 reasoning models",
+          "web_rendered_lines": "1250-1266",
+          "finding": "Table lists Luna version 2026-09-22, Responses, structured output, reasoning effort and temperature support."
+        },
+        {
+          "section": "Unsupported parameters",
+          "web_rendered_lines": "1397-1401",
+          "finding": "Statement excludes reasoning models other than GPT-6 Astra from temperature support; it conflicts with the table."
+        },
+        {
+          "section": "Control costs; Allocate space for reasoning",
+          "web_rendered_lines": "280-297",
+          "finding": "Responses max_output_tokens covers reasoning and visible output; incomplete output is possible before visible text. Documentation recommends a larger initial buffer while learning a workload."
+        },
+        {
+          "section": "Reasoning effort",
+          "web_rendered_lines": "304-311",
+          "finding": "Low is a documented effort option; model-specific support is referenced to the table."
+        }
+      ],
+      "resolution": "Omit explicit temperature for Luna until an endpoint compatibility test resolves the conflict. Use low reasoning and a proposed 2000-token cap with incomplete-response fallback; this numeric cap is not an evaluated optimum."
+    },
+    {
+      "source_id": "R02",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Model summary and reasoning settings",
+          "web_rendered_lines": "958-989",
+          "finding": "Luna supports low reasoning effort; current model page is present."
+        },
+        {
+          "section": "Pricing",
+          "web_rendered_lines": "993-1023",
+          "finding": "Direct Standard input/output rates and rate modifiers are stated."
+        }
+      ],
+      "limitations": [
+        "Direct OpenAI pricing does not establish Azure pricing.",
+        "No inference, entitlement, language-quality or safety test was performed."
+      ]
+    },
+    {
+      "source_id": "R03",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Choose between agentic retrieval and classic RAG",
+          "finding": "Classic RAG is described for GA-only, simplicity, speed and fine-grained pipeline control."
+        },
+        {
+          "section": "Indexing and query guidance",
+          "finding": "Chunking, vectorization, hybrid queries and optional semantic ranking are described."
+        }
+      ],
+      "limitations": [
+        "Retrieval design is supported; application correctness is not established."
+      ]
+    },
+    {
+      "source_id": "R04",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Why use hybrid search?",
+          "finding": "Keyword precision and conceptual vector matching are described."
+        },
+        {
+          "section": "How does hybrid search work?",
+          "finding": "Parallel keyword/vector retrieval and reciprocal rank fusion are described."
+        }
+      ],
+      "limitations": [
+        "No proposal-specific relevance measurement was found or claimed."
+      ]
+    },
+    {
+      "source_id": "R05",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Introduction; About the security filter pattern",
+          "web_rendered_lines": "31-43",
+          "finding": "The documented pattern stores principal identifiers and filters search results; it is used where built-in ACL support cannot be used."
+        }
+      ],
+      "limitations": [
+        "The application must implement identity-derived filters correctly; no authorization implementation was tested."
+      ]
+    },
+    {
+      "source_id": "R06",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Important privacy statements",
+          "web_rendered_lines": "34-46",
+          "finding": "Customer inputs and outputs are not shared with OpenAI/other customers and do not train foundation models without permission/instruction."
+        },
+        {
+          "section": "Understanding location of processing for Global and Data zone deployment types",
+          "web_rendered_lines": "70-73",
+          "finding": "Processing location differs by deployment type; at-rest geography and processing geography are distinct."
+        },
+        {
+          "section": "Abuse monitoring and review",
+          "web_rendered_lines": "107-110",
+          "finding": "Authorized Microsoft human review can occur for flagged material; modified monitoring requires approval."
+        }
+      ],
+      "limitations": [
+        "The source does not support an unconditional zero-retention claim.",
+        "No customer contract, deployment settings or compliance certification was reviewed."
+      ]
+    },
+    {
+      "source_id": "R07",
+      "status": "supported",
+      "locations": [
+        {
+          "section": "Maintenance Copilot introduction",
+          "web_rendered_lines": "31-43",
+          "finding": "Asset manuals, maintenance records and data-quality limitations are described."
+        },
+        {
+          "section": "Prerequisites and Availability",
+          "web_rendered_lines": "44-55",
+          "finding": "Web and mobile availability are described; mobile offline mode is unsupported."
+        }
+      ],
+      "limitations": [
+        "Vendor documentation, not independent performance comparison."
+      ]
+    },
+    {
+      "source_id": "R08",
+      "status": "supported_via_web_fetch_direct_http_inconclusive",
+      "locations": [
+        {
+          "section": "Genix APM Copilot; workflow and infrastructure questions",
+          "web_rendered_lines": "23-61",
+          "finding": "Conversational access to operational information within Genix APM is described."
+        }
+      ],
+      "limitations": [
+        "Direct urllib GET timed out; web tool returned readable content.",
+        "Marketing performance statements were not adopted as measured benefits."
+      ]
+    },
+    {
+      "source_id": "R09",
+      "status": "supported_via_web_fetch_direct_http_denied",
+      "locations": [
+        {
+          "section": "Industrial robot systems and industrial robot system safety",
+          "finding": "OSHA technical guidance discusses hazards, risk assessment, safeguarding and maintenance safety."
+        }
+      ],
+      "limitations": [
+        "Direct urllib GET returned403; web tool returned readable content.",
+        "Technical guidance does not certify the proposed advisor or replace qualified assessment."
+      ]
+    },
+    {
+      "source_id": "R10",
+      "status": "supported_with_classic_documentation_limit",
+      "locations": [
+        {
+          "section": "Understand embeddings introduction",
+          "web_rendered_lines": "31-37",
+          "finding": "Vectors and similarity retrieval are explained; the page is explicitly marked Foundry classic."
+        }
+      ],
+      "limitations": [
+        "This page does not establish exact current Azure text-embedding-3-small region/version availability.",
+        "The embedding model remains a proposed candidate requiring deployment and multilingual checks."
+      ]
+    }
+  ],
+  "critical_configuration_review": {
+    "candidate": "Azure gpt-6-luna, version2026-09-22",
+    "responses_api": "documented",
+    "reasoning_effort_low": "documented by Luna model page and Azure effort guidance",
+    "temperature_0_1": "unresolved documentation conflict; omitted from proposal",
+    "max_output_tokens_2000": "parameter documented; numeric value is a proposal, not empirically validated",
+    "live_endpoint_validation_performed": false,
+    "deployed_region_or_quota_verified": false,
+    "paid_calls_performed": false,
+    "privacy_claims": "supported with abuse-monitoring and geography caveats"
+  },
+  "udacity_classroom_check": {
+    "url": "https://learn.udacity.com/nd088",
+    "method": "read-only web open",
+    "status": "unavailable_through_web_tool",
+    "observed_result": "Tool reported URL not accessible.",
+    "classroom_contents_verified": false,
+    "starter_template_verified": false,
+    "course_text_reproduced": false,
+    "usable_requirement_basis": "User-supplied project brief and rubric; no claim of classroom/template inspection."
+  },
+  "consistency_changes": [
+    "Research now proposes an English-only initial pilot. Spanish follows bilingual technician review; other languages have separate review gates.",
+    "R01 source supports and limits now record the temperature contradiction.",
+    "Research omits explicit temperature pending endpoint compatibility validation."
+  ],
+  "limitations": [
+    "Web-rendered line numbers locate the audited content at this check and may change as publishers update pages.",
+    "HTTP200 verifies reachability, not the correctness or permanence of every claim.",
+    "Eight direct URL checks returned200; ABB timed out and OSHA returned403. Their content was readable through the web tool.",
+    "No source body, private course material, account data or credentials were copied into this audit."
+  ]
+}
