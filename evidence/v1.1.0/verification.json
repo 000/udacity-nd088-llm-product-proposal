@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "scope": "artifact checks; no operational advisor tested",
+  "checks": [
+    "five proposed KPIs; no fabricated measured values",
+    "independently recomputed three economic cases, break-even, payback and pilot envelope",
+    "version, complete token allocation, unset temperature and truthful unsubmitted status",
+    "PPTX ZIP integrity, slide/notes count and all ten source IDs",
+    "PDF file header; rendered review is recorded separately",
+    "bounded public-text account-path and private-key screening",
+    "original exports preserved, no Git LFS pointers and review-bundle artifact integrity when present"
+  ],
+  "slides": 25,
+  "speaker_notes": 25,
+  "economics": [
+    {
+      "case": "conservative",
+      "sessions": 396.0,
+      "capacity_usd": 792.0,
+      "net_before_implementation_usd": -808.0
+    },
+    {
+      "case": "base",
+      "sessions": 970.2,
+      "capacity_usd": 3234.0,
+      "net_before_implementation_usd": 1634.0
+    },
+    {
+      "case": "favorable",
+      "sessions": 1795.2,
+      "capacity_usd": 8377.6,
+      "net_before_implementation_usd": 6777.6
+    }
+  ],
+  "version": "1.1.0",
+  "record_stage": "Final local artifact preflight before bundle/manifest creation; run source/verify.py for complete downloaded-file verification.",
+  "checked_date": "2026-11-16",
+  "rendered_slides_reviewed_by_builder": 25,
+  "independent_rendered_samples": [
+    8,
+    9,
+    22,
+    23,
+    24,
+    25,
+    13,
+    17
+  ],
+  "baseline_independent_arithmetic_checks": 21,
+  "additional_input_budget_checks": 7,
+  "academic_eligibility": "open",
+  "classroom_submission_performed": false,
+  "confirmation_observed": false,
+  "open_artifact_findings_within_review_scope": 0,
+  "current_artifact_sha256": {
+    "submission/LineGuide_Proposal_v1.1.0.pdf": "83ea78685e4c495dd2f6f8c5c360b0c4dde7f1016ecaf1c3602b950085fda744",
+    "submission/LineGuide_Proposal_v1.1.0.pptx": "5d5c50abfb50000d7cf92082635ad0fcdfd4850e3b3791855212b884e53398db"
+  }
+}

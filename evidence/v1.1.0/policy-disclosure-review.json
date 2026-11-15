@@ -1,0 +1,106 @@
+{
+  "schema": "lineguide-policy-disclosure-review.v1",
+  "reviewed_at": "2026-11-16T04:33:03+07:00",
+  "reviewer": "Codex policy-review subagent",
+  "execution_owner": "Herdr",
+  "review_mode": "read_only",
+  "scope": {
+    "fully_read_files": [
+      "README.md",
+      "docs/academic-integrity.md",
+      "docs/evidence-scope.md",
+      "CHANGELOG.md"
+    ],
+    "not_reviewed": [
+      "Complete package contents",
+      "Rendered slides",
+      "Authenticated classroom state",
+      "Final published revision"
+    ]
+  },
+  "snapshot_sha256": {
+    "README.md": "b3cee6665536f6f4b55c255095380789014b469b8db462a881ae8622ccdfcb3a",
+    "docs/academic-integrity.md": "e8df9c87f9727c3d33e5e71a76b250574d6043302e3cf730e867f876edd50052",
+    "docs/evidence-scope.md": "2978724f2f4980326786d5052cae288c9086612b440455275711a3b435e5db4d",
+    "CHANGELOG.md": "b5764cce296602b6059b62ff5dd9428f1d84eb068b0f9b1676b4f9cadc077185"
+  },
+  "status": "policy_wording_consistent_with_open_eligibility; release_dependencies_pending",
+  "checks": [
+    {
+      "id": "PD01",
+      "result": "pass",
+      "description": "README discloses substantial AI generation, including reasoning, architecture, calculations, prose, diagrams, slides and verification code."
+    },
+    {
+      "id": "PD02",
+      "result": "pass",
+      "description": "All four documents retain unresolved academic eligibility and make no own-work or independent-student-understanding attestation."
+    },
+    {
+      "id": "PD03",
+      "result": "pass",
+      "description": "Policy discussion does not treat disclosure, artifact checks, review or a request to submit as sufficient permission."
+    },
+    {
+      "id": "PD04",
+      "result": "pass",
+      "description": "No classroom submission or successful confirmation is asserted."
+    },
+    {
+      "id": "PD05",
+      "result": "pass",
+      "description": "Academic policy research preserves its access limits and separates public-source verification from classroom observation."
+    },
+    {
+      "id": "PD06",
+      "result": "pass",
+      "description": "Original diagram provenance and artifact originality are not equated with student authorship."
+    },
+    {
+      "id": "PD07",
+      "result": "pass",
+      "description": "Model, customer, industrial-safety and operating-benefit claims remain unmeasured or proposed."
+    }
+  ],
+  "material_policy_wording_findings": [],
+  "prepublication_dependencies": [
+    {
+      "id": "DEP01",
+      "path": "submission/LineGuide_v1.1.0_review_bundle.zip",
+      "state_at_snapshot": "missing",
+      "needed": "Create and verify the linked bundle before publishing the README."
+    },
+    {
+      "id": "DEP02",
+      "path": "docs/revision-response-v1.1.0.md",
+      "state_at_snapshot": "missing",
+      "needed": "Create the linked response and include the separately observed classroom status."
+    },
+    {
+      "id": "DEP03",
+      "path": "docs/policy-source-register.json",
+      "state_at_snapshot": "missing",
+      "needed": "Supply the register next to academic-integrity.md or replace its code-form reference with the correct relative link."
+    },
+    {
+      "id": "DEP04",
+      "path": "main",
+      "state_at_snapshot": "final revision publication not inspected",
+      "needed": "Verify the revision is present on the public default branch before treating the release-copy statement as current evidence."
+    }
+  ],
+  "known_context_from_coordinator": {
+    "applicable_course_specific_permission_established": false,
+    "own_work_affirmation_required_in_classroom": true,
+    "own_work_affirmation_checked": false,
+    "submitted": false,
+    "independently_reverified_in_this_followup": false
+  },
+  "conclusion": "The reviewed wording accurately states provenance and the unresolved attestation issue. Eligibility remains open; no grade, plagiarism verdict or policy compliance is certified. Packaging dependencies need final verification.",
+  "humanizer_review": {
+    "mode": "embedded",
+    "complete_files_reviewed": 4,
+    "partial": false,
+    "facts_and_links_preserved": true
+  }
+}

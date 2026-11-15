@@ -1,0 +1,321 @@
+{
+  "schema": "lineguide-gap-audit.v1",
+  "recorded_at": "2026-11-16T04:21:40+07:00",
+  "reviewer": "Codex independent gap-audit subagent",
+  "execution_owner": "Herdr",
+  "status": "baseline_audit_complete_revision_review_pending",
+  "evidence_boundary": "This is an artifact and documentation assessment, not an Udacity grade, plagiarism clearance, legal opinion or student-authorship certification.",
+  "assessment_sha256": "745c0b2deb1ea1318a541dff0fdffdd74b5da85cf311bbaa1deb0dac7f33d76d",
+  "baseline_commit": "245117135e51f4c3bc1faae5c24d0a9a4640b1a5",
+  "baseline_artifact_sha256": {
+    "submission/LineGuide_Proposal.pptx": "6abc0af75c5bfc2c86f7e040e9a162d593620ed32b83acf34ff86ce844e13f86",
+    "submission/LineGuide_Proposal.pdf": "e6243d6771135ba4324f1b65db94c3fe526deded8fedc5c800ea4562537e98c3",
+    "README.md": "150d00660c7307f30f6c5c6c95c0760ef20c738bd131a7181f05e605b7623fe5",
+    "source/deck-content.json": "bdf59daea904444494ab97590e70445fefc9f0e07229329505873c419996c33e"
+  },
+  "checks": {
+    "baseline_file_hashes_checked": 30,
+    "baseline_all_hashes_match": true,
+    "baseline_lfs_pointer_count": 0,
+    "pptx_zip_crc_valid": true,
+    "pptx_slide_count": 20,
+    "pptx_note_count": 20,
+    "pdf_page_count": 20,
+    "all_source_fragments_and_notes_match": true,
+    "source_reference_ids_found": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10"
+    ],
+    "searched_placeholders": [
+      "lorem ipsum",
+      "TODO",
+      "your title here",
+      "insert diagram",
+      "[placeholder]"
+    ],
+    "placeholder_hits": [],
+    "independent_decimal_arithmetic_checks": 21,
+    "arithmetic_all_passed": true,
+    "visual_samples": [
+      8,
+      10,
+      12,
+      14,
+      18,
+      20
+    ],
+    "visual_sample_result": "Readable, with no clipping or overlap found in these six rendered baseline samples. Diagram completeness findings remain separate."
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "dimension": "Public repository and default-branch artifact packaging",
+      "baseline_status": "evidence_verified_for_baseline_commit",
+      "evidence": [
+        "baseline-fetch.json identifies main at commit 245117135e51f4c3bc1faae5c24d0a9a4640b1a5",
+        "All 30 published file hashes independently matched the fresh fetched archive",
+        "No Git LFS pointers; PPTX ZIP CRC valid; PDF header and 20 text pages read",
+        "Coordinator GitHub metadata reports public visibility and default branch main"
+      ],
+      "remaining_for_revision": "Publish versioned binaries and direct review bundle, then repeat exact remote byte checks.",
+      "related_issues": [
+        "LG-01",
+        "LG-07"
+      ]
+    },
+    {
+      "id": "G2",
+      "dimension": "Scenario, business problem, current workaround and user context",
+      "baseline_status": "explicit_coverage_found",
+      "evidence": [
+        "Slides 1 and 2 name hypothetical Scenario C",
+        "Slides 2 and 3 explain English article/manual/catalog search and unresolved support escalation",
+        "Slide 2 notes preserve ages 20 to 60, all five languages, overlapping device and education figures",
+        "Slide 5 compares Siemens and ABB with proposed differentiation qualified"
+      ],
+      "remaining_for_revision": "Preserve scenario labels and the distinction between supplied counts and unknown baseline outcomes.",
+      "related_issues": []
+    },
+    {
+      "id": "G3",
+      "dimension": "Precise product summary, appeal and non-LLM alternatives",
+      "baseline_status": "explicit_coverage_found",
+      "evidence": [
+        "Slide 3 visible solution and benefit occupy three sentences; notes contain an explicit two-sentence core solution",
+        "Slide 3 notes explain appeal and adoption risks",
+        "Slide 4 compares improved search, rules/catalog and LLM with RAG"
+      ],
+      "remaining_for_revision": "Keep the core solution within one to three sentences and retain the search baseline.",
+      "related_issues": []
+    },
+    {
+      "id": "G4",
+      "dimension": "Three to five grouped risks, mitigation and opportunity cost",
+      "baseline_status": "explicit_coverage_with_visibility_improvement",
+      "evidence": [
+        "Slide 12 contains exactly five risk groups with concrete mitigations and accountable roles",
+        "Physical safety, fabricated or incompatible parts, confidentiality, unequal language quality and operating cost are covered",
+        "Slide 12 notes explain continued search friction and escalation if experimentation is delayed"
+      ],
+      "remaining_for_revision": "Make the unpriced opportunity cost visible and make unequal language quality/bias explicit without adding a sixth deployment-risk group.",
+      "related_issues": [
+        "LG-08"
+      ]
+    },
+    {
+      "id": "G5",
+      "dimension": "Primary system goal and one or two secondary goals",
+      "baseline_status": "explicit_coverage_found",
+      "evidence": [
+        "Slide 6 visibly labels one primary goal and two secondary goals",
+        "Pilot scope and staged language validation are explicit"
+      ],
+      "remaining_for_revision": "Preserve the goal hierarchy.",
+      "related_issues": []
+    },
+    {
+      "id": "G6",
+      "dimension": "Component list, relationship diagram and protected connections",
+      "baseline_status": "focused_traceability_gap",
+      "evidence": [
+        "Slide 8 has an editable native diagram with separate manual retrieval and API-only SQL catalog paths",
+        "TLS, private endpoints, managed identities and no controller connection are visible",
+        "Slide 8 notes list more components than are labeled individually in the visual",
+        "Ingestion and audit are described in notes; the validated return to the app is a caption rather than a drawn path"
+      ],
+      "remaining_for_revision": "Use stable component IDs and matching labels in diagram, registry and prose; show ingestion, audit, return and escalation flows with legible protection callouts.",
+      "related_issues": [
+        "LG-02"
+      ]
+    },
+    {
+      "id": "G7",
+      "dimension": "Hosted LLM settings, budgets, data handling and optimization",
+      "baseline_status": "focused_budget_and_label_gap",
+      "evidence": [
+        "Slide 10 names Azure gpt-6-luna 2026-09-22, Responses API, low reasoning, 2000 output tokens including reasoning, 800 visible-token target and 15-second deadline",
+        "Sampling defaults are justified in notes because vendor documentation conflicts",
+        "Slide 11 qualifies provider retention and processing location; zero retention is not claimed",
+        "RAG and deferred fine-tuning are explained on slides 4 and 9"
+      ],
+      "remaining_for_revision": "Label temperature explicitly as not sent/vendor default; distinguish total input from the 8000-token retrieved slice and reserve output within the documented context capacity.",
+      "related_issues": [
+        "LG-03"
+      ]
+    },
+    {
+      "id": "G8",
+      "dimension": "Three to five measurable user-centered system measurements",
+      "baseline_status": "explicit_coverage_found",
+      "evidence": [
+        "Slides 13 and 14 contain exactly five KPI definitions and proposed directions/thresholds",
+        "Denominators retain abstention, missing feedback and escalation where appropriate",
+        "The catalog subgate requires at least 76 of 80 known answers, correct handling of all 20 ambiguous cases and zero wrong part emissions",
+        "Safety and latency gates, sample sizes and subgroup cuts are explicit; all measured values are null"
+      ],
+      "remaining_for_revision": "Preserve definitions and keep planned tests separate from observed results.",
+      "related_issues": []
+    }
+  ],
+  "integrity_controls": [
+    {
+      "id": "I1",
+      "dimension": "Scenario facts versus targets and assumptions",
+      "baseline_status": "explicit_coverage_found",
+      "evidence": [
+        "Scenario figures are labeled hypothetical supplied context",
+        "Product KPI values are proposed, with measured_value null",
+        "Economic values are assumptions and capacity-value scenarios; no cash, downtime or observed customer benefit is claimed"
+      ],
+      "remaining": "Preserve these boundaries across revised exports and notes."
+    },
+    {
+      "id": "I2",
+      "dimension": "Diagram provenance and starter-deck hygiene",
+      "baseline_status": "original_generated_artifacts_documented_template_comparison_unverified",
+      "evidence": [
+        "Native diagram is constructed in the project builder; no external diagram image is embedded for the architecture",
+        "No searched placeholder strings were found in source deck content",
+        "All 20 PPTX slides and notes match expected source fragments",
+        "Original classroom starter template was not part of the baseline package"
+      ],
+      "remaining": "Record actual classroom template availability; avoid claiming template fidelity or human authorship. No exhaustive plagiarism comparison was run.",
+      "related_issues": [
+        "LG-06"
+      ]
+    },
+    {
+      "id": "I3",
+      "dimension": "External source attribution",
+      "baseline_status": "attribution_present_live_recheck_outside_this_agent_scope",
+      "evidence": [
+        "All ten source IDs R01 to R10 occur in actual PPTX slides or notes",
+        "Slides 19 and 20 show source titles and URLs",
+        "Source register and source-audit record preserve claim boundaries and access limits"
+      ],
+      "remaining": "Keep claim-specific references. Current policy verification belongs to the assigned policy agent; this audit does not re-fetch all vendor sources."
+    },
+    {
+      "id": "I4",
+      "dimension": "AI contribution, student ownership and submission eligibility",
+      "baseline_status": "open_eligibility_and_disclosure_gap",
+      "evidence": [
+        "Baseline README says AI-assisted research, drafting and slide production",
+        "The known workflow generated substantive product reasoning, architecture, prose, diagrams and code",
+        "No student-authored reasoning, personal review or course-specific AI permission is established by these artifacts",
+        "Coordinator reports the classroom own-work pledge and no course-specific permission evidence"
+      ],
+      "remaining": "Expand truthful AI provenance and keep academic eligibility open. Disclosure and artifact quality do not establish permission or justify a false own-work attestation.",
+      "related_issues": [
+        "LG-04",
+        "LG-05"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "LG-01",
+      "kind": "reviewer_context_gap",
+      "priority": "material_evidence",
+      "baseline": "The attached assessment did not retrieve artifacts; it did not report a verified slide failure.",
+      "minimal_fix": "Provide direct PDF, PPTX, README and manifest in a versioned review bundle, with commit/default-branch/non-LFS proof.",
+      "acceptance": "A reader can download actual binaries and inspect notes, hashes and the target commit without relying on a URL assertion.",
+      "status": "baseline_retrieval_verified_revision_bundle_pending"
+    },
+    {
+      "id": "LG-02",
+      "kind": "documentation_traceability",
+      "priority": "material",
+      "baseline": "Slide 8 component prose and visual labels are not one-to-one; ingestion, audit and validated return are implicit.",
+      "minimal_fix": "Add component IDs and a registry; draw all relevant flows, with private-link/identity/TLS and external-processing qualifications.",
+      "acceptance": "Each registry ID exists in the diagram with matching label; ingestion, catalog, generation, validation, return, support and audit connections are visible or clearly mapped across companion diagrams.",
+      "status": "revision_pending"
+    },
+    {
+      "id": "LG-03",
+      "kind": "configuration_completeness",
+      "priority": "material",
+      "baseline": "Retrieved context <=8000 tokens is not a complete input budget. Temperature is only identified explicitly in notes.",
+      "minimal_fix": "Give total input budget and allocations, output reserve, context-capacity check and explicit temperature not sent/default setting.",
+      "acceptance": "The figures reconcile, proposed values are labeled, overflow/truncation failure behavior is safe, and no unsupported sampling parameter is claimed supported.",
+      "status": "revision_pending"
+    },
+    {
+      "id": "LG-04",
+      "kind": "provenance_accuracy",
+      "priority": "material",
+      "baseline": "The concise AI-assisted wording understates substantive generated reasoning, architecture and code.",
+      "minimal_fix": "Disclose the actual scope of AI generation in README and deck; distinguish agent verification from student review.",
+      "acceptance": "No statement falsely says the student authored or verified all judgments; substantive AI contributions and limits are explicit.",
+      "status": "revision_pending"
+    },
+    {
+      "id": "LG-05",
+      "kind": "academic_eligibility",
+      "priority": "submission_blocker",
+      "baseline": "Applicable live policy and any course-specific exception were not established in the attached assessment. An own-work pledge cannot be certified from this artifact audit.",
+      "minimal_fix": "Use the current official policy and classroom pledge; obtain applicable evidence of eligibility or have the student complete genuinely personal required work.",
+      "acceptance": "The final submission attestation can be made truthfully. A generic approval or AI disclosure alone is insufficient.",
+      "status": "open_external_eligibility"
+    },
+    {
+      "id": "LG-06",
+      "kind": "template_evidence_boundary",
+      "priority": "documentation",
+      "baseline": "The baseline records that the starter deck was unavailable and does not assert template matching.",
+      "minimal_fix": "Record actual classroom access/template status and check for remaining prompts if any template is used.",
+      "acceptance": "No placeholder or copied instructional content remains; any fidelity claim is supported by an inspected template.",
+      "status": "classroom_check_pending"
+    },
+    {
+      "id": "LG-07",
+      "kind": "versioned_delivery",
+      "priority": "delivery",
+      "baseline": "The baseline deck has no visible version label; Git history identifies its immutable publication.",
+      "minimal_fix": "Publish v1.1.0 with a visible version, distinct filenames, change log and refreshed manifest while preserving baseline artifacts/history.",
+      "acceptance": "README identifies the current candidate and the old version stays recoverable; remote published bytes match reviewed revised files.",
+      "status": "revision_pending"
+    },
+    {
+      "id": "LG-08",
+      "kind": "presentation_visibility",
+      "priority": "improvement",
+      "baseline": "Opportunity cost is qualified in slide 12 notes; language inequality is covered as translation risk but bias is not named visibly.",
+      "minimal_fix": "Add a short visible opportunity-cost line and explicit unequal-language-quality/bias wording within the existing five risk groups.",
+      "acceptance": "The reader sees the risk of delay and the language-quality tradeoff without an invented monetary amount or additional ungrouped risk.",
+      "status": "revision_pending"
+    }
+  ],
+  "optional_classroom_suggestions": [
+    {
+      "id": "O1",
+      "source": "Coordinator live classroom review",
+      "status": "revision_pending",
+      "requirement": "Include original example System and User prompts for the proposed product.",
+      "acceptance": "Examples are clearly labeled proposed, use fictional reference tasks and enforce scope/source/escalation boundaries; they do not claim executed product behavior."
+    },
+    {
+      "id": "O2",
+      "source": "Coordinator live classroom review",
+      "status": "revision_pending",
+      "requirement": "Describe reference data type, amount, source/provenance, bias assessment and update frequency.",
+      "acceptance": "Scenario inventory and proposed pilot scope are distinct; content owner, applicability, approval, refresh and language-bias handling are inspectable."
+    }
+  ],
+  "open_submission_blocker": "Academic eligibility and a truthful own-work attestation remain unresolved.",
+  "scope_limits": [
+    "All 20 source slide records and notes were read; all 20 actual PPTX slides/notes were checked for expected fragments.",
+    "Visual review sampled six baseline pages; it was not a new full-slide visual review.",
+    "Native Microsoft PowerPoint was not opened.",
+    "Live policy and correct classroom project are being checked by the coordinator and policy agent.",
+    "The revised v1.1.0 files have not yet been independently reviewed or published at this checkpoint."
+  ]
+}

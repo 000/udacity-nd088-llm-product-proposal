@@ -1,0 +1,324 @@
+{
+  "schema": "lineguide-final-independent-review.v1",
+  "recorded_at": "2026-11-16T04:43:07+07:00",
+  "reviewer": "Codex independent gap-audit subagent",
+  "execution_owner": "Herdr",
+  "version": "1.1.0",
+  "status": "local_artifact_review_passed_eligibility_open_publication_pending",
+  "scope": "Artifact fidelity, selected rendered pages, component/configuration consistency, preserved arithmetic and truthful provenance. This is not an Udacity grade, policy adjudication or safety certification.",
+  "snapshot_sha256": {
+    "README.md": "b3cee6665536f6f4b55c255095380789014b469b8db462a881ae8622ccdfcb3a",
+    "CHANGELOG.md": "b5764cce296602b6059b62ff5dd9428f1d84eb068b0f9b1676b4f9cadc077185",
+    "docs/component-register.md": "37b24ddd0c947cc55c9f56d78d7528e770f3df7b9e5908ee1040bab763b94a6a",
+    "docs/components.json": "e10e433ee14a2db352067f9d5ed891e4d807fa1df66428a687ec3f5068b88d5d",
+    "docs/proposed-model-config.json": "f203a531f7ae1cecd939f4d5fa3f449c647f1ad5bdab990572370083956ef5a9",
+    "docs/reference-data-plan.md": "e6eec4b8b37d3183199be92a663a6a9f7429598aa4f0222eb32b41e8c7e3133c",
+    "docs/prompt-examples.md": "fdf06e3ae1d9878918a1a308f8230cd3e0381b1f04c123583f2dfc40f6acbdf6",
+    "docs/metrics.json": "dbecbd4777a4a97cff57c775826abc850f3955effeb1f5116272d0fe785e8f44",
+    "docs/academic-integrity.md": "67eddf72fa3216289398db406decb0982bb5b6f3c925ec78188aaa40a0d3fe46",
+    "source/deck-content.json": "cab5f7115daed981ec7116769dfa75d77f999dc33eb93ba3b64453a59e152dfd",
+    "submission/LineGuide_Proposal_v1.1.0.pptx": "5d5c50abfb50000d7cf92082635ad0fcdfd4850e3b3791855212b884e53398db",
+    "submission/LineGuide_Proposal_v1.1.0.pdf": "83ea78685e4c495dd2f6f8c5c360b0c4dde7f1016ecaf1c3602b950085fda744"
+  },
+  "checks": {
+    "pptx_zip_crc_valid": true,
+    "pptx_slides": 25,
+    "pptx_notes": 25,
+    "all_25_source_fragment_checks_passed": true,
+    "all_25_notes_match": true,
+    "pdf_header_valid": true,
+    "pdf_pages": 25,
+    "source_ids_present": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10"
+    ],
+    "component_ids_and_labels": [
+      {
+        "id": "C1",
+        "label": "Mobile web client",
+        "visible_slides": [
+          8,
+          22
+        ]
+      },
+      {
+        "id": "C2",
+        "label": "Identity and policy API",
+        "visible_slides": [
+          8,
+          22
+        ]
+      },
+      {
+        "id": "C3",
+        "label": "Hybrid retrieval",
+        "visible_slides": [
+          8,
+          9,
+          22
+        ]
+      },
+      {
+        "id": "C4",
+        "label": "Generation endpoint",
+        "visible_slides": [
+          8,
+          22
+        ]
+      },
+      {
+        "id": "C5",
+        "label": "Response validator",
+        "visible_slides": [
+          8,
+          22
+        ]
+      },
+      {
+        "id": "C6",
+        "label": "Controlled manuals",
+        "visible_slides": [
+          9,
+          22
+        ]
+      },
+      {
+        "id": "C7",
+        "label": "Parts catalogue",
+        "visible_slides": [
+          8,
+          9,
+          22
+        ]
+      },
+      {
+        "id": "C8",
+        "label": "Human support",
+        "visible_slides": [
+          8,
+          22
+        ]
+      },
+      {
+        "id": "C9",
+        "label": "Ingestion job",
+        "visible_slides": [
+          9,
+          22
+        ]
+      },
+      {
+        "id": "C10",
+        "label": "Audit events",
+        "visible_slides": [
+          8,
+          9,
+          22
+        ]
+      }
+    ],
+    "financial_and_metric_objects_exactly_equal_to_baseline": true,
+    "baseline_decimal_arithmetic_checks_retained": 21,
+    "token_checks": [
+      {
+        "id": "T1",
+        "check": "Input allocations 8000+2000+2000 equal total input 12000",
+        "status": "verified"
+      },
+      {
+        "id": "T2",
+        "check": "Input 12000 plus output 2000 equal combined 14000",
+        "status": "verified"
+      },
+      {
+        "id": "T3",
+        "check": "Input 12000 is below documented maximum input 922000",
+        "status": "verified"
+      },
+      {
+        "id": "T4",
+        "check": "Output 2000 is below documented maximum output 128000",
+        "status": "verified"
+      },
+      {
+        "id": "T5",
+        "check": "Combined 14000 is below documented context 1050000",
+        "status": "verified"
+      },
+      {
+        "id": "T6",
+        "check": "Visible target 800 is within total output cap 2000 including reasoning",
+        "status": "verified"
+      },
+      {
+        "id": "T7",
+        "check": "Temperature is null and not sent; no numeric support claim is invented",
+        "status": "verified"
+      }
+    ],
+    "legacy_pptx_unchanged": true,
+    "legacy_pdf_unchanged": true,
+    "offline_cache_explicitly_disabled": true
+  },
+  "rendered_sample_review": {
+    "slides": [
+      8,
+      9,
+      22,
+      23,
+      24,
+      25,
+      13,
+      17
+    ],
+    "surface": "PNG previews from the final PDF; final PDF hash matches the frozen export",
+    "result": "All eight requested samples readable; no clipping, overlap or obstructed labels found. Runtime/ingestion arrows and component labels were inspected.",
+    "limit": "This reviewer sampled eight rendered slides; the builder performed the separate full-deck visual review."
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "status": "pending_revised_publication_check",
+      "evidence": "Revised binary headers, hashes and notes were verified locally; coordinator is constructing the review bundle and will verify main/publication.",
+      "limit": "This agent did not verify revised remote bytes."
+    },
+    {
+      "id": "G2",
+      "status": "coverage_verified",
+      "evidence": "Slides 1 to 3 and 5 retain Scenario C, current workaround, hypothetical source counts, unknown baseline and market comparison."
+    },
+    {
+      "id": "G3",
+      "status": "coverage_verified",
+      "evidence": "Slide 3 preserves a three-sentence visible product/benefit summary and two-sentence core notes; slide 4 retains search and rules alternatives."
+    },
+    {
+      "id": "G4",
+      "status": "coverage_verified",
+      "evidence": "Slide 13 retains five grouped risks, owner/mitigation pairs, visible unpriced cost of delay and language-inequity handling; no sixth risk group added."
+    },
+    {
+      "id": "G5",
+      "status": "coverage_verified",
+      "evidence": "Slide 6 labels exactly one primary and two secondary goals."
+    },
+    {
+      "id": "G6",
+      "status": "focused_gap_resolved",
+      "evidence": "Slides 8, 9 and 22 and the component register share exact C1-C10 labels. Runtime return, separate catalog, escalation, audit and approved-ingestion paths are visible. TLS/private identity protections and provider-retention qualification remain explicit."
+    },
+    {
+      "id": "G7",
+      "status": "focused_gap_resolved",
+      "evidence": "Slides 11 and 23 plus proposed-model-config.json define complete input/output budgets, explicit unset temperature, hosted candidate, retention choices and failure behavior. All values remain untested proposals."
+    },
+    {
+      "id": "G8",
+      "status": "coverage_verified",
+      "evidence": "Slides 14 to 16 preserve exactly five defined KPI gates; all measured values remain null; catalog coverage and all other denominator/sample safeguards are unchanged."
+    }
+  ],
+  "integrity_controls": [
+    {
+      "id": "I1",
+      "status": "boundary_preserved",
+      "evidence": "Scenario inputs, proposed design and measured artifact checks remain separate; no model/customer/pilot performance is claimed."
+    },
+    {
+      "id": "I2",
+      "status": "source_hygiene_verified_with_template_limit",
+      "evidence": "Deck is generated from native project objects; no searched placeholder string is present. Slide 21 and documentation identify a visible classroom resource link but unsuccessful bounded retrieval.",
+      "limit": "No template-fidelity, exhaustive plagiarism or student-authorship certification is made."
+    },
+    {
+      "id": "I3",
+      "status": "attribution_preserved",
+      "evidence": "All ten source IDs and dedicated references remain present; policy attribution uses an explicit official URL.",
+      "limit": "This review did not re-fetch all vendor or policy webpages."
+    },
+    {
+      "id": "I4",
+      "status": "provenance_disclosure_corrected_eligibility_open",
+      "evidence": "README and slide 25 disclose substantive AI research, reasoning, architecture, prose, calculations, slides and code. They distinguish agent checks from unverified student ownership and claim no classroom submission.",
+      "limit": "Disclosure and local artifact checks do not establish permission or make an own-work pledge true."
+    }
+  ],
+  "optional_suggestions": [
+    {
+      "id": "O1",
+      "status": "coverage_verified",
+      "evidence": "Slide 24 and prompt-examples.md provide proposed System/User examples using clearly fictional identifiers, no real fault facts and a missing-evidence abstention expectation."
+    },
+    {
+      "id": "O2",
+      "status": "coverage_verified",
+      "evidence": "Slides 9 and 10 and reference-data-plan.md distinguish scenario inventory/pilot scope and specify provenance, approval, quality/bias review, withdrawals and refresh cadence."
+    }
+  ],
+  "issue_disposition": [
+    {
+      "id": "LG-01",
+      "status": "local_artifact_access_verified_bundle_publication_pending",
+      "basis": "Actual revised PDF/PPTX read and checked; direct ZIP review-bundle checks remain with coordinator."
+    },
+    {
+      "id": "LG-02",
+      "status": "resolved_in_reviewed_artifacts",
+      "basis": "Exact C1-C10 registry and separate runtime/ingestion diagrams with explicit result, catalog, support and audit paths."
+    },
+    {
+      "id": "LG-03",
+      "status": "resolved_in_reviewed_artifacts",
+      "basis": "Total input/output budgets, unset-temperature rationale, overflow handling and retention proposals reconcile."
+    },
+    {
+      "id": "LG-04",
+      "status": "resolved_in_reviewed_artifacts",
+      "basis": "Substantive AI provenance and unverified student acceptance are explicit."
+    },
+    {
+      "id": "LG-05",
+      "status": "OPEN",
+      "basis": "Academic eligibility remains unresolved; no false own-work or submission-confirmation statement is present."
+    },
+    {
+      "id": "LG-06",
+      "status": "retrieval_limit_documented_fidelity_unverified",
+      "basis": "Custom layout is disclosed; the classroom link was identified but bounded retrieval failed. No template-fidelity claim is made."
+    },
+    {
+      "id": "LG-07",
+      "status": "local_versioning_verified_publication_pending",
+      "basis": "Visible v1.1.0 and distinct filenames are present; original PDF/PPTX bytes and legacy commit reference preserved."
+    },
+    {
+      "id": "LG-08",
+      "status": "resolved_in_reviewed_artifacts",
+      "basis": "Unpriced delay cost is visible on slide 13; language inequity is retained within the five risk groups."
+    }
+  ],
+  "open_artifact_findings": [],
+  "open_submission_findings": [
+    {
+      "id": "LG-05",
+      "status": "OPEN",
+      "finding": "Academic eligibility and a truthful own-work attestation are unresolved."
+    }
+  ],
+  "excluded_from_review": [
+    "Evolving rubric map and revision-response text",
+    "Coordinator verifier implementation and final review-bundle contents",
+    "Revised remote GitHub publication, default-branch read-back and archive bytes",
+    "Authenticated classroom actions and any submission confirmation",
+    "New model inference, customer studies or industrial safety validation"
+  ],
+  "humanizer_review": "Complete review of the prose written in this record; source facts, counts, identifiers and evidence limits preserved."
+}

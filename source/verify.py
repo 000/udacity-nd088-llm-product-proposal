@@ -19,6 +19,9 @@ def close(actual, expected, label):
 
 def verify(with_manifest=True):
     checks = []
+    assert (ROOT / "VERSION").read_text().strip() == "1.1.0", "version file"
+    content = json.loads((ROOT / "source/deck-content.json").read_text())
+    assert content.get("version") == "1.1.0", "deck source version"
     metrics = json.loads((ROOT / "docs/metrics.json").read_text())
     rows = metrics["metrics"]
     assert len(rows) == 5, "Exactly five product measurements required"
@@ -51,11 +54,23 @@ def verify(with_manifest=True):
     assert len(ids) == len(set(ids)) == 10, "source IDs"
     assert all(s["url"].startswith("https://") and s["checked_date"] == "2026-11-16" for s in sources)
     ns = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main"}
-    deck = ROOT / "submission/LineGuide_Proposal.pptx"
+    config = json.loads((ROOT / "docs/proposed-model-config.json").read_text())
+    limits = config["orchestrator_limits"]
+    close(sum(limits["input_allocations"].values()), limits["total_input_tokens"], "input allocations")
+    close(limits["total_input_tokens"] + limits["max_output_tokens"], limits["input_plus_output_tokens"], "combined token budget")
+    assert limits["total_input_tokens"] <= config["documented_vendor_capacity"]["maximum_input_tokens"]
+    assert limits["input_plus_output_tokens"] <= config["documented_vendor_capacity"]["context_tokens"]
+    assert config["sampling"]["send_temperature"] is False and config["sampling"]["temperature"] is None
+    assert config["privacy_proposals"]["offline_private_manual_cache_enabled"] is False
+    classroom = json.loads((ROOT / "evidence/v1.1.0/classroom-verification.json").read_text())
+    assert classroom["submission_performed"] is False and classroom["confirmation_observed"] is False
+    assert classroom["own_work_affirmation_checked"] is False and classroom["eligibility_status"] == "open"
+    checks.append("version, complete token allocation, unset temperature and truthful unsubmitted status")
+    deck = ROOT / "submission/LineGuide_Proposal_v1.1.0.pptx"
     with zipfile.ZipFile(deck) as z:
         assert z.testzip() is None, "corrupt PPTX member"
         slide_paths = sorted((n for n in z.namelist() if re.fullmatch(r"ppt/slides/slide\d+\.xml", n)), key=lambda n: int(re.search(r"slide(\d+)\.xml", n).group(1)))
-        assert 15 <= len(slide_paths) <= 24, "unexpected slide count"
+        assert len(slide_paths) == len(content["slides"]) == 25, "unexpected slide count"
         texts = [" ".join(t.text or "" for t in ET.fromstring(z.read(n)).findall(".//a:t", ns)) for n in slide_paths]
         notes = [n for n in z.namelist() if re.fullmatch(r"ppt/notesSlides/notesSlide\d+\.xml", n)]
         assert len(notes) == len(slide_paths), "missing slide notes"
@@ -63,9 +78,15 @@ def verify(with_manifest=True):
         assert "LineGuide" in combined and "Scenario C" in combined
         for source_id in ids:
             assert source_id in combined, "uncited source: " + source_id
+        assert "1.1.0" in combined, "missing visible version"
+        components = json.loads((ROOT / "docs/components.json").read_text())["components"]
+        assert len(components) == 10
+        normalized = re.sub(r"\s+", " ", combined)
+        for item in components:
+            assert re.search(r"\b" + re.escape(item["id"]) + r"\s+" + re.escape(item["label"]) + r"\b", normalized), "missing component label: " + item["id"]
         assert "/Users/" not in combined, "private account path in deck"
         checks.append("PPTX ZIP integrity, slide/notes count and all ten source IDs")
-    pdf = (ROOT / "submission/LineGuide_Proposal.pdf").read_bytes()
+    pdf = (ROOT / "submission/LineGuide_Proposal_v1.1.0.pdf").read_bytes()
     assert pdf.startswith(b"%PDF-"), "invalid PDF header"
     checks.append("PDF file header; rendered review is recorded separately")
     text_suffixes = {".md", ".json", ".py", ".mjs", ".mmd", ".txt"}
@@ -73,10 +94,23 @@ def verify(with_manifest=True):
         if p.is_file() and p.suffix in text_suffixes:
             content = p.read_text()
             # This verifier necessarily contains the pattern it checks.
-            if p != Path(__file__).resolve():
-                assert "/Users/" not in content, "private account path: " + str(p.relative_to(ROOT))
+            assert not re.search(r"/Users/[A-Za-z0-9_.-]+/", content), "private account path: " + str(p.relative_to(ROOT))
             assert "-----BEGIN " + "PRIVATE KEY-----" not in content, "private key pattern"
     checks.append("bounded public-text account-path and private-key screening")
+    legacy = {"LineGuide_Proposal.pptx": "6abc0af75c5bfc2c86f7e040e9a162d593620ed32b83acf34ff86ce844e13f86", "LineGuide_Proposal.pdf": "e6243d6771135ba4324f1b65db94c3fe526deded8fedc5c800ea4562537e98c3"}
+    for name, digest in legacy.items():
+        assert hashlib.sha256((ROOT / "submission" / name).read_bytes()).hexdigest() == digest, "legacy artifact changed"
+    for p in ROOT.rglob("*"):
+        if p.is_file() and "__pycache__" not in p.parts:
+            assert not p.read_bytes().startswith(b"version https://git-lfs.github.com/spec/v1"), "LFS pointer: " + str(p.relative_to(ROOT))
+    bundle = ROOT / "submission/LineGuide_v1.1.0_review_bundle.zip"
+    if bundle.exists():
+        with zipfile.ZipFile(bundle) as z:
+            assert z.testzip() is None, "review bundle CRC"
+            assert "SHA256SUMS" in z.namelist() and "README.md" in z.namelist()
+            for name in ["submission/LineGuide_Proposal_v1.1.0.pptx", "submission/LineGuide_Proposal_v1.1.0.pdf"]:
+                assert z.read(name) == (ROOT / name).read_bytes(), "bundle artifact mismatch: " + name
+    checks.append("original exports preserved, no Git LFS pointers and review-bundle artifact integrity when present")
     count = None
     if with_manifest:
         manifest = ROOT / "SHA256SUMS"

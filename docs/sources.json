@@ -11,7 +11,8 @@
       "supports": [
         "The GPT-6 feature table lists gpt-6-luna version 2026-09-22, alongside newer GPT-6.1 models.",
         "GPT-6 models are listed with structured outputs, the Responses API and reasoning effort. The table marks temperature supported for Luna, but the unsupported-parameters section contradicts this.",
-        "Responses uses max_output_tokens; input and output limits share the context budget."
+        "Responses uses max_output_tokens; input and output limits share the context budget.",
+        "Current feature table lists Luna context 1,050,000 tokens, maximum input 922,000 and maximum output 128,000; these are documented capacities, not account verification."
       ],
       "limits": [
         "Documentation verifies supported interfaces, not account entitlement, regional quota, measured quality or latency.",

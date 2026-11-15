@@ -6,6 +6,7 @@ import { Presentation, PresentationFile } from '@oai/artifact-tool';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const packageRoot = path.basename(here) === 'source' ? path.dirname(here) : path.join(here, 'package');
+const workspaceDir = process.env.LINEGUIDE_WORKSPACE_DIR || packageRoot;
 const outputDir = process.env.LINEGUIDE_OUTPUT_DIR || path.join(packageRoot, 'submission');
 const buildDir = process.env.LINEGUIDE_BUILD_DIR || path.join(here, 'render-build');
 const previews = process.env.LINEGUIDE_PREVIEW_DIR || path.join(here, 'previews');
@@ -28,7 +29,7 @@ function base(d,i) {
   const s=p.slides.add();s.background.fill=paper;
   if(d.type!=='cover')text(s,d.title,64,42,1152,96,44,ink,true,'slide-title');
   line(s,64,660,1152);
-  text(s,d.footer||'Hypothetical product proposal • Proposed targets are unmeasured',64,677,1080,24,15,muted,false,'footer');
+  text(s,d.footer||'Hypothetical product proposal. Proposed targets are unmeasured.',64,677,1080,24,15,muted,false,'footer');
   text(s,String(i+1).padStart(2,'0'),1174,675,42,26,17,muted,false,'slide-number');
   const citations=(d.sources||[]).map(id=>{const z=content.sources.find(x=>x.id===id);return z?`${id}: ${z.title}\n${z.url}\nLimit: ${z.limit||'Vendor documentation establishes features, not application performance.'}`:id;}).join('\n\n');
   s.speakerNotes.text=`${d.notes||''}\n\nEvidence status: ${d.status||'Design proposal; no production deployment or user study has been run.'}\n\nSources checked 16 November 2026:\n${citations}`;
@@ -66,38 +67,86 @@ function node(s,t,x,y,w,h=82){
   return z;
 }
 function arrow(s,a,b,from='right',to='left'){s.shapes.connect(a,b,{kind:'straight',fromSide:from,toSide:to,line:{fill:teal,width:2},tail:{type:'triangle',width:'sm',length:'sm'}});}
+function route(s,points,color=teal,dashed=false){
+  for(let i=1;i<points.length;i++){
+    const [x1,y1]=points[i-1],[x2,y2]=points[i];
+    const reverse=x2<x1||y2<y1;
+    const end=i===points.length-1?{[reverse?'head':'tail']:{type:'triangle',width:'sm',length:'sm'}}:{};
+    s.shapes.add({geometry:'connector',kind:'straight',position:{left:Math.min(x1,x2),top:Math.min(y1,y2),width:Math.abs(x2-x1),height:Math.abs(y2-y1)},line:{fill:color,width:2,...(dashed?{style:'dashed'}:{})},...end});
+  }
+}
 function architecture(s,d){
-  text(s,'Device / public edge',64,148,320,38,23,muted,true);
-  text(s,'Private application and data services',405,148,811,38,23,muted,true);
-  const a=node(s,'Mobile web app\nTechnician + model ID',64,218,240,90);
-  const b=node(s,'Entra ID + API\nAuthZ and risk policy',374,218,255,90);
-  const c=node(s,'Hybrid retrieval\nTenant + model + revision',699,218,247,90);
-  const e=node(s,'Azure OpenAI\nCited draft only',1016,218,200,90);
-  arrow(s,a,b);arrow(s,b,c);arrow(s,c,e);
-  const f=node(s,'Validation\nCitations + parts',1016,385,200,90);
-  const g=node(s,'Approved manuals\nBlob + search index',699,385,247,90);
-  const catalog=node(s,'Parts catalogue\nAPI-only SQL lookup',374,385,255,90);
-  const h=node(s,'Human support\nEscalation via API',64,385,240,90);
-  arrow(s,e,f,'bottom','top');arrow(s,g,c,'top','bottom');arrow(s,b,catalog,'bottom','top');
-  arrow(s,b,h,'bottom','top');
-  s.shapes.add({geometry:'connector',kind:'straight',position:{left:501,top:475,width:0,height:35},line:{fill:teal,width:2}});
-  s.shapes.add({geometry:'connector',kind:'straight',position:{left:501,top:510,width:615,height:0},line:{fill:teal,width:2}});
-  s.shapes.add({geometry:'connector',kind:'straight',position:{left:1116,top:475,width:0,height:35},line:{fill:teal,width:2},head:{type:'triangle',width:'sm',length:'sm'}});
-  text(s,'Exact catalog records',700,481,310,28,23,muted);
-  s.shapes.add({geometry:'line',position:{left:340,top:193,width:0,height:300},fill:'none',line:{fill:rule,width:1,style:'dashed'}});
-  text(s,'TLS',312,242,55,30,18,muted);
-  text(s,'Back-end links use private endpoints and managed identities. The API returns validated answers to the app; robot controllers remain disconnected.',64,552,1152,85,24,ink,true);
+  text(s,'Device and support edge',64,148,350,34,23,muted,true);
+  text(s,'Authenticated backend services',544,148,672,34,23,muted,true);
+  const a=node(s,'C1 Mobile\nweb client',64,250,190,90);
+  const b=node(s,'C2 Identity and\npolicy API',304,250,190,90);
+  const c=node(s,'C3 Hybrid\nretrieval',544,250,190,90);
+  const g=node(s,'C4 Generation\nendpoint',784,250,190,90);
+  const v=node(s,'C5 Response\nvalidator',1024,250,192,90);
+  const h=node(s,'C8 Human\nsupport',64,480,190,90);
+  const catalog=node(s,'C7 Parts catalogue',365,480,255,90);
+  const audit=node(s,'C10 Audit events',745,480,240,90);
+  arrow(s,a,b);arrow(s,b,c);arrow(s,c,g);arrow(s,g,v);
+  route(s,[[1120,250],[1120,205],[399,205],[399,250]],accent,true);
+  route(s,[[304,295],[280,295],[280,225],[159,225],[159,250]],accent,true);
+  text(s,'Validated answer or abstention',596,176,420,28,20,accent);
+  text(s,'TLS',261,273,42,28,17,muted);
+  route(s,[[399,340],[399,410],[492,410],[492,480]]);
+  text(s,'Read-only lookup',415,374,220,28,20,muted);
+  route(s,[[620,525],[680,525],[680,400],[1160,400],[1160,340]]);
+  text(s,'Exact compatible records',714,365,355,29,20,muted);
+  route(s,[[304,315],[285,315],[285,455],[159,455],[159,480]]);
+  text(s,'Reviewed escalation',66,417,245,28,20,muted);
+  route(s,[[1216,295],[1240,295],[1240,610],[865,610],[865,570]],muted,true);
+  text(s,'Minimal trace metadata',877,578,320,27,18,muted);
+  s.shapes.add({geometry:'line',position:{left:275,top:237,width:0,height:335},line:{fill:rule,width:1,style:'dashed'}});
+  text(s,'Private endpoints and managed identities protect backend links. Robot controllers remain disconnected.',64,622,1152,28,20,ink,true);
+}
+function ingestion(s,d){
+  const source=node(s,'C6 Controlled manuals',64,220,300,90);
+  const ingest=node(s,'C9 Ingestion job',490,220,300,90);
+  const index=node(s,'C3 Hybrid retrieval',916,220,300,90);
+  const audit=node(s,'C10 Audit events',490,430,300,90);
+  node(s,'C7 Parts catalogue',916,430,300,90);
+  arrow(s,source,ingest);arrow(s,ingest,index);arrow(s,ingest,audit,'bottom','top');
+  text(s,'Approval + applicability',64,333,350,30,22,muted);
+  text(s,'Versioned chunks + withdrawal',790,333,426,30,22,muted);
+  text(s,'Managed identity\nIngestion/revocation records',310,367,300,66,22,muted);
+  text(s,'Current catalog stays structured.\nRuntime path: C2 to C7 to C5.',916,541,300,65,21,muted);
+  text(s,'Proposed pilot: up to 200 approved English articles, five topics and two models.',64,152,1152,40,27,teal,true);
+  text(s,'Review revisions daily. Process withdrawals before serving affected content. Unknown approval, entitlement or freshness means abstention.',64,565,730,78,23,ink,true);
+}
+function componentRegister(s,d){
+  const items=[
+   ['C1 Mobile web client','Technician context, sources and support.'],
+   ['C2 Identity and policy API','Entra identity, access and orchestration.'],
+   ['C3 Hybrid retrieval','Approved text and vector search index.'],
+   ['C4 Generation endpoint','Bounded, cited draft through Azure.'],
+   ['C5 Response validator','Applicability, citations and exact parts.'],
+   ['C6 Controlled manuals','Approved originals with revision metadata.'],
+   ['C7 Parts catalogue','Authoritative compatible structured records.'],
+   ['C8 Human support','Reviewed escalation through existing support.'],
+   ['C9 Ingestion job','Approval checks, chunks and index updates.'],
+   ['C10 Audit events','Minimized trace and revocation records.']
+  ];
+  items.forEach(([label,body],j)=>{
+   const x=j<5?64:670,y=156+(j%5)*94;
+   text(s,label,x,y,546,35,26,teal,true,'component-label');
+   text(s,body,x,y+38,546,49,23,ink,false,'component-description');
+  });
 }
 for(const [i,d]of content.slides.entries()){
  const s=base(d,i);
  if(d.type==='cover'){
    text(s,'LineGuide',64,120,1152,110,80,ink,true,'cover-title');
    text(s,'AI-powered industrial robot\nexpert advisor',64,260,1100,160,48,teal,false,'cover-subtitle');
-   text(s,'Scenario C • Udacity ND088\nStakeholder proposal • 16 November 2026',64,494,1000,105,27,muted,false,'cover-meta');
+   text(s,'Scenario C, Udacity ND088\nRevision v1.1.0, 16 November 2026',64,494,1000,105,27,muted,false,'cover-meta');
  }else if(d.type==='table')table(s,d);
  else if(d.type==='rows')rows(s,d);
  else if(d.type==='two')two(s,d);
  else if(d.type==='architecture')architecture(s,d);
+ else if(d.type==='ingestion')ingestion(s,d);
+ else if(d.type==='component_register')componentRegister(s,d);
  else if(d.type==='statement'){
    text(s,d.statement,64,174,1140,230,42,teal,true,'main-statement');
    text(s,d.body,64,438,1140,176,27,ink,false,'statement-body');
@@ -109,23 +158,23 @@ await fs.writeFile(path.join(buildDir,'geometry.json'),JSON.stringify(geometry,n
 await fs.writeFile(path.join(buildDir,'presentation.json'),JSON.stringify(p.toProto()));
 const candidate=path.join(buildDir,'candidate.pptx');
 await(await PresentationFile.exportPptx(p)).save(candidate);
-const finalPptx=path.join(outputDir,'LineGuide_Proposal.pptx');
+const finalPptx=path.join(outputDir,'LineGuide_Proposal_v1.1.0.pptx');
 if(process.env.PRESENTATIONS_SKILL_DIR){
  const sk=process.env.PRESENTATIONS_SKILL_DIR;
  const {finalizePresentation}=await import(pathToFileURL(path.join(sk,'container_tools/artifact_tool_utils.mjs')).href);
  await fs.mkdir(path.join(buildDir,'validated-output'),{recursive:true});
  const validated=path.join(buildDir,'validated-output',`validated-${Date.now()}.pptx`);
  const receipt=path.join(buildDir,`validation-${Date.now()}.json`);
- await finalizePresentation({workspaceDir:here,candidatePath:candidate,finalPath:validated,pythonExecutable:process.env.RUNTIME_PYTHON||'python3',integrityValidatorPath:path.join(sk,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(sk,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...content.slides.flatMap((x,i)=>x.type==='table'?['--require-native-table-slide',String(i+1)]:[])],requiredNativeTableOwnerSlides:content.slides.flatMap((x,i)=>x.type==='table'?[i+1]:[]),requiredNativeChartOwnerSlides:[],explicitTotalSlideCount:content.slides.length,fontPolicy:{basis:'design',families:[font]},verifyArtifactToolImport:true,receiptPath:receipt});
+ await finalizePresentation({workspaceDir,candidatePath:candidate,finalPath:validated,pythonExecutable:process.env.RUNTIME_PYTHON||'python3',integrityValidatorPath:path.join(sk,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(sk,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...content.slides.flatMap((x,i)=>x.type==='table'?['--require-native-table-slide',String(i+1)]:[])],requiredNativeTableOwnerSlides:content.slides.flatMap((x,i)=>x.type==='table'?[i+1]:[]),requiredNativeChartOwnerSlides:[],explicitTotalSlideCount:content.slides.length,fontPolicy:{basis:'design',families:[font]},verifyArtifactToolImport:true,receiptPath:receipt});
  await fs.copyFile(validated,finalPptx);
  await fs.copyFile(receipt,path.join(buildDir,'validation-current.json'));
 }else await fs.copyFile(candidate,finalPptx);
 // LibreOffice renders the exact delivered PPTX. Artifact Tool's bundled PDF
 // exporter currently has an unresolved standard-font alias in this runtime.
 execFileSync(process.env.SOFFICE_BINARY||'soffice',['--headless','--convert-to','pdf','--outdir',outputDir,finalPptx],{stdio:'inherit'});
-execFileSync(process.env.PDFTOPPM_BINARY||'pdftoppm',['-png','-scale-to','1280',path.join(outputDir,'LineGuide_Proposal.pdf'),path.join(previews,'slide')],{stdio:'inherit'});
+execFileSync(process.env.PDFTOPPM_BINARY||'pdftoppm',['-png','-scale-to','1280',path.join(outputDir,'LineGuide_Proposal_v1.1.0.pdf'),path.join(previews,'slide')],{stdio:'inherit'});
 for(const [i,s]of p.slides.items.entries()){
  const stem=`slide-${String(i+1).padStart(2,'0')}`;
  await fs.writeFile(path.join(buildDir,stem+'.layout.json'),await(await s.export({format:'layout'})).text());
 }
-console.log(JSON.stringify({slides:content.slides.length,pptx:finalPptx,pdf:path.join(outputDir,'LineGuide_Proposal.pdf'),previews}));
+console.log(JSON.stringify({slides:content.slides.length,pptx:finalPptx,pdf:path.join(outputDir,'LineGuide_Proposal_v1.1.0.pdf'),previews}));

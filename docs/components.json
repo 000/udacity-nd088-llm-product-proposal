@@ -1,0 +1,45 @@
+{
+  "version": "1.1.0",
+  "components": [
+    {
+      "id": "C1",
+      "label": "Mobile web client"
+    },
+    {
+      "id": "C2",
+      "label": "Identity and policy API"
+    },
+    {
+      "id": "C3",
+      "label": "Hybrid retrieval"
+    },
+    {
+      "id": "C4",
+      "label": "Generation endpoint"
+    },
+    {
+      "id": "C5",
+      "label": "Response validator"
+    },
+    {
+      "id": "C6",
+      "label": "Controlled manuals"
+    },
+    {
+      "id": "C7",
+      "label": "Parts catalogue"
+    },
+    {
+      "id": "C8",
+      "label": "Human support"
+    },
+    {
+      "id": "C9",
+      "label": "Ingestion job"
+    },
+    {
+      "id": "C10",
+      "label": "Audit events"
+    }
+  ]
+}

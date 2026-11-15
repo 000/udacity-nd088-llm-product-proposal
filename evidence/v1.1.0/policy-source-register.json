@@ -1,0 +1,122 @@
+{
+  "schema": "lineguide-policy-source-register.v1",
+  "checked_date": "2026-11-16",
+  "client_timezone": "Asia/Bangkok",
+  "direct_http_checked_at_utc": "2026-11-15T21:17:35.254197+00:00",
+  "scope": "Public policy retrieval, including coordinator-supplied browser observations; no authenticated classroom inspection or student-compliance certification by this reviewer",
+  "sources": [
+    {
+      "id": "P01",
+      "title": "Honor Code",
+      "url": "https://www.udacity.com/en-US/legal/honor-code",
+      "publisher": "Udacity",
+      "page_last_updated": "2026-02-05",
+      "web_tool_retrieval": "complete",
+      "direct_http_status": 200,
+      "response_bytes": 157094,
+      "response_sha256": "a27bad398105798929cc8ce90e791aed9099569ef6382023de3c8cfd9bb3d102",
+      "claim_locator": "Use of Artificial Intelligence Tools, sections 1 to 5; general Honor Code provisions",
+      "course_specific_exception_established": false
+    },
+    {
+      "id": "P02",
+      "title": "Terms of Use",
+      "url": "https://www.udacity.com/en-US/legal/terms-of-use",
+      "publisher": "Udacity",
+      "page_last_updated": "2026-01-16",
+      "web_tool_retrieval": "complete",
+      "direct_http_status": 200,
+      "response_bytes": 313238,
+      "response_sha256": "252ca55bf3e1266e1b9c0f7d7e7425ab54024db69ac1179ec23b8c93676dd00f",
+      "claim_locator": "Introduction and Acceptance of Terms, paragraphs addressing Nanodegree special terms and incorporation of the Honor Code",
+      "legal_conclusion_certified": false
+    },
+    {
+      "id": "P03",
+      "title": "How to Submit your Project Successfully: Checklist",
+      "url": "https://support.udacity.com/hc/en-us/articles/47406875454477-How-to-Submit-your-Project-Successfully-Checklist",
+      "publisher": "Udacity Support",
+      "web_tool_retrieval": "complete",
+      "direct_http_status": 403,
+      "claim_locator": "Sections 1 to 4",
+      "learner_specific_confirmation": false
+    },
+    {
+      "id": "P04",
+      "title": "Udacity Etiquette category linked from the Honor Code",
+      "requested_url": "https://udacity.zendesk.com/hc/en-us/categories/360000151251-Plagiarism",
+      "resolved_url": "https://support.udacity.com/hc/en-us/categories/360000151251-Plagiarism",
+      "publisher": "Udacity Support",
+      "web_tool_retrieval": "failed_after_redirect",
+      "direct_http_status": 403,
+      "full_content_verified": false,
+      "reviewer_web_tool_retrieval": "failed_after_redirect",
+      "coordinator_browser_retrieval": {
+        "checked_date": "2026-11-16",
+        "browser": "Chrome",
+        "surface": "visible page",
+        "category_listing": "complete",
+        "plagiarism_section_present": true,
+        "linked_article_bodies_fully_read": [
+          "P06",
+          "P07"
+        ],
+        "all_seven_linked_article_bodies_read": false
+      },
+      "full_content_verified_note": "Coordinator verified the complete category listing and two article bodies; five linked article bodies were not reviewed."
+    },
+    {
+      "id": "P05",
+      "title": "Project submission notes after Plagiarism",
+      "url": "https://support.udacity.com/hc/en-us/articles/33904319303309-Project-submission-notes-after-Plagiarism",
+      "publisher": "Udacity Support",
+      "web_tool_retrieval": "failed",
+      "search_index_excerpt_available": true,
+      "direct_http_status": 403,
+      "full_live_content_verified": false,
+      "prior_flag_about_learner_inferred": false
+    },
+    {
+      "id": "P06",
+      "title": "What is Plagiarism?",
+      "url": "https://support.udacity.com/hc/en-us/articles/30467895834509-What-is-Plagiarism",
+      "publisher": "Udacity Support",
+      "coordinator_browser_retrieval": {
+        "checked_date": "2026-11-16",
+        "browser": "Chrome",
+        "article_body": "complete"
+      },
+      "reviewer_independent_page_retrieval_performed": false,
+      "response_sha256": null,
+      "claim_locator": "Definition and examples for ideas/work, written content, images, interface designs and limited attributed helper code",
+      "ai_production_exception_established": false
+    },
+    {
+      "id": "P07",
+      "title": "Guidelines for work submission",
+      "url": "https://support.udacity.com/hc/en-us/articles/360001430552-Guidelines-for-work-submission",
+      "publisher": "Udacity Support",
+      "coordinator_browser_retrieval": {
+        "checked_date": "2026-11-16",
+        "browser": "Chrome",
+        "article_body": "complete"
+      },
+      "reviewer_independent_page_retrieval_performed": false,
+      "response_sha256": null,
+      "claim_locator": "Conceptual notes, own implementation and individual work after collaboration",
+      "ai_production_exception_identified_in_read_article": false
+    }
+  ],
+  "assessment": {
+    "public_honor_code_and_terms_evidence": "verified",
+    "plagiarism_category_full_text": "coordinator_verified_category_listing; all_linked_article_bodies_not_reviewed",
+    "submission_eligibility": "not_established",
+    "student_authorship_attestation_supported_by_workflow_evidence": false,
+    "disclosure_alone_treated_as_permission": false,
+    "actual_classroom_declaration_inspected_by_this_reviewer": false,
+    "classroom_submission_performed_by_this_reviewer": false,
+    "limitation": "Only Udacity can adjudicate policy acceptance; the coordinator must check any applicable course-specific authorization and actual submission declaration.",
+    "plagiarism_definition_and_work_submission_guidelines": "coordinator_browser_verified_complete_articles_P06_P07",
+    "coordinator_observation_provenance": "Coordinating agent supplied the live Chrome observations on 16 November 2026; this reviewer did not independently repeat the browser read."
+  }
+}

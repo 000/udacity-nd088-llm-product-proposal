@@ -2,6 +2,8 @@
 
 The deliverable is a product proposal and slide deck. It is not an implemented industrial advisor.
 
+Version 1.1.0 also carries an unresolved academic-eligibility item. Substantive reasoning, architecture, content and code were AI-generated. Accurate attribution and artifact verification do not establish the student's own assessed work. Current policy and classroom observations are recorded in the academic-integrity and revision-response documents; no classroom submission or successful-submission confirmation is claimed.
+
 The user supplied the hypothetical business scenario and assessment requirements. Knowledgebase counts, device access and supported languages describe that scenario. They are not findings from company records. Device and education percentages overlap and must not be added into distributions.
 
 Vendor documentation supports the stated interfaces, retrieval patterns, privacy qualifications and adjacent market examples. A documented model does not establish account access, regional availability, industrial suitability, throughput or multilingual quality. Vendor descriptions do not establish comparative superiority.

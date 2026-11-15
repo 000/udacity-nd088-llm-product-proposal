@@ -1,0 +1,248 @@
+{
+  "checked_date": "2026-11-16",
+  "repository": "000/udacity-nd088-llm-product-proposal",
+  "visibility": "public",
+  "default_branch": "main",
+  "source_commit": "245117135e51f4c3bc1faae5c24d0a9a4640b1a5",
+  "tree_sha": "4c647a8e816ecc0b9811ef7c1dd18be13330b0f4",
+  "parents": [
+    "a25094a0ec38ad863c15034f8fb0171bb84eca18"
+  ],
+  "tree_truncated": false,
+  "entries": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21f019dedca898e5b5fa51ad5eb0b4ac999b9d81",
+      "size": 50
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01a540f672039b9662a93f8180bac62e446263c9",
+      "size": 1941
+    },
+    {
+      "path": "SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "100b5d9f7edf0936addd0d90c6c3eedeee15c123",
+      "size": 2659
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23ed71fab3a44247c7441c8f2b6772856da6838d"
+    },
+    {
+      "path": "docs/architecture.mmd",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7aa43a668ccf82fa3e5a440585da56372bf16bfc",
+      "size": 849
+    },
+    {
+      "path": "docs/cursor-project-brief.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59b0147bea45b7c40889b17b96b28934acb21649",
+      "size": 1569
+    },
+    {
+      "path": "docs/evidence-scope.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76dea50271190e08ef7d2f0ca0ef96c0fcb30e71",
+      "size": 2137
+    },
+    {
+      "path": "docs/metrics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb442a4e419e34788f4af9699b160cbfd143f64a",
+      "size": 6420
+    },
+    {
+      "path": "docs/product-plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3ea6596d09417a4cc77788acb4cbe5597f2df5d",
+      "size": 19067
+    },
+    {
+      "path": "docs/rubric-map.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44f8cbb69d3c3d3b59b88838ce7574b21ee642e7",
+      "size": 2561
+    },
+    {
+      "path": "docs/sources.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b94b74c8c9bb7753b6a20b76a0c45f1dac137be9",
+      "size": 8222
+    },
+    {
+      "path": "docs/tech-stack.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85dfa0f59d1975228effd842df32aa7d5ed7ea59",
+      "size": 4562
+    },
+    {
+      "path": "docs/workflow.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60f4f8b874d5d2704427a388914f5bef8361f835",
+      "size": 4169
+    },
+    {
+      "path": "evidence",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a99a4a9e94976c7cbb171edf354e229da6aee93a"
+    },
+    {
+      "path": "evidence/authoring-provenance.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc132634a63d98200ae208af53ffdc0af903f722",
+      "size": 987
+    },
+    {
+      "path": "evidence/decisions-request.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "052fbcf44436df2d6eaa50e3c58611ac921a7e82",
+      "size": 1513
+    },
+    {
+      "path": "evidence/decisions-result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dc58ae26aa4c530df65b5d0a26d7002770832d6",
+      "size": 1617
+    },
+    {
+      "path": "evidence/decisions-scope.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d349a7a0031e65d55ce3578e728f6a3f14480019",
+      "size": 216
+    },
+    {
+      "path": "evidence/deck-review-final.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04e50c22a82dcb4e569ee5d31b418ec0543d2558",
+      "size": 2838
+    },
+    {
+      "path": "evidence/deck-review-initial.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38e8dfb52c43d59619339f6a18219aa93f24c883",
+      "size": 11118
+    },
+    {
+      "path": "evidence/deck-validation.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b633b09fb17cfa489857cdabbce398987f185bb",
+      "size": 4684
+    },
+    {
+      "path": "evidence/hermes-advisory.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c248863a29df3bb099daf750b039d9804a96526",
+      "size": 1168
+    },
+    {
+      "path": "evidence/hermes-report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8343925e310300d8b380a44bc3084d746a214763",
+      "size": 1940
+    },
+    {
+      "path": "evidence/independent-product-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "caf1b44c664007520bb7cdb71b60665c4a10cf54",
+      "size": 7558
+    },
+    {
+      "path": "evidence/source-audit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "478d7d2860a3440dd74b2e26640fc8618cad4f2d",
+      "size": 14209
+    },
+    {
+      "path": "evidence/verification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dffbdebc5f371c0d99d9c3e292270d00ee9edbe9",
+      "size": 1737
+    },
+    {
+      "path": "evidence/visual-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3da94e7418fcce231ef41d8581d3b04cd7db049",
+      "size": 2088
+    },
+    {
+      "path": "source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "50266c9a7754bd5f3a9b4e302cde0b2202df186c"
+    },
+    {
+      "path": "source/build-deck.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "682d114a71aebc491234c7ba05895207293a3939",
+      "size": 9812
+    },
+    {
+      "path": "source/deck-content.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36fa8ea5533e8295045984af8eb738a7c528f390",
+      "size": 32880
+    },
+    {
+      "path": "source/verify.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b64e0a5f4c5396b8ef78fca35f4cc5a32cf58ba",
+      "size": 6279
+    },
+    {
+      "path": "submission",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ec5318147e655a5875523c843d521888406dfd9"
+    },
+    {
+      "path": "submission/LineGuide_Proposal.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec43eab88d762c26002b14035116924cda264a43",
+      "size": 300749
+    },
+    {
+      "path": "submission/LineGuide_Proposal.pptx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95629366b1b4c55a0f1d1bd560b8b1f9ebf27550",
+      "size": 104699
+    }
+  ]
+}

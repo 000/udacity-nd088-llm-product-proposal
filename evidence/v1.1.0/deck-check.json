@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "date": "2026-11-16",
+  "slide_count": 25,
+  "notes_count": 25,
+  "full_slide_text_fidelity": true,
+  "full_notes_fidelity": true,
+  "missing_fragments": [],
+  "all_source_ids_present": true,
+  "component_labels_match": true,
+  "legacy_binaries_unchanged": true,
+  "hashes": {
+    "submission/LineGuide_Proposal_v1.1.0.pptx": "5d5c50abfb50000d7cf92082635ad0fcdfd4850e3b3791855212b884e53398db",
+    "submission/LineGuide_Proposal_v1.1.0.pdf": "83ea78685e4c495dd2f6f8c5c360b0c4dde7f1016ecaf1c3602b950085fda744",
+    "source/build-deck.mjs": "1b208f4078d196cab3cdba29d3800f2c16204d895dcc2807f9ceca65777c043d",
+    "source/deck-content.json": "cab5f7115daed981ec7116769dfa75d77f999dc33eb93ba3b64453a59e152dfd"
+  },
+  "limits": [
+    "No product runtime or customer study tested.",
+    "No native Microsoft PowerPoint opening.",
+    "Student authorship and classroom eligibility are not established by artifact checks."
+  ]
+}

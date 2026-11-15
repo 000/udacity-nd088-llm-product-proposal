@@ -1,0 +1,23 @@
+{
+  "checked_date": "2026-11-16",
+  "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+  "http_status": 200,
+  "response_sha256": "938206884189e786d7cc482da6cf48de5e7da0e7152a278ae3dbd4e5e059805c",
+  "claim": "The current GPT-6 feature table lists gpt-6-luna 2026-09-22 with context 1,050,000 tokens, maximum input 922,000 and maximum output 128,000. These are documented limits, not verified account/deployment capacities.",
+  "web_line_evidence": {
+    "model_column": 1250,
+    "context_window": 1253,
+    "maximum_input": 1254,
+    "maximum_output": 1255
+  },
+  "planned_application_budget": {
+    "retrieval": 8000,
+    "system_policy": 2000,
+    "query_history_tools": 2000,
+    "total_input": 12000,
+    "max_output_including_reasoning": 2000,
+    "combined": 14000
+  },
+  "temperature": "not sent; current page feature table conflicts with unsupported-parameter prose",
+  "limits": "Account availability, quota, endpoint compatibility and product quality remain untested."
+}

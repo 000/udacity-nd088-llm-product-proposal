@@ -1,21 +1,21 @@
-# LineGuide
+# LineGuide v1.1.0
 
-An AI-powered industrial robot expert advisor proposal for Udacity ND088, Scenario C. Prepared 16 November 2026.
+A hypothetical industrial robot expert advisor proposal for Udacity ND088, Scenario C. Revised 16 November 2026.
 
-Open the [presentation PDF](submission/LineGuide_Proposal.pdf) or download the [editable PowerPoint deck](submission/LineGuide_Proposal.pptx). The completed deck is on this repository's default branch, `main`.
+Open the [revised PDF](submission/LineGuide_Proposal_v1.1.0.pdf), download the [editable PowerPoint](submission/LineGuide_Proposal_v1.1.0.pptx), or use the [complete review bundle](submission/LineGuide_v1.1.0_review_bundle.zip). These files are on the repository's default branch, `main`.
 
-LineGuide would help authorized technicians find approved documentation and compatible catalog records. Its proposed architecture has no robot-control connection. This is a hypothetical product plan: no production service, customer research, model evaluation, pilot results or safety certification is claimed.
+Academic eligibility remains open. Codex generated substantial product reasoning, architecture choices, calculations, prose, diagrams, slide content and verification code. Agent reviews and artifact checks do not establish student authorship or independent understanding. The current [Udacity Honor Code](https://www.udacity.com/en-US/legal/honor-code) restricts substantial AI production of assessed work; disclosure alone does not authorize it. This revision has not been submitted in the classroom and makes no own-work or eligibility attestation.
 
-The proposal separates the scenario's supplied figures from planning assumptions and proposed release targets. Its business case estimates staff capacity, with a negative conservative case and a long base-case implementation payback. Funding and expansion depend on evidence gathered during the proposed pilot.
+LineGuide would help authorized technicians find approved documentation and compatible catalog records. Its architecture has no robot-control connection. Scenario figures, planning assumptions and proposed release targets are identified separately. No customer interviews, production service, model evaluation, pilot results or industrial safety certification is claimed.
 
-For review, use the [rubric map](docs/rubric-map.md), [detailed product plan](docs/product-plan.md), [source register](docs/sources.json), [evidence boundaries](docs/evidence-scope.md) and [verification record](evidence/verification.json). The original classroom starter deck was not supplied; the custom deck follows the supplied rubric.
+The [revision response](docs/revision-response-v1.1.0.md) accounts for every assessment issue and retains the unresolved academic-eligibility item. The [rubric map](docs/rubric-map.md), [component register](docs/component-register.md), [configuration](docs/proposed-model-config.json), [reference-data plan](docs/reference-data-plan.md), [sample prompts](docs/prompt-examples.md) and [product plan](docs/product-plan.md) provide the detailed reasoning. The [source register](docs/sources.json) and [revision evidence](evidence/v1.1.0/) support review.
 
-Run the standard-library verification from the repository root:
+Verify the downloaded repository or extracted review bundle from its root:
 
 ```sh
 python3 source/verify.py
 ```
 
-It checks file hashes, deck structure, source references and the illustrative calculations. It does not test an operational advisor. Editable deck content and the builder are in [source](source/); the authoring runtime and its limits are described in the [stack record](docs/tech-stack.md).
+The verifier checks all manifest entries, binary headers, PPTX structure and notes, component/configuration consistency, and illustrative economics. It tests artifact integrity, not an operational advisor. The review bundle has its own complete manifest and includes the actual files for an auditor who cannot retrieve GitHub URLs. Rebuilding the deck requires the [documented authoring runtime](docs/tech-stack.md); byte-identical rendering is not asserted.
 
-This work uses AI-assisted research, drafting and slide production. Supporting checks record their scope. Human acceptance, Udacity assessment and deployment approval remain separate decisions. No submission was made inside the Udacity classroom.
+The original [v1.0.0 PDF](submission/LineGuide_Proposal.pdf) and [PowerPoint](submission/LineGuide_Proposal.pptx) remain unchanged. Its complete publication is preserved at [commit 2451171](https://github.com/000/udacity-nd088-llm-product-proposal/tree/245117135e51f4c3bc1faae5c24d0a9a4640b1a5), with its original authoring files also retained in [the archive](archive/v1.0.0/). Earlier evidence at the root of `evidence/` describes that baseline; dated revision evidence describes v1.1.0.

@@ -67,8 +67,8 @@
     {
       "type": "cover",
       "title": "LineGuide",
-      "footer": "Hypothetical Scenario C proposal \u2022 Product not deployed",
-      "notes": "LineGuide is a hypothetical product proposal for Udacity Scenario C. Request: authorize only a two-week discovery stage, capped at USD 11,000, inside a conditional USD 65,000 ceiling for the full twelve-week plan. A later decision determines whether to fund the remaining stages. No customer interviews, model evaluations or production outcomes have been completed."
+      "footer": "Revision 1.1.0. Hypothetical Scenario C proposal. Product not deployed.",
+      "notes": "LineGuide is a hypothetical product proposal for Udacity Scenario C. Request: authorize only a two-week discovery stage, capped at USD 11,000, inside a conditional USD 65,000 ceiling for the full twelve-week plan. A later decision determines whether to fund the remaining stages. No customer interviews, model evaluations or production outcomes have been completed. Revision 1.1.0 preserves the earlier published version. AI generated substantive research synthesis, product reasoning, architecture, prose and authoring code. Student review and course eligibility have not been established. No classroom submission is claimed."
     },
     {
       "type": "rows",
@@ -80,7 +80,7 @@
         ],
         [
           "Knowledgebase",
-          "7,500 articles \u2022 25 topics \u2022 45,000 parts \u2022 15 robot models"
+          "7,500 articles. 25 topics. 45,000 parts. 15 robot models"
         ],
         [
           "User context",
@@ -100,12 +100,12 @@
       "title": "The product and its customer benefit",
       "statement": "LineGuide explains approved reference material, cites its exact revision and retrieves verified parts for the selected robot configuration.",
       "body": "It asks for missing model or firmware details and prepares a technician-reviewed support handoff when evidence is missing or a request is hazardous.\n\nTechnicians gain a short explanation and an openable source for their machine.",
-      "notes": "Two-sentence solution: LineGuide is a mobile assistant that explains approved reference material in plain language, cites the exact source revision, and retrieves verified catalog records for the technician\u2019s robot configuration. It asks for missing model or firmware details and sends unresolved or hazardous requests to established support channels with a technician-reviewed context bundle. Customer appeal depends on applicability, fast source access, short answers and honest uncertainty; wrong parts, translation errors and repeated configuration entry threaten adoption.",
+      "notes": "Two-sentence solution: LineGuide is a mobile assistant that explains approved reference material in plain language, cites the exact source revision, and retrieves verified catalog records for the technician’s robot configuration. It asks for missing model or firmware details and sends unresolved or hazardous requests to established support channels with a technician-reviewed context bundle. Customer appeal depends on applicability, fast source access, short answers and honest uncertainty; wrong parts, translation errors and repeated configuration entry threaten adoption.",
       "footer": "Proposed benefit; faster or safer outcomes have not been demonstrated"
     },
     {
       "type": "table",
-      "title": "Use an LLM where conversation helps",
+      "title": "LLM benefits and non-LLM alternatives",
       "headers": [
         "Approach",
         "Useful role",
@@ -135,7 +135,7 @@
       ],
       "height": 400,
       "fontSize": 25,
-      "caption": "Keep deterministic truth in records. Test the LLM\u2019s added value against improved search.",
+      "caption": "Keep deterministic truth in records. Test the LLM's added value against improved search.",
       "sources": [
         "R03",
         "R04"
@@ -183,18 +183,18 @@
     },
     {
       "type": "two",
-      "title": "System goals and first-release scope",
+      "title": "System attributes and first-release scope",
       "leftTitle": "Primary goal",
-      "left": "Increase verified self-service resolution of eligible documentation and catalog questions.\n\nSecondary goals\nReduce time to a verified answer.\nPrevent unsupported or hazardous assistance.",
+      "left": "Increase verified self-service resolution of eligible documentation and catalog questions.\n\nSecondary goal 1\nReduce time to a verified answer.\n\nSecondary goal 2\nPrevent unsupported or hazardous assistance.",
       "rightTitle": "Supervised English pilot",
       "right": "Two models; up to 200 approved articles across five topics, subject to content audit.\n\nRead-only explanations and catalog lookup.\n\nSpanish follows its own validation; other languages remain staged.",
-      "fontSize": 27,
+      "fontSize": 25,
       "notes": "Initial audience: authorized maintenance technicians reviewing reference information away from active hazardous work. English only at initial pilot. Later Spanish, Mandarin, written Cantonese and Urdu each need their own technical language validation; Cantonese must not be treated as Mandarin and Urdu needs right-to-left UI testing. Voice is outside the MVP. Pilot coverage is a proposed scope, not the actual distribution of source documents.",
       "footer": "Proposed scope; document suitability and language performance are untested"
     },
     {
       "type": "rows",
-      "title": "The technician\u2019s path through the product",
+      "title": "The technician's path through the product",
       "rows": [
         [
           "1  Confirm context",
@@ -214,20 +214,33 @@
         ]
       ],
       "gap": 108,
-      "notes": "The mobile interface should have large tap targets, short readable answers, source links and an accessible escalation control. For procedural questions, open the complete approved procedure in the controlled original viewer, with prerequisites, warnings, revision and applicability. The LLM must not shorten, reorder or invent safety-critical steps. During outages, generate no new answers; show outage state and established support. Offline reference caching stays disabled until permission expiry, revocation, revision and deletion behavior is verified.",
-      "footer": "Proposed user flow \u2022 No robot commands, work authorization or part ordering"
+      "notes": "The mobile interface should have large tap targets, short readable answers, source links and an accessible escalation control. For procedural questions, open the complete approved procedure in the controlled original viewer, with prerequisites, warnings, revision and applicability. The LLM must not shorten, reorder or invent safety-critical steps. During outages, generate no new answers. Show the outage state and established support route. Offline reference caching is disabled in the pilot. Any later cache needs a separate approved design and verified entitlement, revision, expiry, revocation and deletion behavior.",
+      "footer": "Proposed user flow. No robot commands, work authorization or part ordering",
+      "caption": "Network loss: no new generated answers. Show the established support route."
     },
     {
       "type": "architecture",
-      "title": "RAG architecture and trust boundaries",
+      "title": "Online request and validated response paths",
       "sources": [
         "R03",
         "R04",
         "R05",
         "R06"
       ],
-      "notes": "Proposed components: responsive mobile web client; Microsoft Entra ID; API/orchestrator; policy and configuration checks; Azure AI Search hybrid index; Azure OpenAI in Microsoft Foundry; approved manuals in Blob Storage; authoritative relational parts store; response validator; human support; privacy-filtered audit events. TLS protects device/API transport. Backend services use private endpoints where available, managed identities and least privilege. Derive tenant identity from the authenticated session, filter entitlements before retrieval and recheck before delivery. The API performs read-only catalog lookup. Validate citations, applicability and parts before displaying the response. No network route or credentials reach robot controllers. Audit request IDs, source revisions, model/prompt/index versions, policy outcome, timings and review disposition. Disable raw query logs by default.",
-      "footer": "Proposed architecture \u2022 External generation remains subject to approved regional/provider terms"
+      "notes": "Proposed runtime component labels match the register: C1 Mobile web client; C2 Identity and policy API; C3 Hybrid retrieval; C4 Generation endpoint; C5 Response validator; C7 Parts catalogue; C8 Human support; C10 Audit events. C6 Controlled manuals and C9 Ingestion job appear in the next diagram. C2 includes Microsoft Entra validation, server-derived tenant identity, policy and required model/firmware checks. C2 sends a filtered retrieval request to C3 and a separate read-only lookup to C7. C3 sends approved passages to C4. C4 returns a draft to C5, while C7 supplies exact compatible records. C5 checks citations, applicability, catalog identifiers and delivery entitlements. Only a validated answer or an abstention returns through C2 to C1. C2 sends a technician-reviewed escalation through C8. C5 sends only minimal trace metadata to C10. Encrypted transport protects the device/API edge; private endpoints and managed identities protect supported backend links. A separate provider-processing contract and region review remain necessary. There is no route or credential to a robot controller.",
+      "footer": "Proposed flows. Backend private links do not establish zero provider retention."
+    },
+    {
+      "type": "ingestion",
+      "title": "Controlled ingestion and version withdrawal",
+      "sources": [
+        "R03",
+        "R04",
+        "R05",
+        "R10"
+      ],
+      "notes": "Exact component labels: C6 Controlled manuals; C9 Ingestion job; C3 Hybrid retrieval; C7 Parts catalogue; C10 Audit events. A domain owner approves C6 records with model, firmware range, tenant entitlement, language, section, revision and effective/withdrawal dates. C9 rejects missing approval/applicability data and preserves warnings while chunking and embedding approved sections. C9 writes the versioned index used by C3 and records ingestion/revocation evidence in C10. C7 stays an authoritative structured catalog, outside vector-index factual authority. The controlled source is proposed to contain up to 200 articles across five topics and two robot models, subject to audit, with English first. Query the current catalog read-only. Proposed freshness controls: check approvals and revisions daily, process withdrawal/revocation events before further serving affected content, and fail closed on unknown status. Catalog compatibility is checked on each relevant request; no stale catalog response is trusted. Proposed bias review compares source coverage, missing topics, language quality and model/configuration gaps. Later languages require separate bilingual validation. These amounts and cadences are design assumptions, not collected data or established service guarantees.",
+      "footer": "Proposed source scope and freshness controls. No production ingestion has run."
     },
     {
       "type": "rows",
@@ -235,7 +248,7 @@
       "rows": [
         [
           "Ingest controlled records",
-          "Preserve owner, revision, section, model, firmware, language and entitlement metadata."
+          "Pilot input: up to 200 approved English articles, five topics and two models. Keep catalog records structured."
         ],
         [
           "Retrieve applicable evidence",
@@ -247,7 +260,7 @@
         ],
         [
           "Abstain on conflicts",
-          "Missing configuration, withdrawn content or incompatible parts trigger clarification or support."
+          "Review revisions daily. Invalidate withdrawals before serving. Unknown status triggers clarification or support."
         ]
       ],
       "gap": 108,
@@ -257,7 +270,7 @@
         "R05",
         "R10"
       ],
-      "notes": "These chunking and retrieval values are proposed starting settings. Keep warnings attached to their sections. Reject withdrawn records and missing approval or applicability metadata. The structured parts catalog is separate from document chunks; embeddings cannot establish part validity. Pin model, prompt, embedding and index versions together, and rehearse rollback. Cache only within tenant and permission scope. The embedding candidate is text-embedding-3-small; verify its current Azure region/version support and retrieval quality before use.",
+      "notes": "These chunking and retrieval values are proposed starting settings. Keep warnings attached to their sections. Reject withdrawn records and missing approval or applicability metadata. The structured parts catalog is separate from document chunks; embeddings cannot establish part validity. Pin model, prompt, embedding and index versions together, and rehearse rollback. Offline caching is disabled in the pilot. A later cache requires a separate approved design with tenant and permission controls. The embedding candidate is text-embedding-3-small; verify its current Azure region/version support and retrieval quality before use. Proposed reference data: up to 200 approved English articles across five topics and two models; the full supplied scenario has 7,500 articles and 45,000 catalog parts across 15 models. Audit approval, applicability completeness, duplication and missing topics before selecting the pilot subset. Check source revisions daily, process withdrawals before further serving the affected content, and read current catalog compatibility on each relevant request. Unknown status triggers abstention. Assess language, topic and robot-model coverage separately so a strong English aggregate cannot hide an unsupported subgroup. The five-passage maximum and near-500-token starting chunk size imply around 2,500 nominal passage tokens before metadata or passage expansion. The 8,000 retrieved-token limit is a ceiling, not an expectation to fill it or a claim that five chunks each contain 8,000 tokens. Count the actual serialized request against the 12,000 input ceiling.",
       "footer": "Starting retrieval settings; held-out evaluation decides whether to change them"
     },
     {
@@ -282,11 +295,11 @@
         ],
         [
           "Context and timing",
-          "Retrieved context \u22648,000 tokens; visible answer target \u2264800; 15-second deadline"
+          "Total input ≤12,000 tokens, including retrieval ≤8,000. Visible answer target ≤800. Deadline 15 seconds."
         ],
         [
           "Sampling",
-          "Vendor default; test endpoint compatibility before overriding"
+          "temperature not sent. Use vendor default pending endpoint compatibility."
         ],
         [
           "Behavior and tuning",
@@ -300,7 +313,7 @@
         "R02",
         "R10"
       ],
-      "notes": "These are proposed settings, not tested optima. Candidate: Azure gpt-6-luna version 2026-09-22. Benchmark it and a stronger current model using the same frozen set; choose the smallest that passes every gate. Account entitlement, regional quota and lifecycle are unverified. Temperature is omitted because Microsoft R01 conflicts: its GPT-6 table marks it supported but the unsupported-parameters section excludes models other than Astra. Use vendor sampling defaults until endpoint testing resolves this. The 2,000-token output cap includes reasoning; target no more than 800 visible tokens. Incomplete output produces a safe excerpt or escalation, never an unvalidated partial answer. No fine-tuning, persistent conversation memory, external browsing or autonomous tool loop.",
+      "notes": "These are proposed settings, not tested optima. Candidate: Azure gpt-6-luna version 2026-09-22. Benchmark it and a stronger current model using the same frozen set; choose the smallest that passes every gate. Account entitlement, regional quota and lifecycle are unverified. Temperature is omitted because Microsoft R01 conflicts: its GPT-6 table marks it supported but the unsupported-parameters section excludes models other than Astra. Use vendor sampling defaults until endpoint testing resolves this. The 2,000-token output cap includes reasoning; target no more than 800 visible tokens. Incomplete output produces a safe excerpt or escalation, never an unvalidated partial answer. No fine-tuning, persistent conversation memory, external browsing or autonomous tool loop. Proposed total input ceiling is 12,000 tokens: 8,000 retrieved passages, 2,000 system/policy and 2,000 query, history, tool records and formatting. Truncate or reject before sending if the counted input exceeds the cap. Reserve 2,000 output tokens including reasoning and formatting, for a planned combined 14,000-token budget. R01 documents a 1,050,000-token model context and 922,000 maximum input for this candidate. Regional deployment limits must still be confirmed. A large documented context ceiling does not justify sending the whole knowledgebase. Microsoft recommends a larger initial reasoning/output reserve while learning the workload; this tight cap can cause incomplete responses and must be tuned using observed tasks before release.",
       "footer": "Candidate version is documented; account access, quality, latency and configuration are untested"
     },
     {
@@ -311,7 +324,7 @@
       "rightTitle": "Constrain external processing",
       "right": "Select an approved regional or DataZone deployment.\n\nDisable raw-query logs by default.\n\nReview abuse-monitoring, retention and deletion terms before customer data enters the endpoint.",
       "fontSize": 26,
-      "caption": "Azure\u2019s no-training statement does not establish zero retention or safety certification.",
+      "caption": "Azure's no-training statement does not establish zero retention or safety certification.",
       "sources": [
         "R05",
         "R06",
@@ -350,8 +363,8 @@
           "Security lead"
         ],
         [
-          "Translation changes meaning",
-          "Release each language separately; bilingual technical review; preserve warnings and identifiers",
+          "Language inequity or mistranslation",
+          "Validate every language separately. Compare coverage and outcomes. Preserve warnings and identifiers.",
           "Localization lead"
         ],
         [
@@ -365,7 +378,8 @@
       "sources": [
         "R09"
       ],
-      "notes": "These are five product risks, not an exhaustive safety assessment. The service has no controller connection and cannot authorize physical work or order parts. Ambiguous hazardous requests receive escalation. Qualified personnel retain responsibility for physical work. A critical escape suspends the affected capability for safety review. Delaying experimentation preserves current search friction and escalation, but their monetary size is unknown. A bounded discovery stage tests whether an LLM adds enough value to justify its operating and review costs."
+      "notes": "These are five product risks, not an exhaustive safety assessment. The service has no controller connection and cannot authorize physical work or order parts. Ambiguous hazardous requests receive escalation. Qualified personnel retain responsibility for physical work. A critical escape suspends the affected capability for safety review. Delaying experimentation preserves current search friction and escalation, but their monetary size is unknown. A bounded discovery stage tests whether an LLM adds enough value to justify its operating and review costs. Bias includes uneven source coverage, terminology and performance across languages and robot models. Do not infer technical competence from the supplied education categories. Track the same five KPIs for each enabled language/model and withhold a failing subgroup.",
+      "caption": "Cost of delay: continued search friction and support escalation. Monetary size unknown."
     },
     {
       "type": "table",
@@ -383,12 +397,12 @@
       "rows": [
         [
           "Verified self-service resolution",
-          "Confirmed correct resolution, no escalation within 24 h / all eligible sessions; \u226570%",
-          "\u2265200 eligible sessions; review all outcomes"
+          "Confirmed correct resolution, no escalation within 24 h / all eligible sessions; ≥70%",
+          "≥200 eligible sessions; review all outcomes"
         ],
         [
           "Time to verified answer",
-          "Median time to correct answer or appropriate escalation; \u226530% lower than search",
+          "Median time to correct answer or appropriate escalation; ≥30% lower than search",
           "25 technicians; 200 trials/condition; counterbalanced"
         ]
       ],
@@ -396,7 +410,7 @@
       "height": 350,
       "caption": "Abstentions, missing feedback and escalations remain in the resolution denominator.",
       "notes": "Resolution numerator: eligible sessions with technician-confirmed resolution, domain-review confirmation and no support escalation within 24 hours. Denominator: all eligible sessions, including abstentions, missing feedback and escalations. Use the same eligibility for search. For task time, 25 technicians complete 16 trials each, eight search and eight assistant, using distinct matched variants and counterbalanced order. This yields 200 trials per condition. Report paired differences and uncertainty alongside completion and escalation rates. This pilot screen does not prove population-wide lift. Report every KPI by enabled language and robot model. All targets are proposed and unmeasured.",
-      "footer": "Two of five proposed measurements \u2022 Baselines and outcomes are not yet measured"
+      "footer": "Two of five proposed measurements. Baselines and outcomes are not yet measured"
     },
     {
       "type": "table",
@@ -414,8 +428,8 @@
       "rows": [
         [
           "Evidence and parts",
-          "\u226598% correctness; 0 wrong parts; \u226576/80 known record returns; 20/20 ambiguous clarifications",
-          "\u2265200 substantive answers; domain review; abstentions fail known cases"
+          "≥98% correctness; 0 wrong parts; ≥76/80 known record returns; 20/20 ambiguous clarifications",
+          "≥200 substantive answers; domain review; abstentions fail known cases"
         ],
         [
           "Prohibited-assistance escape",
@@ -424,15 +438,15 @@
         ],
         [
           "Validated latency, p95",
-          "\u22648 seconds; failures and timeouts exceed target",
-          "\u2265500 requests at 10 concurrent users; 15-second timeout"
+          "≤8 seconds; failures and timeouts exceed target",
+          "≥500 requests at 10 concurrent users; 15-second timeout"
         ]
       ],
       "height": 440,
       "fontSize": 23,
       "caption": "Zero observed safety escapes in curated tests does not certify industrial safety.",
       "notes": "Correctness numerator: substantive answers whose material claims have applicable current cited support and whose emitted parts exactly match compatible permitted catalog records. Denominator: all substantive answered cases. Require at least 200 substantive answers and at least 98% correctness. The 100 catalog cases contain 80 unique known parts and 20 ambiguous or unknown cases. Require at least 76/80 correct record returns, 20/20 appropriate clarifications or escalations, and zero wrong part emissions. Abstentions count as failed known-record returns. Safety escape rate is actionable prohibited assistance divided by all prohibited requests. Require zero observed escapes in 100 cases per language and no critical escape in supervised use. Zero of 100 would imply an approximate 3% upper 95% bound only with independent representative sampling; curated tests do not meet that assumption or certify safety. Latency is empirical p95 from server acceptance to fully validated response or abstention; failures and timeouts exceed the target. Use 500 requests at 10 concurrency and record query mix, cache state and versions.",
-      "footer": "Three of five proposed measurements \u2022 No model result or load test has been observed"
+      "footer": "Three of five proposed measurements. No model result or load test has been observed"
     },
     {
       "type": "rows",
@@ -456,16 +470,16 @@
         ]
       ],
       "gap": 108,
-      "notes": "The English release set has 400 disjoint semantic cases: 200 routine, 100 catalog and 100 prohibited requests. The catalog split is 80 unique known records and 20 ambiguous or unknown cases, with the subgates on slide 14. These are proposed tests, not executed results. Customer tasks and catalogs are unavailable; qualified reviewers must create and approve them. Freeze the release set before tuning. The separate 500 request load test uses a pinned deployment. Test 1,500 requests/day before claiming tenfold headroom over the scenario 150 daily. Block delivery until validation completes. Each later language repeats its own semantic and safety validation. An LLM cannot be the sole grader of itself.",
-      "footer": "Proposed acceptance plan \u2022 Tests and customer studies remain to be run"
+      "notes": "The English release set has 400 disjoint semantic cases: 200 routine, 100 catalog and 100 prohibited requests. The catalog split is 80 unique known records and 20 ambiguous or unknown cases, with the subgates on slide 15. These are proposed tests, not executed results. Customer tasks and catalogs are unavailable; qualified reviewers must create and approve them. Freeze the release set before tuning. The separate 500 request load test uses a pinned deployment. Test 1,500 requests/day before claiming tenfold headroom over the scenario 150 daily. Block delivery until validation completes. Each later language repeats its own semantic and safety validation. An LLM cannot be the sole grader of itself.",
+      "footer": "Proposed acceptance plan. Tests and customer studies remain to be run"
     },
     {
       "type": "statement",
       "title": "Illustrative monthly capacity value",
-      "statement": "970.2 successful assisted sessions \u00d7 5 minutes saved \u00d7 $40/hour \u2248 $3,234 per month",
-      "body": "150 queries/day \u00d7 22 days \u00d7 60% eligible \u00d7 70% adoption \u00d7 70% verified resolution = 970.2 sessions.\n\nAssume $1,600/month run cost: $800 cloud allowance  + 16 review hours at $50. Base net capacity value: $1,634/month before implementation.",
-      "notes": "Currency: USD. Only 150 queries/day is supplied by the scenario. The 22 service days, eligibility 60%, adoption 70%, resolution 70%, five minutes saved and $40/hour are assumptions. Exact calculation: 150*22*.6*.7*.7= 970.2; 970.2*5/60*40=3234. Recurring cost 800 + 16*50=1600; base net 1634. The $800 cloud/search/storage/model allowance is not a vendor quote and must be replaced with a confirmed Azure estimate. This is redeployable staff capacity, not cash savings, avoided downtime, revenue or a forecast. A query is not a unique technician. Do not add support/downtime benefits without separate measurement and overlap checks.",
-      "footer": "Illustrative assumptions in USD \u2022 No measured savings or vendor quotation"
+      "statement": "970.2 sessions/month × (5 ÷ 60) hours/session × $40/hour = $3,234/month",
+      "body": "150 queries/day × 22 days × 60% eligible × 70% adoption × 70% verified resolution = 970.2 sessions.\n\nAssume $1,600/month run cost: $800 cloud allowance  + 16 review hours at $50. Base net capacity value: $1,634/month before implementation.",
+      "notes": "Currency: USD. Only 150 queries/day is supplied by the scenario. The 22 service days, eligibility 60%, adoption 70%, resolution 70%, five minutes saved and $40/hour are assumptions. Exact calculation: 150*22*.6*.7*.7= 970.2; 970.2*5/60*40=3234. Recurring cost 800 + 16*50=1600; base net 1634. The $800 cloud/search/storage/model allowance is not a vendor quote and must be replaced with a confirmed Azure estimate. This is redeployable staff capacity, not cash savings, avoided downtime, revenue or a forecast. A query is not a unique technician. Do not add support/downtime benefits without separate measurement and overlap checks. The headline displays the minutes-to-hours conversion explicitly, so its units cancel to USD per month.",
+      "footer": "Illustrative assumptions in USD. No measured savings or vendor quotation"
     },
     {
       "type": "table",
@@ -487,7 +501,7 @@
           "Conservative: 3 min saved",
           "396",
           "$792",
-          "\u2212$808"
+          "−$808"
         ],
         [
           "Base: 5 min saved",
@@ -532,7 +546,7 @@
       "gap": 96,
       "caption": "Ask: authorize only $11,000 discovery now; remaining stages conditional within a $65,000 ceiling.",
       "notes": "Authorize only the first two weeks now: at most USD 10,000 labor plus USD 1,000 run and independent-review allowance. This USD 11,000 cap is included in the conditional total USD 65,000 ceiling. If all stages proceed, staffing is one application engineer, one ML/retrieval engineer, 0.25 FTE domain expert and 0.25 FTE PM/designer for twelve weeks: 30 person-weeks at USD 2,000 = USD 60,000. Three months recurring allowance adds USD 4,800, giving USD 64,800. Independent quality review is outside the 30 person-weeks. Existing safety/security reviewers must fit the envelope; otherwise re-scope. Reconcile actual discovery spend before releasing more funding. Weeks 6 to 8 cover independent quality, isolation, injection, accessibility, load and rollback tests; weeks 9 to 10 are supervised English use away from active hazardous work. Spanish needs separate bilingual validation. The sponsor should assign domain and safety reviewers and authorize approved sources in the selected region. No funding, source access or production approval is asserted.",
-      "footer": "Proposed budget and authorization request \u2022 No funding or production approval asserted"
+      "footer": "Proposed budget and authorization request. No funding or production approval asserted"
     },
     {
       "type": "sources",
@@ -544,7 +558,7 @@
         "R05",
         "R06"
       ],
-      "footer": "Primary public sources checked 16 November 2026 \u2022 Full claim boundaries in sources.json",
+      "footer": "Primary public sources checked 16 November 2026. Full claim boundaries in sources.json",
       "notes": "Microsoft R01 contains contradictory temperature guidance. Vendor defaults remain proposed until an endpoint compatibility test resolves it. Security filtering is application enforced and needs authenticated server-derived identity. RAG, hybrid search and privacy terms do not establish correct or safe product behavior. Source claim boundaries and access dates are retained in sources.json."
     },
     {
@@ -557,8 +571,79 @@
         "R09",
         "R10"
       ],
-      "footer": "Primary public sources checked 16 November 2026 \u2022 Scenario inputs supplied in the assignment",
-      "notes": "The direct OpenAI rate was not used as an Azure quotation. Siemens and ABB sources establish adjacent products, not measured superiority. OSHA guidance does not certify this advisor. R10 is Foundry classic, so current deployment support must be confirmed. The starter slide template was unavailable; this custom deck follows the supplied rubric."
+      "footer": "Primary public sources checked 16 November 2026. Scenario inputs supplied in the assignment",
+      "notes": "The direct OpenAI rate was not used as an Azure quotation. Siemens and ABB sources establish adjacent products, not measured superiority. OSHA guidance does not certify this advisor. R10 is Foundry classic, so current deployment support must be confirmed. A classroom resource link was visible, but a usable starter deck was not retrieved. This custom layout follows the current rubric. Template fidelity remains unverified."
+    },
+    {
+      "type": "component_register",
+      "title": "Component register",
+      "notes": "C1-C10 are logical components, not a claim that services have been deployed. This register uses exactly the labels in the two architecture diagrams. Microsoft Entra authentication, policy checks and orchestration are grouped in C2, which is why they are not additional unnumbered components. C6 holds the controlled original document. C3 contains its approved retrieval index. C7 catalog records remain structured truth. C10 contains minimized audit events; it is not a raw prompt archive.",
+      "footer": "Logical component IDs match both diagrams and the engineering register."
+    },
+    {
+      "type": "table",
+      "title": "Token, retention and failure budgets",
+      "headers": [
+        "Boundary",
+        "Proposed setting and reason"
+      ],
+      "widths": [
+        310,
+        842
+      ],
+      "rows": [
+        [
+          "Counted input",
+          "≤12,000 total: retrieval 8,000 + system/policy 2,000 + query/history/tools 2,000"
+        ],
+        [
+          "Generation",
+          "≤2,000 tokens including reasoning. Visible target ≤800. Reject incomplete responses."
+        ],
+        [
+          "Processing and logs",
+          "Raw query logs off. Session RAM: 15 min idle. Minimal audit events: 30 days. Offline caching disabled in the pilot."
+        ],
+        [
+          "Provider and region",
+          "Approved regional or DataZone deployment. Contract review covers provider storage, abuse monitoring and deletion."
+        ]
+      ],
+      "height": 410,
+      "fontSize": 23,
+      "caption": "A 14,000-token planned budget is below the documented 1,050,000-token context ceiling.",
+      "sources": [
+        "R01",
+        "R06"
+      ],
+      "notes": "All limits are proposed application policy, not measured performance or approved customer retention. The 12,000 input cap includes system/policy, user/history, selected catalog tool records, retrieval and formatting. Count the serialized request before transport, truncate optional history or reject excess context, and never drop mandatory safety or applicability policy. The 2,000 generation cap includes hidden reasoning and formatting. The 800 visible-token limit is a response-design target. Incomplete status or deadline expiry returns an abstention, approved source route or support escalation. The current documented Luna context is 1,050,000 and maximum input 922,000. Procurement must verify the actual tested deployment limits. Proposed minimal-event retention is 30 days, with access controls and deletion tests; customer requirements may require another approved period. App-level logging controls do not eliminate provider abuse monitoring or establish zero retention. Proposed volatile session state expires after 15 minutes idle. Offline caching is disabled in the pilot. Any later cache needs a separate approved design, with revocation, expiry, entitlement and deletion tests before use. Those application controls do not remove provider storage or abuse monitoring.",
+      "footer": "Proposed settings. Quota, compatibility, performance and privacy approval remain unverified."
+    },
+    {
+      "type": "two",
+      "title": "Synthetic prompt examples",
+      "leftTitle": "System prompt excerpt",
+      "left": "Use only approved, applicable retrieved evidence. Derive tenant access from validated identity. Ask for missing model or firmware. Cite each material claim and preserve identifiers. Return parts only from compatible catalog records. Give no hazardous recovery or bypass steps. Abstain and route to qualified support when evidence is missing, conflicting or unsafe.",
+      "rightTitle": "User prompt fixture",
+      "right": "Model: DEMO-R2\nFirmware: DEMO-1.4\nLanguage: English\n\nFind the approved glossary definition for hypothetical code DEMO-E17. Link its revision and section. If no applicable source exists, state that and request support.",
+      "fontSize": 25,
+      "caption": "Synthetic wording only. No real fault code, manual excerpt or part number is asserted.",
+      "notes": "These are design examples for an offline fixture, not deployed prompts or evidence of model behavior. DEMO-R2, DEMO-1.4 and DEMO-E17 are invented labels for testing. The server, not the user prompt, supplies entitlements and retrieved evidence. The complete prompt and response schema require engineering, domain, privacy and safety review. If the fixture has no approved supporting source, its expected response is abstention with a support route. A prompt alone cannot enforce the security boundary. The application independently checks access, applicability, citations and catalog records.",
+      "footer": "Illustrative prompt design. No model inference or safety validation has been run."
+    },
+    {
+      "type": "two",
+      "title": "AI provenance and academic eligibility",
+      "leftTitle": "What AI generated",
+      "left": "AI performed source research and drafted the product reasoning, architecture, prose, economic model, slides and authoring code.\n\nAgent reviews and deterministic checks verified stated artifact and arithmetic properties. They do not establish student authorship.",
+      "rightTitle": "What remains unresolved",
+      "right": "Student review, independent product judgments and endorsement have not been verified.\n\nNo course-specific permission for this level of AI generation has been provided. Own-work eligibility remains unresolved.\n\nNo classroom submission is claimed.",
+      "fontSize": 25,
+      "caption": "Published reference candidate v1.1.0. Classroom eligibility is a separate decision.",
+      "notes": "This disclosure records the actual substantive AI contribution. It does not describe the work as solely student-authored or imply that student acceptance follows from agent review. The supplied external assessment was an evidentiary hold because its session had not fetched artifacts, not an observed failing grade. The coordinator retrieved and reviewed the repository artifacts separately. Current Udacity Honor Code is at https://www.udacity.com/en-US/legal/honor-code . The owner has reported no course-specific permission. Publication does not establish permission to submit substantial AI-generated project work. Student review and any course-specific eligibility determination remain outside this artifact.",
+      "footer": "No student-authorship certification, grading guarantee or classroom-submission claim."
     }
-  ]
+  ],
+  "version": "1.1.0",
+  "revision_date": "2026-11-16"
 }

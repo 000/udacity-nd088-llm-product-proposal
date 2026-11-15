@@ -1,0 +1,66 @@
+{
+  "version": "1.1.0",
+  "checked_date": "2026-11-16",
+  "assessment_interpretation": "Evidence hold, not a prior verified rubric failure",
+  "issues": [
+    {
+      "id": "LG-01",
+      "status": "actual_binaries_and_complete_review_bundle_supplied",
+      "acceptance": "A reader can download actual binaries and inspect notes, hashes and the target commit without relying on a URL assertion."
+    },
+    {
+      "id": "LG-02",
+      "status": "addressed_artifact_review_passed",
+      "acceptance": "Each registry ID exists in the diagram with matching label; ingestion, catalog, generation, validation, return, support and audit connections are visible or clearly mapped across companion diagrams."
+    },
+    {
+      "id": "LG-03",
+      "status": "addressed_artifact_review_passed",
+      "acceptance": "The figures reconcile, proposed values are labeled, overflow/truncation failure behavior is safe, and no unsupported sampling parameter is claimed supported."
+    },
+    {
+      "id": "LG-04",
+      "status": "addressed_attribution_corrected_no_ownership_attestation",
+      "acceptance": "No statement falsely says the student authored or verified all judgments; substantive AI contributions and limits are explicit."
+    },
+    {
+      "id": "LG-05",
+      "status": "OPEN_academic_eligibility_no_submission",
+      "acceptance": "The final submission attestation can be made truthfully. A generic approval or AI disclosure alone is insufficient."
+    },
+    {
+      "id": "LG-06",
+      "status": "retrieval_limit_documented_no_template_fidelity_claim",
+      "acceptance": "No placeholder or copied instructional content remains; any fidelity claim is supported by an inspected template."
+    },
+    {
+      "id": "LG-07",
+      "status": "versioned_artifacts_and_history_preserved",
+      "acceptance": "README identifies the current candidate and the old version stays recoverable; remote published bytes match reviewed revised files."
+    },
+    {
+      "id": "LG-08",
+      "status": "addressed_visible_risk_copy",
+      "acceptance": "The reader sees the risk of delay and the language-quality tradeoff without an invented monetary amount or additional ungrouped risk."
+    }
+  ],
+  "additional_correction": {
+    "id": "LG-09",
+    "status": "addressed",
+    "description": "Economic headline displays division by 60; computed values unchanged"
+  },
+  "optional_suggestions": {
+    "O1": "synthetic prompts supplied; not executed",
+    "O2": "reference data type/amount/provenance/bias/refresh plan supplied"
+  },
+  "eligibility": "open",
+  "submission_performed": false,
+  "confirmation_observed": false,
+  "limits": [
+    "Not an Udacity grade or plagiarism clearance",
+    "No product runtime or customer study tested",
+    "Template resource not successfully retrieved; no template fidelity asserted",
+    "Five linked support article bodies were not reviewed"
+  ],
+  "record_stage": "Prepared artifact disposition; final publication verification is recorded separately against the committed revision."
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "lineguide-visual-review.v1.1.0",
+  "date": "2026-11-16",
+  "acting_agent": "Codex deck revision subagent",
+  "owner": "Herdr",
+  "slides": 25,
+  "speaker_note_parts": 25,
+  "full_size_visual_review": {
+    "reviewed_slides": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "surface": "PDF rendered from finalized PPTX with bundled LibreOffice, reviewed as individual 1280x720 PNGs",
+    "final_targeted_recheck": [
+      13,
+      17
+    ],
+    "unchanged_other_final_previews": 23,
+    "closed_findings": [
+      "Runtime escalation segment moved outside the API node.",
+      "Device/support boundary moved clear of human-support content.",
+      "Economic headline now displays the minutes-to-hours conversion.",
+      "Main risk table retained 23px body text and remained readable."
+    ],
+    "unresolved_visual_findings": []
+  },
+  "content_review": "All 25 slide text sections and all speaker notes reviewed using embedded Humanizer mode and checked against the baseline and revision instructions.",
+  "runtime": {
+    "node": "24.22.1",
+    "artifact_tool": "2.8.157",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0",
+    "pdf_font_substitution": "PPTX Arial rendered as embedded Liberation Sans family."
+  },
+  "hashes": {
+    "submission/LineGuide_Proposal_v1.1.0.pptx": "5d5c50abfb50000d7cf92082635ad0fcdfd4850e3b3791855212b884e53398db",
+    "submission/LineGuide_Proposal_v1.1.0.pdf": "83ea78685e4c495dd2f6f8c5c360b0c4dde7f1016ecaf1c3602b950085fda744",
+    "source/build-deck.mjs": "1b208f4078d196cab3cdba29d3800f2c16204d895dcc2807f9ceca65777c043d",
+    "source/deck-content.json": "cab5f7115daed981ec7116769dfa75d77f999dc33eb93ba3b64453a59e152dfd"
+  },
+  "preview_sha256": {
+    "slide-22.png": "f5eb901794bec6b7b340f7e40c06a5e6f19f094e28a8c5a2bd2bf2a24522320b",
+    "slide-23.png": "a12509a418355ba9edccd780720590c3a16d5f2bdc01821d02f1b572f330b225",
+    "slide-21.png": "07678ddbce6573218b4d720ea84eca37d0287e0f0ccd9dcc0af72afc3bb04614",
+    "slide-09.png": "4b600bc10096f607729078241c529a72de3727e2dc2d07bfe51cc1a8183a0d29",
+    "slide-08.png": "7d60b12eb65482022749d7f781a15714e40d76562017e3615c6975b406bf2ade",
+    "slide-20.png": "3f88074fbae18edb362e112b4ad8ed4aa82ce60cdf937096f1eaa6ea867696eb",
+    "slide-18.png": "2212edc8364b7d0d1734ee4c79bf3742a9fbdc14d56be842e1d6310f0c78f81f",
+    "slide-24.png": "36a72cfc955d3120290dd53992e77e795f89ea0202c840a3652efd0eb9d179f1",
+    "slide-25.png": "617effb33642581643cfb3065c557932390f61e7f9d4f82d1f4843311ef651bd",
+    "slide-19.png": "bdace4f7c09ee421694ca20c251234f74e833df79b6089cf1b1b60fb55f73f05",
+    "slide-17.png": "52463d370e73ce4d41c483ca43d25fdaddbe601e920464af6c1f354eb5a068f0",
+    "slide-03.png": "d7dc495740bef4936b28129bf4bd9407eedc61e8e57dce337b84e611117e02f9",
+    "slide-02.png": "e5cae2acec767b3f2996a9ef6a8139b932c7502ed3bbc01df56a31ceeba572c4",
+    "slide-16.png": "0af9129e883f9e1162c4daf725cec8c3d38b761588789dfb3713bed7ce21ad66",
+    "slide-14.png": "b5dbc5a703c707243f8a2f4eea2a1a6b6c678e1f170d0967183f1030d145f69f",
+    "slide-15.png": "78b76d82d360c9097aa41478371f2c625a6d05fe6c4ae2b0d5756f66c8a76574",
+    "slide-01.png": "4311444b09c4e4b57fbadf21c25cc314db3a63d12b0d0183cabf5d9df8008eb7",
+    "slide-05.png": "24edbfa9282367bddcfce9eb19372fe5a6350ec2b1ad844e372c1feaf494ee3f",
+    "slide-11.png": "4e198ef10c5d3fb498dd16836ffda360ea6d83d208f102c725b1db2f75eaa201",
+    "slide-10.png": "4eddac7c54be69535c241847e7b2d0254bafe496ee8a5505e4e737affe877914",
+    "slide-04.png": "d7fae14f32242c24a93afb8bcae74479d6748ec7e18216e96867029a1b4fe373",
+    "slide-12.png": "bc84f93ec355dd160b63f2ca0fe606d9838389c0b23839b534e1457b513a5478",
+    "slide-06.png": "88c7f1fd873359901685b883319697621030f598756e8bae27ec4459d3582862",
+    "slide-07.png": "8bc83e739707487c1d2825c0c9bdef2eeeaab490f99db79484f772670acd0391",
+    "slide-13.png": "0ebc0ff302025c573f508bb06a0c476806b57877323e4d7caca76e7735179821"
+  },
+  "limits": [
+    "No product runtime or customer study tested.",
+    "No native Microsoft PowerPoint opening.",
+    "Student authorship and classroom eligibility are not established by artifact checks."
+  ]
+}

@@ -1,17 +1,17 @@
 flowchart LR
-  U[Authorized technician on mobile web] -->|TLS and authenticated session| G[Gateway: validate identity and entitlement]
-  subgraph Private_application_boundary
-    G --> P[Policy and required configuration checks]
-    P -->|Only approved low-risk information tasks| R[Hybrid retrieval with server-derived tenant and compatibility filters]
-    P --> C[Read-only catalog lookup]
-    R --> L[Bounded LLM explanation with source IDs]
-    C --> V[Validate citations, revisions, applicability and exact catalog records]
-    L --> V
-    V --> A[Validated answer or abstention]
-    P -->|Hazardous, uncertain or unsupported| E[Established support route]
+  C1["C1 Mobile web client"] -->|Authenticated TLS request| C2["C2 Identity and policy API"]
+  subgraph Private_application_and_data_boundary
+    C2 -->|Server-derived scope; private link and managed identity| C3["C3 Hybrid retrieval"]
+    C2 -->|Read-only SQL lookup; scoped identity| C7["C7 Parts catalogue"]
+    C3 -->|Bounded grounding via orchestrator| C4["C4 Generation endpoint"]
+    C4 -->|Unvalidated cited draft| C5["C5 Response validator"]
+    C7 -->|Exact compatible records| C5
+    C5 -->|Validated answer or abstention| C2
+    C6["C6 Controlled manuals"] -->|Approved originals and revisions| C9["C9 Ingestion job"]
+    C9 -->|Approved versioned index; private service identity| C3
+    C9 -->|Approval and index metadata| C10["C10 Audit events"]
+    C5 -->|Minimized outcome metadata| C10
+    C2 -->|Policy and request metadata| C10
   end
-  D[Content owner approves and versions manuals] --> I[Ingestion: applicability metadata and entitlement]
-  I --> R
-  A -->|TLS| U
-  E --> U
-  A --> T[Privacy-filtered audit events]
+  C2 -->|TLS response| C1
+  C2 -->|Hazardous or unresolved; technician-reviewed packet| C8["C8 Human support"]

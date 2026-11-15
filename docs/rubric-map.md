@@ -1,23 +1,18 @@
-# Rubric coverage
+# Rubric and classroom coverage
 
-This maps the supplied assessment requirements to the completed 20-slide proposal. Coverage is a review aid, not an Udacity assessment or grade.
+Version 1.1.0 has 25 slides. The current classroom rubric was read on 16 November 2026. This map records content coverage, not a grade or academic-eligibility decision.
 
-| Requirement | Slide evidence | Supporting detail |
-|---|---|---|
-| Selected business scenario | 1, 2 | Scenario C, hypothetical industrial robot expert advisor |
-| Problem, current solution and customer needs | 2, 3, 7 | Search friction, configuration ambiguity, mobile use and current escalation |
-| Precise solution and customer benefit | 3 | Source-grounded explanation, exact catalog records and clear escalation |
-| LLM benefit and alternatives | 4 | Conversation and explanation compared with search and rules; deterministic catalog truth |
-| Market and competitors | 5 | Siemens and ABB primary-source examples; proposed differentiation remains a hypothesis |
-| Primary and secondary system goals | 6 | Verified resolution, faster answers and prevention of unsupported or hazardous assistance |
-| Components and architecture diagram | 8, 9 | Editable RAG diagram, ingestion, private application boundary, filtered retrieval and validation |
-| Scalability, security and privacy | 8 to 11, 15 | Bounded requests, authorization, deployment/retention review and planned load tests |
-| Deployment and LLM configuration | 10 | Versioned candidate, token/deadline limits, sampling caveat and no initial fine-tuning |
-| Three to five risks with mitigations | 12 | Five risks, concrete mitigations and accountable roles |
-| Three to five success measurements | 13 to 15 | Five KPIs with denominators, proposed gates, samples and subgroup review |
-| Value proposition and economics | 16, 17 | Inspectable assumptions, three scenarios, recurring break-even and implementation payback |
-| Risks of delay and operational limits | 12, 17, 18; speaker notes | Continued friction is unpriced; safety, content and economic readiness constrain expansion |
-| Stakeholder decision and delivery plan | 18 | Two-week discovery authorization inside a conditional twelve-week budget ceiling |
-| References and evidence boundaries | 19, 20; relevant slide notes | Ten public primary sources, scenario data labeled separately, unmeasured targets identified |
+| Gate | Requirement | Slides | Supporting evidence |
+|---|---|---|---|
+| G1 | Public/default-branch packaging | 1; repository evidence | Versioned PDF/PPTX, review bundle, manifest, commit/tree and non-LFS checks |
+| G2 | Scenario and problem | 1, 2, 7 | Scenario C, current search/escalation, supplied user context and overlaps |
+| G3 | Concise solution and alternatives | 3, 4, 5 | One-to-three-sentence core description; benefits, appeal, rules/search comparison and cited competitors |
+| G4 | Risks and mitigations | 13, 18, 19 | Exactly five grouped risks; safety, parts, privacy, language bias and cost; unpriced cost of delay |
+| G5 | System attributes | 6 | One primary goal and two secondary goals |
+| G6 | Architecture and secure connections | 8, 9, 10, 12, 22 | Ten matched component labels; request/return, structured catalog, ingestion/withdrawal, audit and support paths |
+| G7 | LLM configuration | 11, 23 | Versioned candidate; 12k total input, 2k output reserve, sampling not sent, retention proposals, RAG before fine-tuning |
+| G8 | Five success measurements | 14, 15, 16 | Five metrics with denominators, targets, samples and subgroup gates; no observed outcomes |
 
-The [product plan](product-plan.md) retains detailed definitions and exclusions that would make a slide too dense. The [metric specification](metrics.json) contains machine-readable inputs and assumptions. Speaker notes retain explanations and claim-specific citations. The classroom starter deck was not available, so template fidelity is not claimed.
+Sources are on slides 20 and 21 and in relevant notes. Slide 24 adds fictional System/User prompts; the reference-data plan covers source type, amount, provenance, bias and update cadence. Slide 25 records substantive AI provenance and unresolved classroom eligibility.
+
+The detailed product plan, component register, proposed-model-config.json and metrics.json retain definitions that would make a slide too dense. The original classroom starter resource was located but its file retrieval was not verified. No template-fidelity claim is made. The academic-eligibility issue LG-05 remains open, as the revision response explains.

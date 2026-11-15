@@ -1,0 +1,64 @@
+{
+  "version": "1.1.0",
+  "status": "proposed_untested",
+  "deployment": "Azure OpenAI in Microsoft Foundry; approved regional or DataZone deployment after procurement/privacy review",
+  "model_candidate": {
+    "name": "gpt-6-luna",
+    "version": "2026-09-22",
+    "api": "Responses",
+    "reasoning_effort": "low"
+  },
+  "orchestrator_limits": {
+    "total_input_tokens": 12000,
+    "input_allocations": {
+      "system_policy_and_metadata": 2000,
+      "query_and_transient_history": 2000,
+      "retrieved_grounding": 8000
+    },
+    "max_output_tokens": 2000,
+    "output_cap_includes_reasoning": true,
+    "visible_answer_target_tokens": 800,
+    "input_plus_output_tokens": 14000,
+    "end_to_end_timeout_seconds": 15,
+    "overflow_behavior": "Drop whole lower-ranked passages with warnings intact or older transient turns; preserve policy and required metadata. Ask for a shorter request or escalate if it still does not fit. Never display incomplete or unvalidated generation."
+  },
+  "sampling": {
+    "send_temperature": false,
+    "temperature": null,
+    "send_top_p": false,
+    "reason": "Use vendor defaults; conflicting current temperature guidance requires endpoint compatibility testing before any override."
+  },
+  "retrieval": {
+    "embedding_candidate": "text-embedding-3-small",
+    "chunk_target_tokens": 500,
+    "chunk_overlap_tokens": 80,
+    "hybrid_candidates": 20,
+    "maximum_grounding_passages": 5,
+    "part_truth": "read-only structured catalogue; never vector similarity"
+  },
+  "privacy_proposals": {
+    "application_raw_query_logging": false,
+    "persistent_conversation_storage": false,
+    "transient_session_idle_expiry_minutes": 15,
+    "audit_metadata_retention_days": 30,
+    "offline_private_manual_cache_enabled": false,
+    "provider_retention": "Subject to approved contract and abuse-monitoring terms; no zero-retention claim. Private connections do not change provider policy.",
+    "tenant_authorization": "Validated server identity; filter before retrieval and recheck before delivery"
+  },
+  "fine_tuning": "none in pilot",
+  "robot_control_channel": false,
+  "release_requirements": [
+    "Current model/version/region/quota compatibility",
+    "Vendor terms and processing geography approved",
+    "All five product KPI gates on held-out and supervised tasks",
+    "Qualified safety/domain review",
+    "No production or safety approval inferred from artifact tests"
+  ],
+  "documented_vendor_capacity": {
+    "source": "R01",
+    "context_tokens": 1050000,
+    "maximum_input_tokens": 922000,
+    "maximum_output_tokens": 128000,
+    "limits": "Documented values; current account/deployment availability and compatibility unverified."
+  }
+}
