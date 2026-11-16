@@ -77,7 +77,7 @@ def snapshot():
 def archive():
  output=REPO/'review/LineGuide_Review_v2.3.0.zip';output.parent.mkdir(exist_ok=True)
  files={str(p.relative_to(REPO)):p.read_bytes() for p in R.rglob('*') if p.is_file() and '__pycache__' not in p.parts}
- for rel in ['README.md','CURRENT.json','VERSION','verify.py','tools/extract-audit.sh','docs/academic-integrity.md']:
+ for rel in ['README.md','CURRENT.json','VERSION','verify.py','tools/extract-audit.sh','docs/academic-integrity.md','review/PUBLICATION.json']:
   files[rel]=(REPO/rel).read_bytes()
  files['START-HERE.md']=b'# LineGuide2.3.0 review bundle\n\nOpen revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pdf or the editable PPTX beside it. Complete slide text/notes and standalone architecture PNGs/Mermaid are inside that same candidate directory. Its SHA256SUMS verifies every candidate file except itself. CURRENT.json identifies the sole current candidate. Earlier versions are omitted from this bundle.\n\nThis is a hypothetical course proposal with labelled scenario facts, assumptions and synthetic illustrations. Evaluation describes future implementation work. No classroom submission is claimed.\n'
  files['START-HERE.md']=files['START-HERE.md'].replace(b'LineGuide2',b'LineGuide 2')

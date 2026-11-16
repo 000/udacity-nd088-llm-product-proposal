@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-11-16T04:27:54.673307+00:00",
+  "commit": "e6c272ade9a12e920900092e468c5e1c5a03ff3b",
+  "repository": "000/udacity-nd088-llm-product-proposal",
+  "visibility": "public",
+  "default_branch": "main",
+  "remote_default_head_matches": true,
+  "all_downloaded_bytes_match": true,
+  "tracked_files_compared": 253,
+  "archive_sha256": "e8bdacc99d7c0d686dc5e65fc85ba2038b1e436d88ba0cc99ae522eab521c8dc",
+  "verification_method": "Public commit archive downloaded and every tracked file compared byte for byte.",
+  "scope": "Exact artifact content commit verified on public main. A subsequent envelope commit adds the review archive, current manifests and publication records; deck and synthetic dataset bytes are unchanged."
+}

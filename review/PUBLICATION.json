@@ -1,0 +1,33 @@
+{
+  "revision": "2.3.0",
+  "artifact_commit": "e6c272ade9a12e920900092e468c5e1c5a03ff3b",
+  "repository": "000/udacity-nd088-llm-product-proposal",
+  "visibility": "public",
+  "default_branch": "main",
+  "verification": {
+    "verified_at": "2026-11-16T04:27:54.673307+00:00",
+    "commit": "e6c272ade9a12e920900092e468c5e1c5a03ff3b",
+    "repository": "000/udacity-nd088-llm-product-proposal",
+    "visibility": "public",
+    "default_branch": "main",
+    "remote_default_head_matches": true,
+    "all_downloaded_bytes_match": true,
+    "tracked_files_compared": 253,
+    "archive_sha256": "e8bdacc99d7c0d686dc5e65fc85ba2038b1e436d88ba0cc99ae522eab521c8dc",
+    "verification_method": "Public commit archive downloaded and every tracked file compared byte for byte.",
+    "scope": "Exact artifact content commit verified on public main. A subsequent envelope commit adds the review archive, current manifests and publication records; deck and synthetic dataset bytes are unchanged."
+  },
+  "artifacts": {
+    "LineGuide_Proposal_v2.3.0.pdf": {
+      "bytes": 416070,
+      "sha256": "3891b77995d5a131f270be2c7a210192122dc6843e65f5f9582414e202f44a25"
+    },
+    "LineGuide_Proposal_v2.3.0.pptx": {
+      "bytes": 129680,
+      "sha256": "62ef4406d1c2fa0c176f530fb82107e263587ec5685462bbd2d81d0c122424e8"
+    }
+  },
+  "review_archive": "review/LineGuide_Review_v2.3.0.zip",
+  "archive_checksum_file": "review/SHA256SUMS",
+  "scope": "This record anchors the immutable deck content. The final review envelope is a subsequent commit; its ZIP hash is in the separate checksum file to avoid a self-referential archive hash."
+}

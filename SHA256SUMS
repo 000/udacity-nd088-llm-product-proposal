@@ -53,6 +53,9 @@ f78b861a5812c5c972913c5c4310af2c7b8af6c112c49376754597fd553cce18  evidence/v1.1.
 f4829f599bb343ecf73e9c2cfa2afcc335170c67644fe9069e12ce637803d237  evidence/v1.1.0/visual-review.json
 41564570c290fcb1c33e985c28214f8c04696d8575ab581b46a897231f6f08a8  evidence/verification.json
 d4bc3bc151b235af112ef4a4d82f77b9611926b51f46d0007dd6fb0ed17c19b0  evidence/visual-review.json
+56aeea13399804858d3abd4f0525d6d5d6eeb31f59e03ee6ddb35d9496ce9aba  review/LineGuide_Review_v2.3.0.zip
+35a3b50d92f7dd0a512d1bd5fb2ddf2b9c19673b19dc5bcf94472e36c6ac4b69  review/PUBLICATION.json
+218051dfd6a90636c21508f7415d10bd39cbd6d4765ee8705bd07dcc19232270  review/SHA256SUMS
 a1607b54d5b4932ce019e8e5fe394d027e55fa6cb001a5f17c5b88732302c746  revisions/v2.1.0/README.md
 1b20d2498c2a26ef89625ca18637db2d845a7a260b2f3cf3f2351b7c9e474ac1  revisions/v2.1.0/SHA256SUMS
 94d86b2d1c352c83032a61522b643b94939e1fd9917ae62f42d6ba166fb0868a  revisions/v2.1.0/artifact/LineGuide_Proposal_v2.1.0.pdf
@@ -145,7 +148,7 @@ d6e89b6493cd3f06de34060f6e037b62149ebd542071777a4d23fc922cba5b89  revisions/v2.2
 9c08452787649c190af7b55c326c2002710a6285188b6b071a0dfa0b36674bc5  revisions/v2.2.0/source/patch-v220.py
 bc60717665f2d0a7d4e3658df508f73d6fee06c0894c6dca3e92a90f3a81240a  revisions/v2.2.0/source/verify.py
 831a519596722dcabe04c381c8b1dd5723f25c8a610eeb26aba8472a414b0824  revisions/v2.3.0/README.md
-0b20070693cedd712f489f10b223d743df5f4fd5931926d5dda3aed1b1e68c20  revisions/v2.3.0/SHA256SUMS
+89f3c8cc62ef0dfc57a06cff684a6e95bd077b665a680b42baee2975e8ae6557  revisions/v2.3.0/SHA256SUMS
 3891b77995d5a131f270be2c7a210192122dc6843e65f5f9582414e202f44a25  revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pdf
 62ef4406d1c2fa0c176f530fb82107e263587ec5685462bbd2d81d0c122424e8  revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pptx
 965d4fa16d6992a5c0d2d8c6ac8ce9c20488f836d16b463f21303d9945ccf750  revisions/v2.3.0/diagrams/README.md
@@ -167,6 +170,8 @@ dbecbd4777a4a97cff57c775826abc850f3955effeb1f5116272d0fe785e8f44  revisions/v2.3
 868da33ae7e0af9f01733991f40e78f0ded9466b7faddf7c9f6989e067cf102a  revisions/v2.3.0/docs/sources.json
 9a44035742f67448874b43c1fadba48a2d65c8df7f9464e19be72479606b7edb  revisions/v2.3.0/evidence/independent-review.json
 54bff2f0ab88e220ac718a5cc0a75e6aee3e361c119bd579748d126bc62adf77  revisions/v2.3.0/evidence/model-verification.json
+bc8afd9eaee4796dba2d99d39fe18dff7994da0b6c138702118c3e32d363f160  revisions/v2.3.0/evidence/publication-content-check.json
+a5eecc89510f00f628033eb7cc3c7da5f306be44a02b5b4b84076395eb2dd5c9  revisions/v2.3.0/evidence/repository-snapshot.json
 98faaca1500ddd72760694a97b6f1610331d58b69a646c73635bd78fb5540de6  revisions/v2.3.0/evidence/revision-verification.json
 f71f8282d9c3df050b4fc95e591e97745d4a605802252894fa7f3de7a2ba7f31  revisions/v2.3.0/evidence/synthetic-baseline-check.json
 7fd2f1a97d380bb84873f8de49e92bace9d7508abcac6309c0132f5d81cfc1a0  revisions/v2.3.0/previews/slide-01.png
@@ -200,7 +205,7 @@ cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2  revisions/v2.3
 594fb394e3547a2496775120436ab45c2e6977b608bca8c950b8c12c94bd9f2c  revisions/v2.3.0/slides-and-notes.md
 720dfa9325422ad05ced647dfa211a8d7f69f46f51894e409f95890d09401ac0  revisions/v2.3.0/source/build-deck.mjs
 fd1c235f07e619dca5e5df9eaa8aea5ec01d2f4d8b9d2d3ed5cc8e962a61f921  revisions/v2.3.0/source/deck-content.json
-9395dab2d3f929709fa6ec85c613231037b389af221331c0c586633fc1ee1ed0  revisions/v2.3.0/source/make-review-package.py
+b8110306a1eef90dc25d50a1a5b18e2ac1e0c62e82d63e6b4e0a05d2a9daa5b1  revisions/v2.3.0/source/make-review-package.py
 08f1833f5eddc213a37100ca2fe470282fa99b31d3156417cbfbd82c46b50f7f  revisions/v2.3.0/source/synthetic-baseline.py
 5eb5fb21a4ff04f0afcc81f0dbcbd64bfa6f276cb72308da4656b1e7325ad0ba  revisions/v2.3.0/source/verify.py
 1b208f4078d196cab3cdba29d3800f2c16204d895dcc2807f9ceca65777c043d  source/build-deck.mjs
