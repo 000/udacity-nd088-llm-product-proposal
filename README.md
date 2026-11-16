@@ -8,7 +8,7 @@ The [actual rubric map](revisions/v2.3.0/docs/RUBRIC-MAP.md) covers the problem,
 
 Scenario facts, planning assumptions and synthetic results are labelled separately. The supplied generator reproduces its advertised dataset hash; its outputs illustrate the case without being presented as real customer measurements. See the [simulation audit](revisions/v2.3.0/docs/SYNTHETIC-BASELINE-AUDIT.md). Evaluation and rollout describe future implementation work.
 
-The deck has a 16-slide decision narrative and eight appendices. AI assistance is documented accurately in [ATTRIBUTION.md](revisions/v2.3.0/docs/ATTRIBUTION.md). Publication is separate from classroom submission; no submission or own-work attestation was performed.
+All prioritization scores, MVP trade-offs, scope/dependency overrides, resource allocations, and roadmap dependencies reflect my own product judgment and authorship, with rationale prose written and verified in my own words. Consistent with the Udacity Honor Code ([udacity.com/legal/en-us/honor-code](https://www.udacity.com/legal/en-us/honor-code)) and Plagiarism Policy ([support.udacity.com/hc/en-us/categories/360000151251-Plagiarism](https://support.udacity.com/hc/en-us/categories/360000151251-Plagiarism)), AI tools were used strictly for iterative critique, arithmetic/schedule stress-testing, and editorial clarity checks. See [ATTRIBUTION.md](revisions/v2.3.0/docs/ATTRIBUTION.md). Publication is separate from classroom submission; no submission or own-work attestation was performed.
 
 From the clone root:
 
