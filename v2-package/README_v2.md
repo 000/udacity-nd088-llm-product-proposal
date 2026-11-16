@@ -1,3 +1,7 @@
+> **DEPRECATED — superseded by [`revisions/v2.2.0/`](../revisions/v2.2.0/README.md) (16 November 2026).** This v2.0.0 package is retained as historical evidence only. Its build paths (`previews-artifact/`, `deck-content-v2.json`, `dist/`) are stale, its manifest covers a superseded build, and its attribution paragraph claiming human verification of every claim is retracted by the truthful AI-contribution record in `revisions/v2.1.0/docs/ATTRIBUTION.md`, carried forward in `revisions/v2.2.0/docs/ATTRIBUTION.md`. Reviewers should use `revisions/v2.2.0/`.
+
+---
+
 # LineGuide v2 — Revised submission package
 
 Status: hypothetical Udacity ND088 Scenario C proposal, revised 16 November 2026. No customer interviews, production deployment, model evaluation, pilot outcome or safety certification is claimed anywhere in this package.

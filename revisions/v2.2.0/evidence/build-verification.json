@@ -1,0 +1,23 @@
+{
+  "revision": "2.2.0",
+  "verified": "2026-11-16",
+  "baseline": "27e953a (revision 2.1.0)",
+  "builder": "source/build-deck.py (python-pptx + reportlab, public tooling; no @oai/artifact-tool)",
+  "pptx": {
+    "slides": 24,
+    "speaker_notes_on_all_slides": true,
+    "size_bytes": 118056,
+    "sha256": "e4f00911bf8b20906b6eddc597d85059b94aa7da6546a2f9b22188d55fcfc496"
+  },
+  "pdf": {
+    "pages": 24,
+    "size_bytes": 36466,
+    "sha256": "d99353b7cbfe66d074624a3223977d82d8df05859dfa0e8ddb4bacb602e78a51"
+  },
+  "fixes_verified": {
+    "slide_11_note_cache_condition": true,
+    "slide_18_exact_equation": true
+  },
+  "optical_checks": "previews/slide-09.png and slide-10.png inspected: node, boundary and connector labels render without clipping; slide-18 equation legible",
+  "verifier": "Kimi Work automated build; human owner review pending"
+}

@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "scope": "Artifact integrity and design-source consistency only; no operational or academic certification",
+  "checks": [
+    "24 source slides with notes; 12 synchronized references",
+    "13 canonical component names match both native diagram sources; return and fallback edges present",
+    "Five proposed KPIs remain unmeasured; all three capacity-value cases independently recomputed",
+    "Actual PDF/PPTX headers and PPTX ZIP CRC; 24 slides and 24 notes; eight native tables",
+    "Canonical components, scenario ledger and concrete configuration are present in exported slide text; no LFS pointers"
+  ],
+  "slides": 24,
+  "notes": 24,
+  "native_tables": 8,
+  "canonical_components": 13,
+  "references": 12,
+  "manifest_files_checked": null,
+  "render_checks": {
+    "recorded_at": "2026-11-16T01:25:23.135013+00:00",
+    "execution_owner": "Herdr",
+    "coordinator": "codex-root-lineguide-v210",
+    "agent": "deck_runtime",
+    "files": {
+      "source/build-deck.mjs": {
+        "bytes": 8701,
+        "sha256": "d27ca0d2c5785543aeed9b0fad9f50cf84cb216a4184435a86245256eb46791a"
+      },
+      "source/deck-content.json": {
+        "bytes": 55502,
+        "sha256": "5745494c4853747bade10c2cde923543186b1c70ab3a887328aa1b20ad04809a"
+      },
+      "artifact/LineGuide_Proposal_v2.1.0.pptx": {
+        "bytes": 128685,
+        "sha256": "e840c2d0effab9320461d532f718fdefb69158b4927af44f994e42589871464e"
+      },
+      "artifact/LineGuide_Proposal_v2.1.0.pdf": {
+        "bytes": 424616,
+        "sha256": "94d86b2d1c352c83032a61522b643b94939e1fd9917ae62f42d6ba166fb0868a"
+      }
+    },
+    "slide_count": 24,
+    "notes_count": 24,
+    "pdf_pages": 24,
+    "native_table_slides": [
+      4,
+      5,
+      6,
+      12,
+      14,
+      15,
+      16,
+      19
+    ],
+    "editable_diagram_slides": [
+      9,
+      10
+    ],
+    "preview_count": 24,
+    "finalizer_zero_findings_and_warnings": true,
+    "finalizer_receipt": ".git/local-workflow/artifact-probe/v210-validation-1794792264917.json",
+    "pdf_renderer": "Bundled LibreOfficeDev 26.8.0.0.alpha0, Impress PDF export from exact finalized PPTX",
+    "pdf_text_searchable": true,
+    "pdf_fonts": "Embedded LiberationSans and LiberationSans-Bold substituted for encoded Arial",
+    "visual_review": "All 24 slides inspected individually at full size. Repaired diagram labels, reference spacing and risk-cell fit. Changed pages re-rendered and re-inspected.",
+    "native_powerpoint_execution": false,
+    "direct_artifact_pdf_export": "Bundled export unavailable: missing #standard-fonts/Helvetica. No runtime modification; used bundled soffice instead."
+  },
+  "root_visual_check": {
+    "reviewer": "Codex coordinating agent",
+    "pages": [
+      9,
+      10,
+      22,
+      23
+    ],
+    "result": "Legible labels, directed paths, correct identity boundary and complete reference entries observed.",
+    "scope": "AI visual review; no native PowerPoint execution."
+  },
+  "finalizer": {
+    "package_findings": 0,
+    "layout_findings": 0,
+    "layout_warnings": 0,
+    "first_party_import_passed": true,
+    "native_font_rendering_verified": false
+  }
+}

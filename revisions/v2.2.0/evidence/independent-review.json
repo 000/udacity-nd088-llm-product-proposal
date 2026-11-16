@@ -1,0 +1,21 @@
+{
+  "reviewer": "Codex c1_c10_audit",
+  "status": "passed_with_scope_limits",
+  "source_sha256": "5745494c4853747bade10c2cde923543186b1c70ab3a887328aa1b20ad04809a",
+  "pptx_sha256": "e840c2d0effab9320461d532f718fdefb69158b4927af44f994e42589871464e",
+  "actual_slides": 24,
+  "related_notes": 24,
+  "source_to_ooxml_mismatches": 0,
+  "definition_sentences": 2,
+  "risks": 5,
+  "product_metrics": 5,
+  "canonical_components": 13,
+  "diagram_edges_with_arrowheads": 18,
+  "clickable_references": 12,
+  "disclosures_checked": [
+    "substantive AI contribution",
+    "unresolved authorship and eligibility",
+    "HBR metadata-only access"
+  ],
+  "scope": "AI review of source and actual PPTX OOXML, not deployment, grading or academic certification"
+}

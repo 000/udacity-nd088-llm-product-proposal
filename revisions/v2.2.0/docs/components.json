@@ -1,0 +1,58 @@
+{
+  "status": "proposed",
+  "scope": "Canonical names across diagrams, prose and controls",
+  "components": [
+    {
+      "id": "client",
+      "name": "Mobile client"
+    },
+    {
+      "id": "identity",
+      "name": "Entra ID"
+    },
+    {
+      "id": "api",
+      "name": "API orchestrator"
+    },
+    {
+      "id": "policy",
+      "name": "Policy gateway"
+    },
+    {
+      "id": "index",
+      "name": "Hybrid search index"
+    },
+    {
+      "id": "model",
+      "name": "Generation endpoint"
+    },
+    {
+      "id": "validator",
+      "name": "Response validator"
+    },
+    {
+      "id": "parts",
+      "name": "Parts catalogue"
+    },
+    {
+      "id": "support",
+      "name": "Human support"
+    },
+    {
+      "id": "audit",
+      "name": "Audit store"
+    },
+    {
+      "id": "sources",
+      "name": "Approved source store"
+    },
+    {
+      "id": "ingestion",
+      "name": "Ingestion worker"
+    },
+    {
+      "id": "embedding",
+      "name": "Embedding endpoint"
+    }
+  ]
+}

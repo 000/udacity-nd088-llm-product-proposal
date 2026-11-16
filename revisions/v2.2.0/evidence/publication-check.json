@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-11-16T01:28:14.028327+00:00",
+  "repository": "000/udacity-nd088-llm-product-proposal",
+  "visibility": "public",
+  "default_branch": "main",
+  "content_commit": "04ef5f1bdee02be9f2546c92f7fc3297872ee53f",
+  "archive_url": "https://codeload.github.com/000/udacity-nd088-llm-product-proposal/tar.gz/04ef5f1bdee02be9f2546c92f7fc3297872ee53f",
+  "tracked_files_downloaded_and_compared": 142,
+  "all_bytes_match": true,
+  "archive_sha256": "37e1fbbf7beb6a1a16b416196a879afd18b8be7284b6308d707d756833d07617",
+  "scope": "Public commit archive verified against every tracked local file. Final branch receipt is a subsequent commit; binaries remain unchanged.",
+  "remote_head_observed": "04ef5f1bdee02be9f2546c92f7fc3297872ee53f",
+  "default_branch_verified_by": "GitHub repository metadata and Git remote symbolic HEAD",
+  "binary_files": {
+    "LineGuide_Proposal_v2.1.0.pptx": {
+      "bytes": 128685,
+      "sha256": "e840c2d0effab9320461d532f718fdefb69158b4927af44f994e42589871464e"
+    },
+    "LineGuide_Proposal_v2.1.0.pdf": {
+      "bytes": 424616,
+      "sha256": "94d86b2d1c352c83032a61522b643b94939e1fd9917ae62f42d6ba166fb0868a"
+    }
+  }
+}

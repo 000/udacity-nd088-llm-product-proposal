@@ -1,0 +1,131 @@
+{
+  "product": "LineGuide",
+  "scenario": "C: AI-Powered Expert Advisor",
+  "status": "proposed_hypothetical_plan_no_results",
+  "date": "2026-11-16",
+  "metric_count": 5,
+  "baseline_status": "not_measured",
+  "metrics": [
+    {
+      "id": "verified_self_service_resolution",
+      "role": "primary_outcome",
+      "numerator": "eligible sessions with technician-confirmed resolution, domain-review confirmation and no support escalation within 24 hours",
+      "denominator": "all eligible sessions, including abstentions, missing feedback and escalations",
+      "unit": "percent",
+      "target_operator": ">=",
+      "proposed_target": 70,
+      "minimum_sample": 200,
+      "sample_unit": "eligible supervised pilot sessions",
+      "comparison": "search baseline using identical eligibility",
+      "owner": "product manager",
+      "measured_value": null
+    },
+    {
+      "id": "time_to_verified_answer",
+      "role": "secondary_outcome",
+      "definition": "median seconds from task presentation until a correct answer or appropriate escalation",
+      "formula": "100 * (median_search_seconds - median_assistant_seconds) / median_search_seconds",
+      "unit": "percent median reduction",
+      "target_operator": ">=",
+      "proposed_target": 30,
+      "sample_design": "25 technicians, 16 trials each, eight search and eight assistant trials per technician; counterbalanced order and distinct matched task variants",
+      "sample_per_condition": 200,
+      "caveat": "report paired differences and uncertainty; compare completion and escalation rates; a pilot screen is not proof of population-wide lift",
+      "owner": "pilot coordinator",
+      "measured_value": null
+    },
+    {
+      "id": "evidence_and_part_correctness",
+      "role": "quality_guardrail",
+      "numerator": "substantive answered test cases whose material claims are supported by current applicable cited sources and whose emitted part identifiers exactly match compatible catalog records",
+      "denominator": "all substantive answered test cases",
+      "unit": "percent",
+      "target_operator": ">=",
+      "proposed_target": 98,
+      "minimum_substantive_answers": 200,
+      "test_set_per_enabled_language": {
+        "routine_cases": 200,
+        "dedicated_catalog_cases": 100
+      },
+      "additional_gate": "zero wrong emitted parts across 100 dedicated catalog cases",
+      "catalog_test_composition": {
+        "unique_known_answer_cases": 80,
+        "minimum_correct_record_returns": 76,
+        "ambiguous_or_unknown_cases": 20,
+        "required_appropriate_clarification_or_escalation": 20
+      },
+      "caveat": "record abstentions separately; resolution KPI prevents passing through excessive refusal; independent domain scoring",
+      "owner": "domain content owner",
+      "measured_value": null
+    },
+    {
+      "id": "prohibited_assistance_escape_rate",
+      "role": "safety_guardrail",
+      "numerator": "prohibited requests receiving actionable prohibited assistance",
+      "denominator": "all prohibited test requests",
+      "unit": "percent",
+      "target_operator": "=",
+      "proposed_target": 0,
+      "minimum_cases_per_enabled_language": 100,
+      "additional_gate": "no critical escape in supervised use; suspend affected capability after any critical escape",
+      "caveat": "zero of 100 has approximate 3 percent 95 percent upper bound only under independent representative sampling; curated tests do not meet that assumption and do not certify safety",
+      "owner": "product safety lead",
+      "measured_value": null
+    },
+    {
+      "id": "validated_response_latency_p95",
+      "role": "reliability_driver",
+      "definition": "empirical 95th percentile seconds from server acceptance to validated response or abstention; timeout and failed requests count as exceeding the target",
+      "unit": "seconds",
+      "target_operator": "<=",
+      "proposed_target": 8,
+      "minimum_requests": 500,
+      "concurrent_users": 10,
+      "end_to_end_timeout_seconds": 15,
+      "caveat": "record query mix, cache state and tested deployment version",
+      "owner": "application engineering lead",
+      "measured_value": null
+    }
+  ],
+  "required_cuts": ["enabled language", "robot model"],
+  "offline_cases_per_enabled_language": {
+    "routine": 200,
+    "catalog": 100,
+    "prohibited": 100,
+    "total_disjoint_cases": 400
+  },
+  "economics": {
+    "currency": "USD",
+    "status": "illustrative_assumptions_not_observed_or_vendor_quote",
+    "scenario_given_queries_per_day": 150,
+    "assumed_service_days_per_month": 22,
+    "monthly_queries": 3300,
+    "assumed_hourly_capacity_value": 40,
+    "assumed_cloud_allowance_per_month": 800,
+    "assumed_review_hours_per_month": 16,
+    "assumed_review_hourly_cost": 50,
+    "assumed_recurring_cost_per_month": 1600,
+    "cases": [
+      {"name":"conservative","eligible_share":0.4,"adoption_share":0.5,"verified_resolution_share":0.6,"minutes_saved":3,"successful_sessions":396,"capacity_value":792,"net_before_implementation":-808},
+      {"name":"base","eligible_share":0.6,"adoption_share":0.7,"verified_resolution_share":0.7,"minutes_saved":5,"successful_sessions":970.2,"capacity_value":3234,"net_before_implementation":1634},
+      {"name":"favorable","eligible_share":0.8,"adoption_share":0.85,"verified_resolution_share":0.8,"minutes_saved":7,"successful_sessions":1795.2,"capacity_value":8377.6,"net_before_implementation":6777.6}
+    ],
+    "base_recurring_break_even_minutes_saved": 2.473716759431045,
+    "assumed_implementation_labor_cost": 60000,
+    "base_simple_implementation_payback_months": 36.719706242350064,
+    "pilot_person_weeks": 30,
+    "assumed_cost_per_person_week": 2000,
+    "pilot_recurring_months": 3,
+    "pilot_envelope": 64800,
+    "proposed_pilot_cap": 65000,
+    "recommended_initial_authorization": {
+      "weeks": 2,
+      "labor_cap": 10000,
+      "run_and_independent_review_allowance_cap": 1000,
+      "total_cap": 11000,
+      "included_within_pilot_cap": true,
+      "subsequent_funding_condition": "usable approved sources, an available safety reviewer, measured eligible demand and task time, current run-cost quotations, and a credible business case against the sponsor's investment hurdle"
+    },
+    "interpretation": "redeployable staff capacity, not cash savings or avoided downtime revenue; no benefit beyond the scoped 150 daily queries is assumed"
+  }
+}
