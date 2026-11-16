@@ -18,3 +18,7 @@ Academic eligibility remains open. No classroom submission confirmation exists. 
 ## v1.0.0 · 16 November 2026
 
 Twenty-slide initial proposal, sources and verification evidence published at commit `245117135e51f4c3bc1faae5c24d0a9a4640b1a5`.
+
+## 2.1.0, 16 November 2026
+
+Added a 24-slide revision against the supplied C1-C10 checklist, with separate runtime/ingestion diagrams, a visible Scenario C ledger, explicit alternatives and adoption analysis, and concrete privacy and cost controls. Corrected unsupported provenance claims and stale evidence references without overwriting historical packages. Added a version-controlled local extractor and a complete revision manifest. Operational validation, customer/provider approvals and academic eligibility remain open; no classroom submission is recorded.

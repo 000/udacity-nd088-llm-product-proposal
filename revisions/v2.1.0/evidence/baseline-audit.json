@@ -1,0 +1,63 @@
+{
+  "review_date": "2026-11-16",
+  "baseline_commit": "1e36e112faf02a1bf113c9015b70b0b178953c7d",
+  "input_audit_bundle_sha256": "e664516ef3648e268d4abf48c08207bc7ffe4e1d2c18bb9514b2ccde44010ed7",
+  "input_assessment_scope": "User-supplied Gemini evidentiary hold and C1-C10 checklist; no slide grading verdict provided.",
+  "baseline": "v2-package",
+  "actual_baseline_pdf": {
+    "bytes": 30050,
+    "sha256": "280d6eadb34185a2c48f735b4df2f51d37a65b30c7c508fd2d32e11216f41a35"
+  },
+  "actual_baseline_pptx": {
+    "bytes": 102088,
+    "sha256": "a30a8b2125e9d67ee11c9370516b670f619a7339c4dc6171d3d73c3d37fd3e86"
+  },
+  "reviewers": [
+    "Codex c1_c10_audit",
+    "Codex provenance_source_audit"
+  ],
+  "findings": [
+    {
+      "id": "C2-C3",
+      "finding": "Problem/ledger and adoption details were largely in notes; summary lacked a clear definition block."
+    },
+    {
+      "id": "C4",
+      "finding": "Comparison omitted explicit edge-case, maintenance and determinism dimensions."
+    },
+    {
+      "id": "C5",
+      "finding": "Bias/common-sense risk and enforceable cost controls were not explicit."
+    },
+    {
+      "id": "C7-C8",
+      "finding": "Incomplete ingestion, return/fallback flows; component mismatch; incomplete at-rest/boundary controls."
+    },
+    {
+      "id": "C9",
+      "finding": "Contradictory Luna temperature support; missing store=false and concrete application retention."
+    },
+    {
+      "id": "P1",
+      "finding": "Unsupported human-origin reasoning and universal human-review claims."
+    },
+    {
+      "id": "P2",
+      "finding": "Stale evidence and absent README paths; invalid Mac checksum command; incomplete v2 manifest coverage."
+    },
+    {
+      "id": "P3",
+      "finding": "Missing assignment-linked HBR reference."
+    }
+  ],
+  "retained_strengths": [
+    "One primary and two secondary goals",
+    "Five defined proposed measurements with unmeasured values",
+    "Accurate Scenario C numerical facts",
+    "Actual baseline binaries and15valid manifest entries"
+  ],
+  "limits": [
+    "Review is by AI agents, not Udacity grading or human authorship certification.",
+    "Operational performance, source access contracts and academic eligibility remain open."
+  ]
+}
