@@ -1,0 +1,157 @@
+{
+  "data_status": "SYNTHETIC_SIMULATION_ONLY",
+  "observed_customer_rows": 0,
+  "population_rows": 1500,
+  "timed_sample_rows": 240,
+  "strata": 15,
+  "outcomes": {
+    "res": 485,
+    "esc": 605,
+    "abn": 410
+  },
+  "search": {
+    "sample_mean_minutes": 22.815377607104914,
+    "sample_median_minutes": 19.542292880714086,
+    "sample_sd_minutes": 14.246156992323048,
+    "sample_quantiles_25_75_95": [
+      13.819453183564724,
+      29.053859046207684,
+      49.76490905646297
+    ],
+    "sample_above_30_minutes": 53,
+    "known_synthetic_population_mean_minutes": 21.638446880010466
+  },
+  "support": {
+    "synthetic_escalation_rows": 605,
+    "active_mean_minutes": 29.608630529159466,
+    "active_median_minutes": 26.34044523859407,
+    "acknowledgement_mean_minutes": 44.71280919744717,
+    "acknowledgement_median_minutes": 40.371893941695774
+  },
+  "conditional_sampling_diagnostic": {
+    "variance_fpc_factor": 0.84,
+    "se_fpc_factor": 0.916515138991168,
+    "stratified_se_minutes": 0.8044948446446964,
+    "t_degrees_freedom": 225,
+    "t_critical_975": 1.9705633902925461,
+    "critical_panel_convergence_difference": 2.001065979584382e-12,
+    "illustrative_95_interval_minutes": [
+      21.230069518568985,
+      24.400685695640842
+    ],
+    "scope": "Approximate design-based interval for the mean of this fixed synthetic population under its specified within-stratum sampling scheme. It is not a customer-population or model-parameter interval."
+  },
+  "wilson_formula_diagnostic": {
+    "res": {
+      "rate": 0.3233333333333333,
+      "interval": [
+        0.3001396437923261,
+        0.3474295883954713
+      ]
+    },
+    "esc": {
+      "rate": 0.4033333333333333,
+      "interval": [
+        0.37878512264332326,
+        0.4283754006292451
+      ]
+    },
+    "abn": {
+      "rate": 0.2733333333333333,
+      "interval": [
+        0.25138009512875825,
+        0.29644458013105734
+      ]
+    }
+  },
+  "wilson_scope": "Numerical reconciliation only. Rates of the fully generated synthetic population are known exactly. These intervals are not field estimates; heterogeneous generated probabilities also differ from a common-probability iid Bernoulli assumption.",
+  "language_slices": {
+    "synthetic_english_primary": {
+      "population_rows": 855,
+      "resolved_rows": 324,
+      "sample_rows": 131,
+      "sample_search_median_minutes": 18.481090997006255
+    },
+    "synthetic_non_english_primary": {
+      "population_rows": 645,
+      "resolved_rows": 161,
+      "sample_rows": 109,
+      "sample_search_median_minutes": 21.01820339266168
+    }
+  },
+  "rate_assumptions": {
+    "assumed_us_reference": {
+      "technician_per_hour": 52.0,
+      "support_per_hour": 68.0
+    },
+    "assumed_lower_rate_case": {
+      "technician_per_hour": 32.0,
+      "support_per_hour": 54.0
+    }
+  },
+  "labor_hours": {
+    "estimated_technician_search": 570.3844401776228,
+    "generated_support_active": 298.5536911690246
+  },
+  "cost_cases": {
+    "assumed_us_reference": {
+      "technician_search_labor": 29659.990889236382,
+      "support_active_labor": 20301.65099949367,
+      "combined_distinct_owners": 49961.64188873005,
+      "assumed_22_day_multiplier": 2.2,
+      "assumed_22_day_total": 109915.61215520612,
+      "assumed_30_day_multiplier": 3.0,
+      "assumed_30_day_total": 149884.92566619016
+    },
+    "assumed_lower_rate_case": {
+      "technician_search_labor": 18252.30208568393,
+      "support_active_labor": 16121.899323127329,
+      "combined_distinct_owners": 34374.201408811256,
+      "assumed_22_day_multiplier": 2.2,
+      "assumed_22_day_total": 75623.24309938477,
+      "assumed_30_day_multiplier": 3.0,
+      "assumed_30_day_total": 103122.60422643376
+    }
+  },
+  "rounding_reconciliation": {
+    "technician_from_two_decimal_mean": 29666.0,
+    "support_from_two_decimal_mean": 20302.59,
+    "combined_delta_from_two_decimal_means": 6.948111269943183
+  },
+  "cost_interval_diagnostic": {
+    "technician_only": [
+      27599.09037413968,
+      31720.891404333095
+    ],
+    "combined_with_fixed_generated_support": [
+      47900.741373633355,
+      52022.54240382677
+    ],
+    "scope": "Only conditional technician-time sampling uncertainty; assumed rates and generated support hours held fixed. Not a forecast, financial statement or savings interval."
+  },
+  "provenance_limits": [
+    "All language probabilities, duration multipliers, domains and family assignments are coded assumptions; differences are not causal evidence.",
+    "The final generator has no technician, asset, site, date, PII or CRM identifiers. Added SYN-Q values are fabricated row labels, not pseudonymized identities.",
+    "The 15 grouped strata are a simulation taxonomy with no demonstrated mapping to actual 25 topics or 15 models.",
+    "The 375-cell empty-strata criticism assumes every topic/model combination is relevant and nonempty; the scenario alone does not establish that.",
+    "US/reference and lower-rate inputs are unverified assumptions, not verified BLS or regional-wage benchmarks.",
+    "Languages do not establish worker countries, regional wage weights or geography.",
+    "Generated support rows are not a CRM census. All counts and figures remain simulation results.",
+    "Four-decimal means are rounded displays; full-precision values drive arithmetic. No measured savings, margin, downtime, industrial safety or product benefit is established.",
+    "Distinct technician and support labor owners are reported separately; adding them does not make one company P&L cost."
+  ],
+  "canonical_csv_sha256": "cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2",
+  "claimed_canonical_csv_sha256": "cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2",
+  "claimed_hash_reproduced": true,
+  "normalized_csv_sha256": "67057e5ccc148b7eb23339d20b552c8dbd43bbfc066ed3c5a30b6b10c9b4fbdd",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "not installed; unused final-generator import omitted",
+    "bit_generator": "PCG64",
+    "seed": 20261116
+  },
+  "generator_sha256": "08f1833f5eddc213a37100ca2fe470282fa99b31d3156417cbfbd82c46b50f7f",
+  "source_adaptation": "Final attachment generator only. Unused SciPy import omitted; one observation-wording comment corrected. RNG parameters, calls and draw order unchanged. No tuning."
+}

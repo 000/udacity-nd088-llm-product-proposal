@@ -1,0 +1,86 @@
+{
+  "revision": "2.3.0",
+  "checked_date": "2026-11-16",
+  "reviewer": "Codex model-source agent",
+  "execution_owner": "Herdr",
+  "claim": "lineguide-v230-review-20261116",
+  "scope": "Public documentation review only",
+  "assessment_assertion": "The supplied review calls gpt-6-astra nonexistent and recommends older model families.",
+  "disposition": "Corrected by current primary documentation; operational suitability remains unverified.",
+  "summary": "Current OpenAI and Microsoft pages document gpt-6-astra. Microsoft identifies Azure version 2026-09-03 and the required interfaces. The supplied review assertion that the candidate is nonexistent is contradicted by these current sources. The proposed request and app limits remain untested. Azure lifecycle evidence warns against substituting deprecated models without checking subscription eligibility. No Astra retirement date was found; none is inferred.",
+  "summary_utf8_sha256": "4b638085c10f0964de1923903755f132f1f68c0e9c270e449e568a374c4e90ce",
+  "hash_scope": "Exact UTF-8 bytes of the summary field only; not a full webpage or catalog snapshot.",
+  "sources_checked": [
+    {
+      "id": "R01",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+      "access_scope": "Current primary page retrieved; model/version, interface table, availability and unsupported-parameter sections inspected."
+    },
+    {
+      "id": "R12",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/responses",
+      "access_scope": "Current primary page retrieved; supported-model list, stored responses, stateless mode and data-protection sections inspected."
+    },
+    {
+      "id": "R13",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "access_scope": "Current primary model page retrieved; alias, reasoning efforts, token ceilings and endpoint/features sections inspected."
+    },
+    {
+      "id": "R14",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule",
+      "policy_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirements",
+      "access_scope": "Current primary schedule and linked lifecycle policy retrieved; listed model rows and subscription rules inspected."
+    }
+  ],
+  "model_identifiers": {
+    "azure_model": "gpt-6-astra",
+    "azure_version": "2026-09-03",
+    "direct_openai_alias": "gpt-6-astra",
+    "azure_request_model_field": "Deployment name, assigned only after provisioning",
+    "openai_dated_snapshot_verified": false
+  },
+  "documented_vendor_ceilings": {
+    "shared_context_tokens": 1050000,
+    "max_input_tokens": 922000,
+    "max_output_tokens": 128000,
+    "source": "R01"
+  },
+  "proposed_application_request": {
+    "reasoning": {
+      "effort": "low"
+    },
+    "temperature": 0.1,
+    "max_output_tokens": 2000,
+    "store": false
+  },
+  "proposed_application_limits": {
+    "all_input_tokens": 8000,
+    "visible_answer_target_tokens": 800,
+    "deadline_seconds": 15
+  },
+  "lifecycle": {
+    "gpt_4_1_2025_04_14": {
+      "stage": "Deprecated",
+      "retirement_date": "2027-04-14"
+    },
+    "gpt_4o_2024_11_20": {
+      "stage": "Legacy",
+      "retirement_date": "2027-04-14"
+    },
+    "listed_o1_o3_o4_mini_variants": {
+      "stage": "Deprecated",
+      "retirement_date": "2026-11-19"
+    },
+    "astra_retirement_date": null,
+    "astra_schedule_row_found": false
+  },
+  "not_performed": [
+    "Model inference",
+    "Account/subscription or quota check",
+    "Customer-data upload",
+    "Provider-contract acceptance",
+    "Latency, quality, cost or industrial-safety validation"
+  ],
+  "retained_source_review": "R02-R11 retain earlier review provenance and limitations; the HBR body remains unverified."
+}

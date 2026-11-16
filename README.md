@@ -1,20 +1,20 @@
-# LineGuide v2.1.0
+# LineGuide v2.3.0
 
-A hypothetical industrial robot reference advisor for Udacity ND088, Scenario C. Revised 16 November 2026.
+A completed hypothetical product proposal for Udacity ND088, Scenario C. [CURRENT.json](CURRENT.json) identifies the sole current package.
 
-Start with the [current PDF](revisions/v2.1.0/artifact/LineGuide_Proposal_v2.1.0.pdf), [editable PowerPoint](revisions/v2.1.0/artifact/LineGuide_Proposal_v2.1.0.pptx) and [revision guide](revisions/v2.1.0/README.md). The [C1-C10 checklist](revisions/v2.1.0/docs/CHECKLIST.md) maps the supplied assessment to specific slides and evidence. The [issue disposition](revisions/v2.1.0/docs/ISSUE-DISPOSITION.md) distinguishes repaired artifact gaps from open deployment and academic requirements.
+Open the [PDF](revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pdf), [editable PowerPoint](revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pptx), or [self-contained review ZIP](review/LineGuide_Review_v2.3.0.zip). The ZIP contains the actual deck, complete text and notes, standalone diagrams with Mermaid source, supporting documents, reproducible simulation and checksums.
 
-AI agents contributed substantial product reasoning, architecture, calculations, prose, diagrams and code. Human authorship and verification of every judgment have not been established. The user reported no course-specific permission. This revision makes no own-work or academic-eligibility attestation and has not been submitted in the classroom. See the [current attribution](revisions/v2.1.0/docs/ATTRIBUTION.md) and the [existing policy record](docs/academic-integrity.md).
+The [actual rubric map](revisions/v2.3.0/docs/RUBRIC-MAP.md) covers the problem, solution, risks, system goals, architecture, LLM settings and success measurements, plus default-branch packaging. The supplied assignment asks for a hypothetical product plan; it does not require an operating business, real customer telemetry or completed product experiments.
 
-The current revision supersedes the earlier v2 package's unsupported claims of human-origin reasoning, universal human verification and complete audit closure. Earlier versions remain available as historical records: [v2.0.0](v2-package/README_v2.md), [v1.1.0](submission/LineGuide_Proposal_v1.1.0.pdf) and [v1.0.0](submission/LineGuide_Proposal.pdf). Their dated evidence describes those builds and must not be treated as current proof.
+Scenario facts, planning assumptions and synthetic results are labelled separately. The supplied generator reproduces its advertised dataset hash; its outputs illustrate the case without being presented as real customer measurements. See the [simulation audit](revisions/v2.3.0/docs/SYNTHETIC-BASELINE-AUDIT.md). Evaluation and rollout describe future implementation work.
 
-No product deployment, customer interview, model benchmark, measured savings or industrial safety certification is claimed. Scenario facts, proposed settings and unmeasured targets remain separate. The advisor has no robot-control route.
+The deck has a 16-slide decision narrative and eight appendices. AI assistance is documented accurately in [ATTRIBUTION.md](revisions/v2.3.0/docs/ATTRIBUTION.md). Publication is separate from classroom submission; no submission or own-work attestation was performed.
 
 From the clone root:
 
 ```sh
-python3 revisions/v2.1.0/source/verify.py
+python3 verify.py
 /bin/bash tools/extract-audit.sh
 ```
 
-The first command verifies the complete revision manifest and artifact structure. The extractor reads tracked files and writes an ignored local `audit_bundle.txt`, with every deck labelled by its path. It performs no commit or push. The report includes local Git metadata, so review it before sharing. Artifact checks establish file integrity and documented design coverage; they do not establish an operationally safe product or submission eligibility.
+The verifier follows `CURRENT.json`. The extractor labels every repository deck and writes an ignored local `audit_bundle.txt`. [Publication evidence](review/PUBLICATION.json) identifies the verified artifact commit and hashes. Earlier versions remain in [version history](ARCHIVE.md).

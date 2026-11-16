@@ -1,0 +1,48 @@
+{
+  "status": "reproduced_with_scope_limits",
+  "input_classification": "User-supplied synthetic generator and analytical narrative, not measured baseline data",
+  "attachment_lines_reviewed": 721,
+  "source_attachment_sha256": "e32d34fdbf943a8a4a56d1322fa183b13e2e8fb54c534419c3563a17fb34f0e7",
+  "original_final_code_block_sha256": "992d4a6530c9f3e76e0dbf04dbf558fc4e1672d609917987ce17683b0ce02108",
+  "final_block_hash_scope": "UTF-8 code-fence payload without trailing newline",
+  "python_blocks_inspected": 5,
+  "canonical_generator": "Final42-line Python block only",
+  "static_inspection": "Final block contains numerical/dataframe/hash operations only; no network, credentials, filesystem or process calls",
+  "untouched_execution": "Blocked by absent unused SciPy import; transparently omitted for reproduction",
+  "claimed_hash": "cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2",
+  "actual_hash": "cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2",
+  "claimed_hash_matches": true,
+  "observed_customer_rows": 0,
+  "actual_counts": {
+    "res": 485,
+    "esc": 605,
+    "abn": 410
+  },
+  "actual_search_sample_mean_minutes": 22.815377607104914,
+  "actual_support_mean_minutes": 29.608630529159466,
+  "finite_population_variance_factor": 0.84,
+  "finite_population_se_factor": 0.916515138991168,
+  "mean_cost_arithmetic_checked": true,
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "not installed; unused final-generator import omitted",
+    "bit_generator": "PCG64",
+    "seed": 20261116
+  },
+  "generator_sha256": "08f1833f5eddc213a37100ca2fe470282fa99b31d3156417cbfbd82c46b50f7f",
+  "summary_sha256": "28eaa4b794baaddab9f9dfab6f8fde9daeed6e730a211c8c3ad325e13fbe5ff2",
+  "limits": [
+    "All language probabilities, duration multipliers, domains and family assignments are coded assumptions; differences are not causal evidence.",
+    "The final generator has no technician, asset, site, date, PII or CRM identifiers. Added SYN-Q values are fabricated row labels, not pseudonymized identities.",
+    "The 15 grouped strata are a simulation taxonomy with no demonstrated mapping to actual 25 topics or 15 models.",
+    "The 375-cell empty-strata criticism assumes every topic/model combination is relevant and nonempty; the scenario alone does not establish that.",
+    "US/reference and lower-rate inputs are unverified assumptions, not verified BLS or regional-wage benchmarks.",
+    "Languages do not establish worker countries, regional wage weights or geography.",
+    "Generated support rows are not a CRM census. All counts and figures remain simulation results.",
+    "Four-decimal means are rounded displays; full-precision values drive arithmetic. No measured savings, margin, downtime, industrial safety or product benefit is established.",
+    "Distinct technician and support labor owners are reported separately; adding them does not make one company P&L cost."
+  ],
+  "inference_or_customer_data_use": false
+}

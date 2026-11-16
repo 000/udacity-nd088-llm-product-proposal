@@ -1,0 +1,55 @@
+%% Logical proposed flows. No deployed network or industrial-safety certification.
+flowchart TB
+  subgraph runtime["Runtime query and response flow"]
+    direction LR
+    subgraph runtime_internet["Authenticated internet boundary"]
+    runtime_client["Mobile client"]
+    runtime_identity["Entra ID"]
+    end
+    subgraph runtime_private["Private application and data services"]
+    runtime_api["API orchestrator"]
+    runtime_policy["Policy gateway"]
+    runtime_index["Hybrid search index"]
+    runtime_validator["Response validator"]
+    runtime_parts["Parts catalogue"]
+    runtime_support["Human support"]
+    runtime_audit["Audit store"]
+    subgraph runtime_provider["Provider processing boundary"]
+    runtime_model["Generation endpoint"]
+    end
+    end
+    runtime_client --> |"TLS / TLS 1.2+"| runtime_api
+    runtime_identity --> |"OIDC / TLS / TLS 1.2+"| runtime_api
+    runtime_api --> |"TLS 1.2+"| runtime_policy
+    runtime_policy --> |"TLS 1.2+"| runtime_index
+    runtime_index --> |"TLS 1.2+"| runtime_model
+    runtime_model --> |"Draft / TLS 1.2+"| runtime_validator
+    runtime_policy --> |"Read-only lookup / TLS 1.2+"| runtime_parts
+    runtime_parts --> |"TLS 1.2+"| runtime_validator
+    runtime_validator --> |"Validated answer or abstention / TLS 1.2+"| runtime_api
+    runtime_api --> |"Validated result / TLS 1.2+"| runtime_client
+    runtime_policy -.-> |"Blocked / missing evidence / TLS 1.2+"| runtime_support
+    runtime_validator -.-> |"Metadata / TLS 1.2+"| runtime_audit
+    runtime_support -.-> |"TLS 1.2+"| runtime_api
+  end
+  subgraph ingestion["Offline approval, indexing and revocation"]
+    direction LR
+    subgraph ingestion_private["Private ingestion and data boundary"]
+    ingestion_sources["Approved source store"]
+    ingestion_ingestion["Ingestion worker"]
+    ingestion_index["Hybrid search index"]
+    ingestion_parts["Parts catalogue"]
+    ingestion_audit["Audit store"]
+    subgraph ingestion_provider["Provider embedding boundary"]
+    ingestion_embedding["Embedding endpoint"]
+    end
+    end
+    ingestion_sources --> |"TLS 1.2+"| ingestion_ingestion
+    ingestion_ingestion --> |"TLS 1.2+"| ingestion_embedding
+    ingestion_embedding --> |"TLS 1.2+"| ingestion_index
+    ingestion_ingestion --> |"Approved catalog records / TLS 1.2+"| ingestion_parts
+    ingestion_ingestion -.-> |"Revision, approval and deletion events / TLS 1.2+"| ingestion_audit
+  end
+%% All network links require TLS 1.2+; managed identities/private endpoints where supported.
+%% Application/source/index/catalogue/audit stores require encryption and scoped RBAC.
+%% Runtime internet boundary: Mobile client and Entra ID. Provider boundaries: Generation endpoint and Embedding endpoint.

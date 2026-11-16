@@ -1,0 +1,247 @@
+{
+  "checked_date": "2026-11-16",
+  "source_policy": "Bounded publisher claims only. R01, R12, R13 and R14 were checked for the current model/lifecycle review on 16 November 2026. R02-R11 retain the earlier dated source review and its access limits. All product settings and thresholds remain proposals; no inference, account check or customer study was run.",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "Azure OpenAI reasoning models",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Microsoft lists gpt-6-astra version 2026-09-03 with Responses, structured outputs, reasoning effort and temperature support.",
+        "The table gives a shared 1,050,000-token context, at most 922,000 input and 128,000 output tokens.",
+        "The unsupported-parameters paragraph expressly exempts GPT-6 Astra. Responses uses max_output_tokens."
+      ],
+      "limits": [
+        "These documented interfaces and ceilings do not establish account access, deployment availability, price, latency, quality or safety.",
+        "The application caps, temperature 0.1 and reasoning effort low are proposed settings that require endpoint and held-out evaluation."
+      ],
+      "access_scope": "Current primary page retrieved; model/version, interface table, availability and unsupported-parameter sections inspected."
+    },
+    {
+      "id": "R02",
+      "title": "How to generate reproducible output with Azure OpenAI in Microsoft Foundry Models (classic)",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/how-to/reproducible-output",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Microsoft describes best-effort reproducibility and says determinism is not guaranteed, including when seed and backend fingerprint match."
+      ],
+      "limits": [
+        "The article concerns a classic-portal Chat Completions feature. It is a reproducibility caveat, not proof of seed support for this proposed Responses configuration.",
+        "Low temperature does not establish factual accuracy, safety or identical responses. No live model comparison was performed."
+      ],
+      "access_scope": "Live primary page retrieved; reproducibility limitations inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R03",
+      "title": "RAG and generative AI in Azure AI Search",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "RAG retrieves external grounding content before generation.",
+        "Microsoft describes classic RAG as suitable when generally available features, simplicity, speed and fine control are priorities.",
+        "Chunking and vectorization are indexing steps; hybrid queries and optional semantic ranking are query options."
+      ],
+      "limits": [
+        "RAG does not guarantee correctness or citation faithfulness.",
+        "Agentic retrieval exists; choosing classic RAG here is a design judgment for a small, tightly controlled pilot."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R04",
+      "title": "Hybrid search overview",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Hybrid search runs keyword and vector queries in parallel and combines results using reciprocal rank fusion.",
+        "Keyword search can provide precision for product codes and specialist terms while vector search finds conceptual similarity."
+      ],
+      "limits": [
+        "No application-specific relevance gain or accuracy percentage is established.",
+        "Part validity still needs deterministic lookup against the authoritative catalogue."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R05",
+      "title": "Security filters for trimming results in Azure AI Search",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "A security filter pattern stores principal identifiers and filters results using search.in.",
+        "The pattern applies when built-in document ACL support is unavailable."
+      ],
+      "limits": [
+        "String filtering is an application-enforced pattern, not automatic identity authorization.",
+        "Server-side construction, deny-by-default behavior, tenant boundaries and leakage tests remain implementation requirements."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R06",
+      "title": "Data, privacy, and security for Models sold by Azure in Microsoft Foundry",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Azure excludes customer prompts and outputs from foundation-model training without permission or instruction.",
+        "Service storage and abuse review can still apply. Deployment type controls processing geography; stored data has separate geographic and encryption rules."
+      ],
+      "limits": [
+        "No zero-retention or unconditional single-region guarantee follows. Customer-specific contract and deployment acceptance remain unverified.",
+        "Privacy and legal review must precede customer-data use; no compliance or safety certification is established."
+      ],
+      "access_scope": "Live primary page retrieved; training, storage, geography, encryption and abuse-monitoring sections inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R07",
+      "title": "Maintenance Copilot documentation",
+      "publisher": "Siemens",
+      "url": "https://help.assetmanagement.siemens.com/help/Content/Documentation/Maintenance/Asset%20Essentials/EnterpriseFeatures/AI-Driven%20Capabilities/Maintenance%20Copilot.htm",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Asset Essentials Enterprise Maintenance Copilot uses linked asset manuals and maintenance records for in-context work-order support.",
+        "The documented feature is available on web and mobile; mobile requires online mode.",
+        "Siemens says data quality affects output usefulness."
+      ],
+      "limits": [
+        "This is vendor documentation, not independent comparative testing.",
+        "It establishes an adjacent competitor; it does not prove the proposed product is uniquely capable or faster."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R08",
+      "title": "Genix APM Copilot",
+      "publisher": "ABB",
+      "url": "https://new.abb.com/process-automation/genix/abb-genix-copilot/apm",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "ABB offers conversational access to operational information within its Genix APM infrastructure."
+      ],
+      "limits": [
+        "Claims about speed and downtime on this vendor page are not transferred into the proposal as measured benefits.",
+        "No head-to-head evaluation or pricing comparison was conducted."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R09",
+      "title": "Industrial robot systems and industrial robot system safety",
+      "publisher": "US Occupational Safety and Health Administration",
+      "url": "https://www.osha.gov/otm/section-4-safety-hazards/chapter-4",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "OSHA identifies hazards across robot operation, programming and maintenance and discusses risk assessment, safeguarding and hazardous-energy control."
+      ],
+      "limits": [
+        "The manual is technical guidance for inspection and hazard understanding, not certification of a chatbot.",
+        "Local obligations and current applicable standards require qualified safety/legal review."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R10",
+      "title": "Understand embeddings in Azure OpenAI",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Embeddings represent text as vectors for similarity search and can support Azure AI Search retrieval."
+      ],
+      "limits": [
+        "The page is marked Foundry classic. Confirm current deployment support and model version before provisioning.",
+        "Embedding retrieval does not validate exact part identifiers or language quality."
+      ],
+      "access_scope": "Live primary page retrieved; the listed supporting claims and limits inspected.",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R11",
+      "title": "How to Train Generative AI Using Your Company’s Data",
+      "publisher": "Harvard Business Review",
+      "authors": [
+        "Tom Davenport",
+        "Maryam Alavi"
+      ],
+      "published_date": "2023-07-06",
+      "url": "https://hbr.org/2023/07/how-to-train-generative-ai-using-your-companys-data",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "Assignment-linked background reference; bibliographic metadata is corroborated by the publisher."
+      ],
+      "limits": [
+        "Only metadata and the public preview were available for this review. The full article was not verified, and no detailed technical claim relies on it.",
+        "No purchase, sign-in or paywall bypass was attempted."
+      ],
+      "access_scope": "Metadata and public preview only; full body not verified.",
+      "metadata_corroboration_url": "https://store.hbr.org/product/how-to-train-generative-ai-using-your-company-s-data/H07PNV",
+      "review_provenance": "Retained from revision 2.1.0 source review dated 2026-11-16; not reread during the revision 2.3.0 model/lifecycle check."
+    },
+    {
+      "id": "R12",
+      "title": "Use the Azure OpenAI Responses API",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/responses",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "The supported-model list includes gpt-6-astra version 2026-09-03.",
+        "The documentation supports stateless requests with store=false. Stored response data otherwise has a documented 30-day default."
+      ],
+      "limits": [
+        "store=false is not a blanket zero-retention guarantee. Abuse-monitoring and contractual review remain separate.",
+        "This source does not establish customer resource access, regional availability, or tested runtime behavior."
+      ],
+      "access_scope": "Current primary page retrieved; supported-model list, stored responses, stateless mode and data-protection sections inspected."
+    },
+    {
+      "id": "R13",
+      "title": "GPT-6 Astra model",
+      "publisher": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "OpenAI publishes a current gpt-6-astra model page and identifies Responses and structured-output support.",
+        "The model page lists low, medium, high, xhigh and max reasoning efforts; the page gives a 1,050,000-token context and 128,000 maximum output tokens."
+      ],
+      "limits": [
+        "The direct OpenAI alias is gpt-6-astra. Azure version 2026-09-03 is identified by Microsoft and must not be presented as an OpenAI snapshot identifier.",
+        "OpenAI pricing and access statements do not constitute an Azure quote or prove subscription access, runtime performance or industrial suitability."
+      ],
+      "access_scope": "Current primary model page retrieved; alias, reasoning efforts, token ceilings and endpoint/features sections inspected."
+    },
+    {
+      "id": "R14",
+      "title": "Azure model retirement schedule and lifecycle policy",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule",
+      "policy_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirements",
+      "checked_date": "2026-11-16",
+      "supports": [
+        "The schedule marks GPT-4.1 version 2025-04-14 deprecated, with retirement on 2027-04-14. GPT-4o version 2024-11-20 is Legacy with retirement on 2027-04-14.",
+        "Listed o1, o3 and o4-mini alternatives are deprecated with retirement on 2026-11-19.",
+        "The lifecycle policy restricts deprecated-model access for new subscriptions; existing-subscription eligibility has a separate definition."
+      ],
+      "limits": [
+        "No Astra row or retirement date was found in the inspected schedule. That absence does not establish a retirement date, perpetual availability or the status of a customer deployment.",
+        "Model lifecycle and regional availability must be checked for the actual subscription before selection or provisioning."
+      ],
+      "access_scope": "Current primary schedule and linked lifecycle policy retrieved; listed model rows and subscription rules inspected."
+    }
+  ],
+  "revision": "2.3.0"
+}

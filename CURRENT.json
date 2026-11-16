@@ -1,0 +1,16 @@
+{
+  "version": "2.3.0",
+  "candidate_path": "revisions/v2.3.0",
+  "pdf": "revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pdf",
+  "pptx": "revisions/v2.3.0/artifact/LineGuide_Proposal_v2.3.0.pptx",
+  "review_bundle": "review/LineGuide_Review_v2.3.0.zip",
+  "publication_record": "review/PUBLICATION.json",
+  "narrative_slides": 16,
+  "appendix_slides": 8,
+  "operational_validation": "future_implementation_work",
+  "classroom_submission": "not_performed",
+  "course_scope": "hypothetical_product_proposal",
+  "data_basis": "scenario_facts_labelled_assumptions_and_synthetic_illustrations",
+  "real_customer_measurements_required": false,
+  "authorship_provenance": "substantive_AI_assistance_disclosed"
+}

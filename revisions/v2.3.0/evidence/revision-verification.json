@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "scope": "Artifact integrity and design-source consistency only; no operational or academic certification",
+  "checks": [
+    "24 source slides with notes; 14 synchronized references",
+    "13 canonical component names match both native diagram sources; return and fallback edges present",
+    "Five proposed KPIs remain unmeasured; all three capacity-value cases independently recomputed",
+    "Actual PDF/PPTX headers and PPTX ZIP CRC; 24 slides and 24 notes; nine native tables",
+    "Canonical components, scenario ledger and concrete configuration are present in exported slide text; no LFS pointers"
+  ],
+  "slides": 24,
+  "notes": 24,
+  "native_tables": 9,
+  "canonical_components": 13,
+  "references": 14,
+  "manifest_files_checked": null,
+  "revision": "2.3.0",
+  "render_checks": {
+    "recorded_at": "2026-11-16T04:23:58.532174+00:00",
+    "execution_owner": "Herdr",
+    "coordinator": "codex-root-lineguide-v230",
+    "agent": "v230_deck_builder",
+    "files": {
+      "source/build-deck.mjs": {
+        "bytes": 8737,
+        "sha256": "720dfa9325422ad05ced647dfa211a8d7f69f46f51894e409f95890d09401ac0"
+      },
+      "source/deck-content.json": {
+        "bytes": 58357,
+        "sha256": "fd1c235f07e619dca5e5df9eaa8aea5ec01d2f4d8b9d2d3ed5cc8e962a61f921"
+      },
+      "artifact/LineGuide_Proposal_v2.3.0.pptx": {
+        "bytes": 129680,
+        "sha256": "62ef4406d1c2fa0c176f530fb82107e263587ec5685462bbd2d81d0c122424e8"
+      },
+      "artifact/LineGuide_Proposal_v2.3.0.pdf": {
+        "bytes": 416070,
+        "sha256": "3891b77995d5a131f270be2c7a210192122dc6843e65f5f9582414e202f44a25"
+      }
+    },
+    "slide_count": 24,
+    "notes_count": 24,
+    "pdf_pages": 24,
+    "native_table_slides": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      21
+    ],
+    "editable_diagram_slides": [
+      8,
+      17
+    ],
+    "preview_count": 24,
+    "clickable_reference_urls": 14,
+    "finalizer_zero_findings_and_warnings": true,
+    "pdf_renderer": "Bundled LibreOffice Impress PDF export from the exact finalized PPTX",
+    "pdf_text_searchable": true,
+    "pdf_fonts": "Embedded LiberationSans and LiberationSans-Bold substituted for encoded Arial",
+    "visual_review": "The previous full-size review covered all 24 pages. After the clarified-scope revision, pages 1, 13, 14, 15, 16 and 24 were rendered and inspected again. Their text and new synthetic table fit without unintended overlap or clipping. The other 18 rendered PNGs are byte-identical to the previously inspected pages.",
+    "changed_pages_reinspected": [
+      1,
+      13,
+      14,
+      15,
+      16,
+      24
+    ],
+    "unchanged_rendered_pages_byte_identical": 18,
+    "native_powerpoint_execution": false,
+    "scope": "Artifact structure and rendering checks only. The synthetic illustration is labelled; it is not customer evidence or a live product/model test."
+  },
+  "root_visual_review": {
+    "pages": [
+      1,
+      14,
+      15,
+      16
+    ],
+    "result": "Hypothetical-course framing, labelled synthetic results, explicit assumptions and proposed rollout are legible.",
+    "reviewer": "Codex coordinating agent"
+  },
+  "actual_rubric": {
+    "content_criteria": 7,
+    "packaging_requirement": "completed deck on public default branch",
+    "coverage_map": "docs/RUBRIC-MAP.md",
+    "real_customer_measurements_required": false,
+    "future_product_tests_are_not_course_completion_gates": true
+  },
+  "finalizer": {
+    "package_findings": 0,
+    "layout_findings": 0,
+    "layout_warnings": 0,
+    "native_powerpoint_execution": false
+  }
+}

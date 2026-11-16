@@ -1,0 +1,29 @@
+{
+  "revision": "2.3.0",
+  "reviewer": "Codex independent evidence agent",
+  "source_sha256": "fd1c235f07e619dca5e5df9eaa8aea5ec01d2f4d8b9d2d3ed5cc8e962a61f921",
+  "pptx_sha256": "62ef4406d1c2fa0c176f530fb82107e263587ec5685462bbd2d81d0c122424e8",
+  "pdf_sha256": "3891b77995d5a131f270be2c7a210192122dc6843e65f5f9582414e202f44a25",
+  "source_to_ooxml_mismatches": 0,
+  "displayed_slides": 24,
+  "related_notes": 24,
+  "pdf_pages": 24,
+  "native_tables": 9,
+  "editable_diagrams": 2,
+  "native_arrowheads": 18,
+  "canonical_components": 13,
+  "clickable_references": 14,
+  "definition_sentences": 2,
+  "risk_rows": 5,
+  "proposed_kpis": 5,
+  "synthetic_outcomes": [
+    485,
+    605,
+    410
+  ],
+  "synthetic_counts_and_percentages_recomputed": true,
+  "actual_rubric_content_criteria": 7,
+  "default_branch_packaging_separate": true,
+  "real_customer_measurements_required": false,
+  "scope": "Rubric coverage and final artifact parity review; no grade guarantee, deployment or personal-authorship certification."
+}

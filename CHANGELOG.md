@@ -22,3 +22,7 @@ Twenty-slide initial proposal, sources and verification evidence published at co
 ## 2.1.0, 16 November 2026
 
 Added a 24-slide revision against the supplied C1-C10 checklist, with separate runtime/ingestion diagrams, a visible Scenario C ledger, explicit alternatives and adoption analysis, and concrete privacy and cost controls. Corrected unsupported provenance claims and stale evidence references without overwriting historical packages. Added a version-controlled local extractor and a complete revision manifest. Operational validation, customer/provider approvals and academic eligibility remain open; no classroom submission is recorded.
+
+## 2.3.0, 16 November 2026
+
+Separated a 16-slide product-proposal narrative from eight appendices; aligned completion checks to the actual hypothetical-course rubric. Added clearly labelled assumptions, the reproduced synthetic baseline and an optional future measurement protocol. Verified current model documentation and lifecycle qualifications rather than accepting the unsupported nonexistence assertion. Added one current-candidate record/launcher and a portable review bundle with actual binaries, text/notes, diagrams, source and scoped repository evidence. Earlier versions remain historical. No empirical result, independent authorship, provider approval or classroom submission is asserted.

@@ -1,0 +1,37 @@
+{
+  "status": "SYNTHETIC_SIMULATION_ONLY",
+  "customer_records": 0,
+  "canonical_csv": "synthetic-baseline-canonical.csv",
+  "normalized_csv": "synthetic-baseline-normalized.csv",
+  "summary": "synthetic-baseline-summary.json",
+  "canonical_columns": [
+    "sid",
+    "domain",
+    "family",
+    "Nh",
+    "nh",
+    "non_eng",
+    "sampled",
+    "res",
+    "esc",
+    "abn",
+    "s_min",
+    "ack_min",
+    "sup_min"
+  ],
+  "normalized_added_columns": {
+    "data_status": "Constant SYNTHETIC_SIMULATION",
+    "synthetic_query_id": "Fabricated sequential row label; not a real or de-identified query ID"
+  },
+  "serialization": "pandas DataFrame.round(6).to_csv(index=False), UTF-8, LF; default float formatting",
+  "canonical_sha256": "cef03be7adb723bab005ea3d5ab679c3f418910d5f2612f5f7eccd74c9013de2",
+  "normalized_sha256": "67057e5ccc148b7eb23339d20b552c8dbd43bbfc066ed3c5a30b6b10c9b4fbdd",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "not installed; unused final-generator import omitted",
+    "bit_generator": "PCG64",
+    "seed": 20261116
+  }
+}

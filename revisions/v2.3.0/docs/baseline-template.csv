@@ -1,0 +1,1 @@
+record_id,collection_date,task_variant_id,language,robot_model_code,firmware_group,experience_group,condition,eligible,exclusion_reason,duration_seconds,verified_correct_resolution,escalated_within_24h,source_revision_ids,review_role_code,support_minutes,measurement_status
